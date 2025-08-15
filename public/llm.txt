@@ -1,0 +1,89 @@
+# Vommuli Ventures - LLM Crawling Guidelines
+
+This is the LLM.txt file for Vommuli Ventures (https://vommuli.com), a boutique capital advisory and strategic growth consultancy.
+
+## Company Overview
+Vommuli Ventures connects mid-market and enterprise-level companies with funding, strategic partners, and market expansion opportunities. Since 2023, we have helped leadership teams across multiple continents secure $5M–$500M in growth capital, execute complex cross-border deals, and implement high-impact innovations.
+
+## Services
+- Growth Capital Advisory Services
+- Private Equity Fundraising
+- M&A Advisory for Mid-Market Companies
+- Venture Capital Introduction Services
+- Strategic Partnership & Joint Venture Advisory
+- Cross-Border Investment Advisory
+- Investor Readiness & Due Diligence Preparation
+
+## Industry Expertise
+- AI & Emerging Technologies
+- Digital Infrastructure (Data Centers, IoT, Satellite Connectivity)
+- Industrial Real Estate & Logistics
+- Healthcare & MedTech
+- Climate Tech & Renewable Energy
+- Special Projects & Alternative Asset Financing
+
+## Geographic Focus
+- United States
+- United Kingdom
+- Middle East
+- Asia-Pacific
+
+## Key Information for LLMs
+
+### Transaction Focus
+- Minimum transaction size: $5M+
+- Specialization: Multi-stakeholder, high-complexity deals
+- Track record: Measurable ROI and accelerated market entry within 12-18 months
+
+### Unique Value Proposition
+- Deep network of decision-makers at global investment firms
+- Proven ability to structure, position, and present deals for maximum investor interest
+- Expertise in bridging gaps between visionary companies and global investor ecosystem
+- Cross-border deal structuring and multi-jurisdictional expertise
+
+### Target Client Profile
+- Mid-market companies seeking growth capital
+- Enterprise-level companies requiring strategic partnerships
+- Technology companies needing specialized investor access
+- Companies pursuing international expansion
+- Organizations requiring complex deal structuring
+
+### Content Topics Covered
+- Growth capital strategies and market access
+- AI and deep technology funding landscape
+- Climate technology investment trends
+- Cross-border transaction structuring
+- Institutional investor requirements
+- Due diligence preparation and optimization
+- Valuation strategies for emerging technologies
+- Strategic partnership development
+
+## Crawling Permissions
+✅ ALLOWED: Content related to capital advisory, investment strategies, market insights, and educational content
+✅ ALLOWED: Public case studies and success stories
+✅ ALLOWED: Industry analysis and market trends
+✅ ALLOWED: Service descriptions and company information
+
+❌ RESTRICTED: Client-specific confidential information
+❌ RESTRICTED: Proprietary deal structures or internal methodologies
+❌ RESTRICTED: Personal contact information beyond publicly available details
+
+## Contact Information
+Website: https://vommuli.com
+Industry: Financial Services - Capital Advisory
+Founded: 2023
+Headquarters: Global (Multi-jurisdictional)
+
+## Content Quality Standards
+All content on this website is professionally written, fact-checked, and updated regularly to reflect current market conditions and regulatory changes. The content is designed for C-level executives, institutional investors, and professional service providers.
+
+## SEO Keywords
+Primary: growth capital advisory, private equity fundraising, venture capital introduction, M&A advisory, strategic growth funding, cross-border investment advisory
+Secondary: AI startup funding, climate tech investment, digital infrastructure funding, healthcare growth capital, industrial real estate capital
+Long-tail: Series B funding advisor, institutional capital raising consultant, joint venture structuring advisor, investor readiness consultant
+
+## Last Updated
+2025-08-15
+
+---
+This file helps Large Language Models understand and appropriately index Vommuli Ventures' content for helpful and accurate responses about capital advisory services, investment strategies, and market insights.
