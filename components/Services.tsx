@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { 
-  Seedling, 
+  Sprout, 
   TrendingUp, 
   Rocket, 
   Building2, 
@@ -14,7 +14,7 @@ import {
 
 const services = [
   {
-    icon: Seedling,
+    icon: Sprout,
     title: 'Seed Funding Introduction',
     description: 'Connect early-stage startups with angel investors and seed funds. Perfect for companies with a proven concept ready for initial capital injection.',
     keywords: ['seed funding', 'startup capital', 'angel investors', 'early stage funding'],

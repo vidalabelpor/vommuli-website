@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Merriweather } from 'next/font/google';
 import './globals.css';
-import { JsonLd } from 'react-schemaorg';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -113,86 +112,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         
-        {/* Schema.org structured data */}
-        <JsonLd
-          type="FinancialService"
-          data={{
-            "@context": "https://schema.org",
-            "@type": "FinancialService",
-            "name": "Vommuli Financial Capital Introduction Services",
-            "description": "Expert financial capital introduction services connecting startups and growth-stage companies with venture capital, private equity, and angel investors.",
-            "url": "https://vommuli.com",
-            "logo": "https://vommuli.com/logo.png",
-            "sameAs": [
-              "https://linkedin.com/company/vommuli-financial",
-              "https://twitter.com/vommuli_financial"
-            ],
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "US"
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+1-555-0123",
-              "contactType": "customer service",
-              "email": "info@vommuli.com"
-            },
-            "serviceType": [
-              "Capital Introduction",
-              "Venture Capital Services",
-              "Private Equity Connections",
-              "Angel Investor Network",
-              "Startup Funding Advisory"
-            ],
-            "areaServed": "Worldwide",
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Financial Services",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Seed Funding Introduction",
-                    "description": "Connect early-stage startups with seed investors"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Series A Funding",
-                    "description": "Connect growth-stage companies with Series A investors"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Private Equity Connections",
-                    "description": "Connect established companies with private equity firms"
-                  }
-                }
-              ]
-            }
-          }}
-        />
-        
-        {/* Organization schema */}
-        <JsonLd
-          type="Organization"
-          data={{
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Vommuli Financial Services",
-            "url": "https://vommuli.com",
-            "logo": "https://vommuli.com/logo.png",
-            "description": "Leading financial capital introduction services for startups and growth companies",
-            "foundingDate": "2024",
-            "industry": "Financial Services",
-            "numberOfEmployees": "10-50"
-          }}
-        />
+        {/* Schema.org structured data - removed temporarily for build fix */}
       </head>
       <body className={`${inter.className} antialiased`}>
         {children}

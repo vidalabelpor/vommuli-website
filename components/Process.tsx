@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { 
   Search, 
   Target, 
-  Handshake, 
+  Users, 
   TrendingUp,
   CheckCircle,
   ArrowRight
@@ -43,7 +43,7 @@ const processSteps = [
   },
   {
     step: '03',
-    icon: Handshake,
+    icon: Users,
     title: 'Introduction & Facilitation',
     description: 'We facilitate strategic introductions between your company and potential investors, ensuring proper positioning and preparation for successful meetings and discussions.',
     details: [

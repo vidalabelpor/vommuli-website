@@ -1,21 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    appDir: true,
+    // appDir: true, // Removed - no longer needed in Next.js 14
   },
   images: {
-    domains: ['images.unsplash.com'],
+    domains: ['images.unsplash.com', 'via.placeholder.com'],
     formats: ['image/webp', 'image/avif'],
   },
   compress: true,
   poweredByHeader: false,
   generateEtags: false,
-  compress: true,
   reactStrictMode: true,
   swcMinify: true,
+  // Remove console.logs in production
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  // Security headers
   async headers() {
     return [
       {
@@ -31,7 +32,7 @@ const nextConfig = {
           },
           {
             key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin',
+            value: 'strict-origin-when-cross-origin',
           },
         ],
       },
