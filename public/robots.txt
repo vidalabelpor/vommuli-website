@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vommuli.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
