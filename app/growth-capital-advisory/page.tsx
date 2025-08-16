@@ -128,8 +128,43 @@ export default function GrowthCapitalAdvisoryPage() {
               </div>
               <h3 className="text-xl font-bold text-white mb-4">Institutional Investor Access</h3>
               <p className="text-slate-300">
-                Leverage our global network of decision-makers at top-tier institutional investors, private equity firms, and family offices.
+                Leverage our global network of decision-makers at top-tier institutional investors, <a href="/private-equity-fundraising" className="text-blue-400 hover:text-blue-300 underline">private equity firms</a>, and family offices.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services Section */}
+      <section className="py-16 px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">
+            Explore Our Related Capital Advisory Services
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700">
+              <h3 className="text-xl font-bold text-blue-400 mb-3">Earlier Stage Funding</h3>
+              <p className="text-slate-300 mb-4">For companies seeking Series A or B funding to establish product-market fit and early scaling.</p>
+              <a href="/venture-capital-introduction" className="text-blue-400 hover:text-blue-300 underline font-semibold">
+                Venture Capital Introduction →
+              </a>
+            </div>
+            
+            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700">
+              <h3 className="text-xl font-bold text-blue-400 mb-3">Strategic Exit Planning</h3>
+              <p className="text-slate-300 mb-4">When growth capital leads to acquisition opportunities or strategic transactions.</p>
+              <a href="/ma-advisory" className="text-blue-400 hover:text-blue-300 underline font-semibold">
+                M&A Advisory Services →
+              </a>
+            </div>
+            
+            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700">
+              <h3 className="text-xl font-bold text-blue-400 mb-3">Sector-Specific Expertise</h3>
+              <p className="text-slate-300 mb-4">Specialized growth capital advisory for technology, healthcare, and infrastructure companies.</p>
+              <a href="/ai-tech-funding-advisory" className="text-blue-400 hover:text-blue-300 underline font-semibold">
+                Technology Funding →
+              </a>
             </div>
           </div>
         </div>

@@ -91,6 +91,41 @@ export default function AITechFundingPage() {
         </div>
       </section>
 
+      {/* Related Services Section */}
+      <section className="py-16 px-6 lg:px-8 bg-slate-800/50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">
+            Comprehensive Technology Funding Solutions
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
+              <h3 className="text-xl font-bold text-purple-400 mb-3">Early-Stage VC Funding</h3>
+              <p className="text-slate-300 mb-4">Series A and B funding for AI startups with proven product-market fit.</p>
+              <a href="/venture-capital-introduction" className="text-purple-400 hover:text-purple-300 underline font-semibold">
+                Venture Capital Introduction →
+              </a>
+            </div>
+            
+            <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
+              <h3 className="text-xl font-bold text-purple-400 mb-3">Growth & Expansion Capital</h3>
+              <p className="text-slate-300 mb-4">Scaling proven AI technologies with institutional growth capital.</p>
+              <a href="/growth-capital-advisory" className="text-purple-400 hover:text-purple-300 underline font-semibold">
+                Growth Capital Advisory →
+              </a>
+            </div>
+            
+            <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
+              <h3 className="text-xl font-bold text-purple-400 mb-3">Strategic Exit Planning</h3>
+              <p className="text-slate-300 mb-4">M&A advisory for AI companies seeking strategic acquisitions or partnerships.</p>
+              <a href="/ma-advisory" className="text-purple-400 hover:text-purple-300 underline font-semibold">
+                M&A Advisory Services →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
