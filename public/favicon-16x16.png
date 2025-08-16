@@ -1,0 +1,15 @@
+PLACEHOLDER - Replace with actual Vommuli Ventures favicon-16x16.png (16x16 PNG)
+
+Smallest favicon size for legacy browser support and very small displays.
+
+Requirements:
+- 16x16 pixels PNG format
+- Transparent background preferred  
+- Extremely simple design - must be recognizable at tiny size
+- Use brand colors: #0ea5e9 primary blue
+- Should match favicon.ico and other sizes
+
+Design tips for 16x16:
+- Single letter "V" or simple geometric shape
+- Bold, high contrast
+- Avoid fine details that won't be visible

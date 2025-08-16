@@ -1,8 +1,44 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://vommuli.com/sitemap.xml
+# AI/LLM Crawlers - Explicit Allow
+User-agent: GPTBot
+Allow: /
 
-# Crawl-delay
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Allow access to key financial content
+Allow: /services/
+Allow: /resources/
+Allow: /about/
+Allow: /compliance/
+Allow: /insights/
+
+# Block sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /thank-you/
+
+# Important files
+Allow: /robots.txt
+Allow: /sitemap.xml
+Allow: /favicon.ico
+
+# Crawl optimization
 Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://vommuli.com/sitemap.xml
+Sitemap: https://vommuli.com/image-sitemap.xml

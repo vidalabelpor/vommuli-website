@@ -1,0 +1,16 @@
+PLACEHOLDER - Replace with actual Vommuli Ventures apple-touch-icon.png (180x180 PNG)
+
+This is the icon that appears when users add your site to their iOS home screen.
+
+Requirements:
+- 180x180 pixels PNG format
+- No transparency (solid background)
+- Rounded corners will be applied automatically by iOS
+- Use brand colors: #0ea5e9 primary, #0f172a dark background
+- Should be recognizable at small sizes
+
+Design considerations:
+- Clear, simple logo or lettermark
+- High contrast
+- Professional appearance
+- Consistent with favicon design
