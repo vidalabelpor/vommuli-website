@@ -2,12 +2,14 @@ import { NextResponse } from 'next/server';
 
 // Define all routes with their priorities and update frequencies
 const routes = [
+  // Homepage
   {
     url: '',
     lastModified: new Date(),
     changeFrequency: 'daily' as const,
     priority: 1.0,
   },
+  // Main pages
   {
     url: '/about',
     lastModified: new Date(),
@@ -32,12 +34,55 @@ const routes = [
     changeFrequency: 'daily' as const,
     priority: 0.8,
   },
-  // Service-specific pages
+  {
+    url: '/schedule-consultation',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  },
+  {
+    url: '/ma-advisory',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  },
+  // Legal pages
+  {
+    url: '/privacy',
+    lastModified: new Date(),
+    changeFrequency: 'yearly' as const,
+    priority: 0.3,
+  },
+  {
+    url: '/terms',
+    lastModified: new Date(),
+    changeFrequency: 'yearly' as const,
+    priority: 0.3,
+  },
+  {
+    url: '/compliance',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  },
+  // Service pages (both /app/ and /app/services/ routes)
+  {
+    url: '/venture-capital-introduction',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  },
   {
     url: '/services/venture-capital-introduction',
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
+  },
+  {
+    url: '/private-equity-fundraising',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
   },
   {
     url: '/services/private-equity-fundraising',
@@ -46,13 +91,37 @@ const routes = [
     priority: 0.8,
   },
   {
+    url: '/growth-capital-advisory',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  },
+  {
     url: '/services/growth-capital-advisory',
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   },
   {
+    url: '/ai-tech-funding-advisory',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  },
+  {
     url: '/services/ai-tech-funding',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  },
+  {
+    url: '/climate-tech-renewable-energy-funding',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  },
+  {
+    url: '/services/climate-tech-renewable-energy-funding',
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
@@ -65,12 +134,6 @@ const routes = [
   },
   {
     url: '/services/digital-infrastructure-funding',
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  },
-  {
-    url: '/services/ma-advisory',
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,

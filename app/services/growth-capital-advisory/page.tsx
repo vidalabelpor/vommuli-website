@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import SchemaMarkup from '@/components/SchemaMarkup';
-import GrowthCapitalFAQ from './GrowthCapitalFAQ';
 
 export const metadata: Metadata = {
   title: 'Growth Capital Advisory Services | Growth Equity Funding | Vommuli Ventures',
@@ -58,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Growth Capital Advisory Services | Expert Growth Equity Funding',
     description: 'Strategic growth capital advisory services for scaling companies. Connect with leading growth equity firms for accelerated expansion.',
-    url: 'https://vommuli.com/growth-capital-advisory',
+    url: 'https://vommuli.com/services/growth-capital-advisory',
   },
 };
 
@@ -1146,10 +1145,7 @@ export default function GrowthCapitalAdvisoryPage() {
       </section>
 
       {/* FAQ Section */}
-      <GrowthCapitalFAQ />
-
-      {/* FAQ Schema Markup */}
-      <SchemaMarkup className="relative py-24 px-6 lg:px-8 z-10">
+      <section className="relative py-24 px-6 lg:px-8 z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-green-500/20 border border-emerald-500/30 backdrop-blur-sm mb-6">
@@ -1314,7 +1310,7 @@ export default function GrowthCapitalAdvisoryPage() {
         data={{
           name: "Growth Capital Advisory Services",
           description: "Expert growth capital advisory services connecting scaling companies with growth equity firms. Strategic financing for revenue-generating businesses ready for accelerated expansion.",
-          url: "/growth-capital-advisory"
+          url: "/services/growth-capital-advisory"
         }}
       />
     </div>

@@ -969,7 +969,7 @@ export default function PrivateEquityFundraisingPage() {
                         <p className="text-slate-300 text-sm mb-3">Matching transaction size to fund strategy and optimal portfolio allocation parameters.</p>
                         <div className="space-y-2 text-xs">
                           <div className="flex justify-between items-center">
-                            <span className="text-slate-400">Large Fund (>$2B) Sweet Spot</span>
+                            <span className="text-slate-400">Large Fund ({'>'}$2B) Sweet Spot</span>
                             <span className="text-indigo-400">$100M-500M</span>
                           </div>
                           <div className="flex justify-between items-center">
@@ -977,7 +977,7 @@ export default function PrivateEquityFundraisingPage() {
                             <span className="text-indigo-400">$25M-150M</span>
                           </div>
                           <div className="flex justify-between items-center">
-                            <span className="text-slate-400">Small Fund (<$500M) Focus</span>
+                            <span className="text-slate-400">Small Fund ({'<'}$500M) Focus</span>
                             <span className="text-indigo-400">$10M-75M</span>
                           </div>
                         </div>

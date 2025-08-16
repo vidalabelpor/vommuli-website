@@ -965,7 +965,7 @@ export default function AITechFundingPage() {
                           <div>
                             <h6 className="font-medium text-white mb-2">Quality Metrics</h6>
                             <ul className="text-slate-300 text-xs space-y-1">
-                              <li>• Data completeness (>95%)</li>
+                              <li>• Data completeness ({'>'}95%)</li>
                               <li>• Annotation accuracy</li>
                               <li>• Distribution balance</li>
                               <li>• Temporal consistency</li>

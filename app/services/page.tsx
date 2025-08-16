@@ -236,7 +236,7 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 
-                <a href="/venture-capital-introduction" className="inline-flex items-center text-violet-400 hover:text-violet-300 font-medium group-hover:translate-x-1 transition-all duration-300">
+                <a href="/services/venture-capital-introduction" className="inline-flex items-center text-violet-400 hover:text-violet-300 font-medium group-hover:translate-x-1 transition-all duration-300">
                   Learn More About VC Introduction
                   <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -278,7 +278,7 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 
-                <a href="/private-equity-fundraising" className="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-medium group-hover:translate-x-1 transition-all duration-300">
+                <a href="/services/private-equity-fundraising" className="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-medium group-hover:translate-x-1 transition-all duration-300">
                   Learn More About PE Fundraising
                   <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -362,7 +362,7 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 
-                <a href="/growth-capital-advisory" className="inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium group-hover:translate-x-1 transition-all duration-300">
+                <a href="/services/growth-capital-advisory" className="inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium group-hover:translate-x-1 transition-all duration-300">
                   Learn More About Growth Capital
                   <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -390,7 +390,7 @@ export default function ServicesPage() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* AI & Tech */}
             <div className="group relative overflow-hidden rounded-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-indigo-600/20 group-hover:from-purple-600/30 group-hover:to-indigo-600/30 transition-all duration-300"></div>
@@ -400,7 +400,7 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-xl font-bold text-purple-400 mb-3">AI & Tech Funding Advisory</h3>
                 <p className="text-slate-300 mb-6">Specialized expertise in AI, machine learning, and deep technology funding with technical due diligence support.</p>
-                <a href="/ai-tech-funding-advisory" className="text-purple-400 hover:text-purple-300 font-medium inline-flex items-center">
+                <a href="/services/ai-tech-funding" className="text-purple-400 hover:text-purple-300 font-medium inline-flex items-center">
                   Explore AI Tech Services
                   <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -418,7 +418,7 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-xl font-bold text-red-400 mb-3">Healthcare & MedTech Funding</h3>
                 <p className="text-slate-300 mb-6">Navigate complex healthcare financing with expertise in regulatory pathways and clinical validation requirements.</p>
-                <a href="/healthcare-medtech-funding" className="text-red-400 hover:text-red-300 font-medium inline-flex items-center">
+                <a href="/services/healthcare-medtech-funding" className="text-red-400 hover:text-red-300 font-medium inline-flex items-center">
                   Explore Healthcare Services
                   <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -436,8 +436,26 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-xl font-bold text-blue-400 mb-3">Digital Infrastructure Funding</h3>
                 <p className="text-slate-300 mb-6">Specialized in data centers, cloud infrastructure, 5G networks, and edge computing capital deployment.</p>
-                <a href="/digital-infrastructure-funding" className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center">
+                <a href="/services/digital-infrastructure-funding" className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center">
                   Explore Infrastructure Services
+                  <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            {/* Climate Tech & Renewable Energy */}
+            <div className="group relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-600/20 to-emerald-600/20 group-hover:from-green-600/30 group-hover:to-emerald-600/30 transition-all duration-300"></div>
+              <div className="relative p-8 border border-green-500/30 group-hover:border-green-400/50 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl mb-6 flex items-center justify-center">
+                  <span className="text-xl">🌍</span>
+                </div>
+                <h3 className="text-xl font-bold text-green-400 mb-3">Climate Tech & Renewable Energy</h3>
+                <p className="text-slate-300 mb-6">Expert advisory for climate technology and renewable energy companies connecting with ESG investors and impact funds.</p>
+                <a href="/services/climate-tech-renewable-energy-funding" className="text-green-400 hover:text-green-300 font-medium inline-flex items-center">
+                  Explore Climate Tech Services
                   <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import SchemaMarkup from '@/components/SchemaMarkup';
-import ClimateEnergyFAQ from './ClimateEnergyFAQ';
 
 export const metadata: Metadata = {
   title: 'Climate Tech & Renewable Energy Funding Advisory | ESG Investment Services | Vommuli',
@@ -58,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Climate Tech & Renewable Energy Funding Advisory | Expert ESG Investment',
     description: 'Specialized climate technology and renewable energy funding advisory connecting sustainable innovation companies with impact investors.',
-    url: 'https://vommuli.com/climate-tech-renewable-energy-funding',
+    url: 'https://vommuli.com/services/climate-tech-renewable-energy-funding',
   },
 };
 
@@ -1150,8 +1149,81 @@ export default function ClimateTechRenewableEnergyFundingPage() {
         </div>
       </section>
 
-      {/* Climate Tech & Renewable Energy FAQ */}
-      <ClimateEnergyFAQ />
+      {/* FAQ Section */}
+      <section className="relative py-24 px-6 lg:px-8 z-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 backdrop-blur-sm mb-6">
+              <span className="text-green-300 text-sm font-medium">❓ Frequently Asked Questions</span>
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Climate Tech Funding Advisory FAQ
+            </h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              Common questions about climate technology funding, ESG investment criteria, and our impact investment advisory process.
+            </p>
+          </div>
+          
+          <div className="space-y-6">
+            <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
+              <h3 className="text-xl font-bold text-green-400 mb-3">What types of climate technology companies do you work with?</h3>
+              <p className="text-slate-300">
+                We work with climate technology companies across five core categories: renewable energy and storage systems, carbon capture and utilization technologies, sustainable agriculture and food technology, clean transportation and mobility solutions, and circular economy and waste reduction platforms. Our focus is on companies with Technology Readiness Level (TRL) 7+ and proven commercial pilot deployments with measurable environmental impact.
+              </p>
+            </div>
+
+            <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
+              <h3 className="text-xl font-bold text-green-400 mb-3">What are the key criteria that climate tech investors look for?</h3>
+              <p className="text-slate-300">
+                Climate tech investors prioritize measurable environmental impact (1M+ tons CO2e reduction annually), commercial viability with proven unit economics, technology readiness (TRL 7+ required), scalable business models with clear deployment pathways, strong ESG compliance and governance practices, experienced management teams with climate expertise, regulatory alignment with policy support, and market validation through pilot customers and strategic partnerships.
+              </p>
+            </div>
+
+            <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
+              <h3 className="text-xl font-bold text-green-400 mb-3">How do ESG requirements impact climate technology funding?</h3>
+              <p className="text-slate-300">
+                ESG requirements are fundamental to climate tech funding, with 95%+ of impact deals requiring comprehensive ESG compliance. Key requirements include Environmental impact measurement and third-party verification, Social responsibility including community engagement and stakeholder consultation, Governance structures incorporating board diversity and sustainability oversight, Transparent reporting aligned with TCFD, EU Taxonomy, and investor-specific frameworks, and Impact metrics tracking with real-time dashboards and annual sustainability reporting.
+              </p>
+            </div>
+
+            <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
+              <h3 className="text-xl font-bold text-green-400 mb-3">What is the typical timeline for climate technology fundraising?</h3>
+              <p className="text-slate-300">
+                Climate technology fundraising typically requires 5-12 months from initial assessment to closing. The process includes impact assessment and ESG positioning (3-4 weeks), impact investor targeting and thesis development (4-6 weeks), investor introductions and presentation phases (10-20 weeks), due diligence including technical and ESG validation (6-12 weeks), and term negotiation incorporating impact milestones and sustainability targets (4-8 weeks). Timeline varies based on technology maturity and regulatory complexity.
+              </p>
+            </div>
+
+            <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
+              <h3 className="text-xl font-bold text-green-400 mb-3">How do you measure and validate climate impact for investors?</h3>
+              <p className="text-slate-300">
+                We employ comprehensive impact measurement frameworks including carbon footprint analysis and life-cycle assessment, third-party verification through certified environmental consultants, quantified environmental benefits (energy savings, emissions reduction, resource efficiency), alignment with UN Sustainable Development Goals and Paris Agreement targets, real-time impact tracking systems with transparent dashboard reporting, regulatory compliance validation, and independent impact auditing for investor confidence and ESG reporting requirements.
+              </p>
+            </div>
+
+            <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
+              <h3 className="text-xl font-bold text-green-400 mb-3">What role do government incentives and policies play in climate tech funding?</h3>
+              <p className="text-slate-300">
+                Government incentives significantly accelerate climate tech funding through tax credits (IRA providing $370B in climate incentives), grant programs and co-funding opportunities, regulatory mandates creating market demand, carbon pricing mechanisms enabling revenue streams, procurement policies supporting early adoption, R&D tax incentives reducing development costs, and international climate agreements driving policy alignment. We help companies navigate these incentives and incorporate policy support into investor presentations.
+              </p>
+            </div>
+
+            <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
+              <h3 className="text-xl font-bold text-green-400 mb-3">How do corporate strategic investors participate in climate tech funding?</h3>
+              <p className="text-slate-300">
+                Corporate strategic investors are increasingly active in climate tech through dedicated climate innovation funds ($45B+ committed), technology partnerships and pilot deployments, supply chain integration opportunities, carbon offset and sustainability goal alignment, co-development agreements for commercial deployment, market access and customer validation support, and strategic acquisitions for technology integration. Corporate participation often provides validation, market access, and accelerated commercial deployment beyond just capital.
+              </p>
+            </div>
+
+            <div className="bg-slate-700/50 p-6 rounded-xl border border-slate-600">
+              <h3 className="text-xl font-bold text-green-400 mb-3">What documentation is required for climate technology due diligence?</h3>
+              <p className="text-slate-300">
+                Climate technology due diligence requires comprehensive environmental impact assessment and life-cycle analysis, technology validation reports and third-party technical due diligence, ESG compliance documentation including governance frameworks, regulatory approvals and environmental permits, pilot deployment data and customer validation studies, intellectual property portfolio and freedom-to-operate analysis, sustainability reporting and impact measurement systems, management team climate expertise and advisory board composition, and financial models incorporating climate risk and opportunity assessment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Get Started CTA */}
       <section className="relative py-24 px-6 lg:px-8 z-10">
@@ -1243,7 +1315,7 @@ export default function ClimateTechRenewableEnergyFundingPage() {
         data={{
           name: "Climate Tech & Renewable Energy Funding Advisory",
           description: "Expert climate technology and renewable energy funding advisory. Connect with impact investors, ESG funds, and clean tech VCs for sustainable innovation financing.",
-          url: "/climate-tech-renewable-energy-funding"
+          url: "/services/climate-tech-renewable-energy-funding"
         }}
       />
     </div>
