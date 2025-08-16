@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Merriweather } from 'next/font/google';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import './globals.css';
 
 const inter = Inter({ 
@@ -115,7 +117,11 @@ export default function RootLayout({
         {/* Schema.org structured data - removed temporarily for build fix */}
       </head>
       <body className={`${inter.className} antialiased`}>
-        {children}
+        <Navigation />
+        <main>
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
