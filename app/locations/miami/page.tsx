@@ -335,7 +335,7 @@ export default function MiamiLocationPage() {
 
       {/* Location Schema Markup */}
       <SchemaMarkup 
-        type="localbusiness" 
+        type="organization" 
         data={{
           name: "Vommuli Ventures - Miami",
           description: "Premier Miami capital introduction services connecting South Florida companies with Latin America gateway investors, venture capital firms, and private equity partners.",

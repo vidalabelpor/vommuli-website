@@ -24,7 +24,6 @@ export default function AnalyticsLandingPage({
       <AnalyticsHero
         title={heroTitle}
         subtitle={heroSubtitle}
-        onCtaClick={onHeroCtaClick}
       />
       
       {/* Company Logos & Testimonial */}

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 interface TestimonialProps {
@@ -94,19 +96,12 @@ export default function AnalyticsTestimonial({
             </blockquote>
             <figcaption className="mt-8">
               <div className="flex items-center justify-center space-x-3">
-                <img
-                  className="h-12 w-12 rounded-full"
-                  src={avatar}
-                  alt={author}
-                  onError={(e) => {
-                    e.currentTarget.src = `data:image/svg+xml;base64,${btoa(`
-                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="48" height="48" rx="24" fill="#E5E7EB"/>
-                        <path d="M24 12C17.373 12 12 17.373 12 24s5.373 12 12 12 12-5.373 12-12S30.627 12 24 12zm0 6c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4zm0 18c-3.314 0-6.219-1.686-7.93-4.24C16.518 29.696 19.91 28 24 28s7.482 1.696 7.93 3.76C30.219 34.314 27.314 36 24 36z" fill="#9CA3AF"/>
-                      </svg>
-                    `)}`
-                  }}
-                />
+                <div className="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 6C13.1 6 14 6.9 14 8s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2z" fill="#9CA3AF"/>
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="none" stroke="#9CA3AF" strokeWidth="2"/>
+                  </svg>
+                </div>
                 <div className="text-sm">
                   <div className="font-semibold text-gray-900">{author}</div>
                   <div className="text-gray-600">{title}, {company}</div>

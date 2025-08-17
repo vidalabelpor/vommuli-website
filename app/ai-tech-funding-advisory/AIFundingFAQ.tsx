@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-const aiFaqs = [
+export const aiFaqs = [
   {
     question: 'What makes AI funding different from traditional tech funding?',
     answer: 'AI funding requires specialized technical due diligence, including model performance validation, data quality assessment, scalability analysis, and bias testing. Investors evaluate AI companies on technical metrics like model accuracy, computational efficiency, and data moats rather than just traditional business metrics. AI companies also command 2-3x premiums over traditional software due to technical barriers and market opportunity size.',

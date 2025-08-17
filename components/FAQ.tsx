@@ -90,7 +90,7 @@ export default function FAQ() {
     : faqs.filter(faq => faq.category === selectedCategory);
 
   return (
-    <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+    <section className="section-padding bg-gradient-neutral">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -103,11 +103,11 @@ export default function FAQ() {
           <div className="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <HelpCircle className="w-10 h-10 text-primary-600" />
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-secondary-900 mb-6">
             Frequently Asked{' '}
             <span className="text-gradient">Questions</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
             Get answers to the most common questions about our financial capital introduction services and how we can help your business secure the funding it needs.
           </p>
         </motion.div>
@@ -126,8 +126,8 @@ export default function FAQ() {
               onClick={() => setSelectedCategory(category)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                 selectedCategory === category
-                  ? 'bg-primary-600 text-white shadow-lg'
-                  : 'bg-white text-gray-600 hover:bg-primary-50 border border-gray-200'
+                  ? 'bg-primary-600 text-white shadow-md'
+                  : 'bg-white text-secondary-600 hover:bg-primary-50 border border-neutral-200 hover:border-primary-200'
               }`}
             >
               {category}
@@ -144,19 +144,19 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+              className="faq-item"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                className="faq-header"
               >
-                <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                <h3 className="text-lg font-semibold text-secondary-900 pr-4 text-left">
                   {faq.question}
                 </h3>
                 {openIndex === index ? (
                   <ChevronUp className="w-5 h-5 text-primary-600 flex-shrink-0" />
                 ) : (
-                  <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                  <ChevronDown className="w-5 h-5 text-secondary-400 flex-shrink-0" />
                 )}
               </button>
               
@@ -166,17 +166,15 @@ export default function FAQ() {
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="px-6 pb-6"
+                  className="faq-content"
                 >
-                  <div className="text-gray-700 leading-relaxed space-y-4">
-                    <p>{faq.answer}</p>
-                    <div className="pt-4 border-t border-gray-100">
-                      <div className="text-sm text-gray-500">
-                        <span className="font-medium">Category:</span> {faq.category}
-                      </div>
-                      <div className="text-sm text-gray-500 mt-1">
-                        <span className="font-medium">Keywords:</span> {faq.keywords.join(', ')}
-                      </div>
+                  <p className="mb-4">{faq.answer}</p>
+                  <div className="pt-4 border-t border-neutral-100">
+                    <div className="text-sm text-secondary-500">
+                      <span className="font-medium">Category:</span> {faq.category}
+                    </div>
+                    <div className="text-sm text-secondary-500 mt-1">
+                      <span className="font-medium">Keywords:</span> {faq.keywords.join(', ')}
                     </div>
                   </div>
                 </motion.div>
@@ -193,18 +191,18 @@ export default function FAQ() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl p-8 lg:p-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+          <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 lg:p-12 border border-neutral-200">
+            <h3 className="text-3xl font-bold text-secondary-900 mb-4">
               Still Have Questions?
             </h3>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-secondary-600 mb-8 max-w-2xl mx-auto">
               Our team of capital introduction experts is here to help. Schedule a free consultation to discuss your specific needs and get personalized answers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="btn-primary">
                 Schedule Free Consultation
               </button>
-              <button className="btn-outline">
+              <button className="btn-secondary">
                 Contact Our Team
               </button>
             </div>

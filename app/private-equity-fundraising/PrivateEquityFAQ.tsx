@@ -56,6 +56,8 @@ const privateEquityFaqs = [
   }
 ];
 
+export { privateEquityFaqs };
+
 export default function PrivateEquityFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 

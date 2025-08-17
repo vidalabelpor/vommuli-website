@@ -56,6 +56,8 @@ const climateEnergyFaqs = [
   }
 ];
 
+export { climateEnergyFaqs };
+
 export default function ClimateEnergyFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 

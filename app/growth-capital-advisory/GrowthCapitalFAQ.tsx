@@ -56,6 +56,8 @@ const growthCapitalFaqs = [
   }
 ];
 
+export { growthCapitalFaqs };
+
 export default function GrowthCapitalFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 

@@ -46,6 +46,8 @@ const vcFaqs = [
   }
 ];
 
+export { vcFaqs };
+
 export default function VCIntroductionFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 

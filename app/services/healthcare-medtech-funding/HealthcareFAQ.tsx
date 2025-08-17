@@ -56,6 +56,8 @@ const healthcareFaqs = [
   }
 ];
 
+export { healthcareFaqs };
+
 export default function HealthcareFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 

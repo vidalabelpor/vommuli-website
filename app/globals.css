@@ -57,6 +57,9 @@
   body {
     @apply bg-white text-gray-900;
     font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   /* Smooth scrolling */
@@ -87,42 +90,200 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  /* Mercury.com inspired Button System with Vommuli Brand Colors */
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply bg-primary-900 hover:bg-primary-800 text-white font-semibold py-3 px-6 rounded-3xl transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    will-change: transform, box-shadow;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(30, 58, 138, 0.2);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0);
   }
 
   .btn-secondary {
-    @apply bg-secondary-100 hover:bg-secondary-200 text-secondary-800 font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+    @apply bg-white hover:bg-neutral-50 text-secondary-900 font-semibold py-3 px-6 rounded-3xl border border-neutral-200 hover:border-neutral-300 transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2;
+    will-change: transform, box-shadow;
+  }
+  
+  .btn-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-secondary:active {
+    transform: translateY(0);
+  }
+
+  .btn-accent {
+    @apply bg-accent-600 hover:bg-accent-700 text-secondary-900 font-semibold py-3 px-6 rounded-3xl transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+    will-change: transform, box-shadow;
+  }
+  
+  .btn-accent:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(202, 138, 4, 0.2);
+  }
+  
+  .btn-accent:active {
+    transform: translateY(0);
   }
 
   .btn-outline {
-    @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply border-2 border-primary-900 text-primary-900 hover:bg-primary-900 hover:text-white font-semibold py-3 px-6 rounded-3xl transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2;
   }
 
+  .btn-ghost {
+    @apply text-secondary-800 hover:text-secondary-900 hover:bg-neutral-50 font-semibold py-3 px-6 rounded-3xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2;
+  }
+
+  /* Mercury.com inspired Card System with Vommuli Brand Colors */
   .card {
-    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100;
+    @apply bg-white rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 p-8 border border-neutral-200 hover:border-primary-200;
+    will-change: transform, box-shadow;
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(30, 58, 138, 0.1);
   }
 
+  .card-elevated {
+    @apply bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-neutral-100;
+    will-change: transform, box-shadow;
+  }
+  
+  .card-elevated:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(30, 58, 138, 0.1);
+  }
+
+  .card-subtle {
+    @apply bg-primary-50 hover:bg-white rounded-3xl transition-all duration-300 p-8 border border-primary-100 hover:border-primary-200 hover:shadow-sm;
+  }
+
+  .card-brand {
+    @apply bg-gradient-to-br from-primary-900 to-secondary-900 rounded-3xl shadow-lg p-8 text-white;
+  }
+
+  /* Professional Section Layouts */
   .section-padding {
     @apply py-16 lg:py-24;
   }
 
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+  .section-padding-sm {
+    @apply py-12 lg:py-16;
   }
 
+  .section-padding-lg {
+    @apply py-20 lg:py-32;
+  }
+
+  /* Mercury + Vommuli Text Treatments */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-900 to-accent-600 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-accent {
+    @apply bg-gradient-to-r from-accent-600 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-brand {
+    @apply bg-gradient-to-r from-primary-900 via-secondary-900 to-primary-800 bg-clip-text text-transparent;
+  }
+
+  /* Mercury-inspired Background Systems with Vommuli Brand */
   .bg-gradient-primary {
-    @apply bg-gradient-to-br from-primary-50 via-primary-100 to-accent-50;
+    @apply bg-gradient-to-br from-primary-50 via-white to-primary-100;
   }
 
   .bg-gradient-secondary {
-    @apply bg-gradient-to-br from-secondary-50 via-secondary-100 to-gray-50;
+    @apply bg-gradient-to-br from-secondary-50 via-white to-secondary-100;
+  }
+
+  .bg-gradient-neutral {
+    @apply bg-gradient-to-br from-neutral-50 via-white to-neutral-100;
+  }
+
+  .bg-gradient-accent {
+    @apply bg-gradient-to-br from-accent-50 via-white to-accent-100;
+  }
+
+  /* Professional Service Page Backgrounds */
+  .bg-service-gradient {
+    @apply bg-gradient-to-br from-primary-50 via-white to-secondary-50;
+  }
+
+  /* Mercury-style Brand Hero Background */
+  .bg-hero-gradient {
+    @apply bg-gradient-to-br from-primary-900 via-secondary-900 to-primary-800;
+  }
+
+  /* Form Elements */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-neutral-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-500 focus:ring-offset-0 transition-all duration-200 placeholder-neutral-400;
+  }
+
+  /* Professional FAQ Components */
+  .faq-item {
+    @apply bg-white rounded-xl border border-neutral-200 hover:border-neutral-300 transition-all duration-200 overflow-hidden;
+  }
+
+  .faq-header {
+    @apply w-full px-6 py-6 text-left flex items-center justify-between hover:bg-neutral-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset;
+  }
+
+  .faq-content {
+    @apply px-6 pb-6 text-secondary-700 leading-relaxed border-t border-neutral-100;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Professional text rendering */
+  .text-crisp {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Enhanced shadow utilities */
+  .shadow-professional {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.02);
+  }
+
+  .shadow-elevated {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.02);
+  }
+
+  .shadow-brand {
+    box-shadow: 0 8px 24px rgba(30, 58, 138, 0.15), 0 0 0 1px rgba(30, 58, 138, 0.05);
+  }
+
+  /* Micro-interaction utilities */
+  .hover-lift {
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    will-change: transform, box-shadow;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  .hover-scale {
+    transition: transform 0.2s ease-out;
+    will-change: transform;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.02);
   }
 
   .animation-delay-200 {
@@ -149,6 +310,11 @@
   /* Focus styles for accessibility */
   .focus-visible:focus {
     @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+  }
+
+  /* Enhanced focus ring for better accessibility */
+  .focus-ring-enhanced {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-opacity-60;
   }
 }
 

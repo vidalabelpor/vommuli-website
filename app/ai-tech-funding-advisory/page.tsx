@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import SchemaMarkup from '@/components/SchemaMarkup';
-import AIFundingFAQ from './AIFundingFAQ';
+import ServicePageHero from '@/components/ServicePageHero';
+import StandardFAQ from '@/components/StandardFAQ';
+import { aiFaqs } from './AIFundingFAQ';
 
 export const metadata: Metadata = {
   title: 'AI & Tech Funding Advisory | Artificial Intelligence Startup Capital Introduction | Vommuli',
@@ -1582,7 +1584,11 @@ export default function AITechFundingPage() {
       </section>
 
       {/* Comprehensive AI Funding FAQ */}
-      <AIFundingFAQ />
+      <StandardFAQ 
+        title="AI & Tech Funding Questions"
+        subtitle="Common questions about artificial intelligence and technology funding advisory services."
+        faqs={aiFaqs}
+      />
 
       {/* FAQ Schema Markup */}
       <SchemaMarkup 

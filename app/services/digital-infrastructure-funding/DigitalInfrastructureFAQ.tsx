@@ -56,6 +56,8 @@ const digitalInfrastructureFaqs = [
   }
 ];
 
+export { digitalInfrastructureFaqs };
+
 export default function DigitalInfrastructureFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 

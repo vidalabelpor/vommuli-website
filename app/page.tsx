@@ -71,7 +71,6 @@ export default function HomePage() {
         title="Transform Your Financial Future with Data-Driven Capital Introduction"
         subtitle="Connect with the right investors for your startup or growth company. Our expert capital introduction services leverage analytics and market intelligence to match you with venture capital, private equity, and angel investors."
         ctaText="Schedule Consultation"
-        onCtaClick={() => window.location.href = '/contact'}
       />
       <Stats />
       <AnalyticsFeatures 

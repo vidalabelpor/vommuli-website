@@ -4,14 +4,12 @@ interface AnalyticsHeroProps {
   title?: string;
   subtitle?: string;
   ctaText?: string;
-  onCtaClick?: () => void;
 }
 
 export default function AnalyticsHero({
   title = "Beautiful analytics to grow smarter",
   subtitle = "Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users. Trusted by over 4,000 startups.",
-  ctaText = "Get started",
-  onCtaClick
+  ctaText = "Get started"
 }: AnalyticsHeroProps) {
   return (
     <section className="relative overflow-hidden bg-white">
@@ -32,12 +30,12 @@ export default function AnalyticsHero({
           
           {/* CTA Button */}
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <button
-              onClick={onCtaClick}
+            <a
+              href="/contact"
               className="rounded-lg bg-purple-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 transition-colors"
             >
               {ctaText}
-            </button>
+            </a>
           </div>
           
           {/* Mock analytics dashboard preview */}
