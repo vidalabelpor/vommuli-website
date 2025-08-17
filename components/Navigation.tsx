@@ -6,6 +6,29 @@ import Link from 'next/link';
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const locations = [
+    {
+      name: 'New York City',
+      href: '/locations/new-york',
+      description: 'Wall Street & Manhattan financial district'
+    },
+    {
+      name: 'Austin, Texas',
+      href: '/locations/austin',
+      description: 'Silicon Hills tech hub & SXSW network'
+    },
+    {
+      name: 'Denver, Colorado',
+      href: '/locations/denver',
+      description: 'Mile High cleantech & outdoor innovation'
+    },
+    {
+      name: 'Miami, Florida',
+      href: '/locations/miami',
+      description: 'Latin America gateway & fintech hub'
+    },
+  ];
+
   const services = [
     {
       name: 'Venture Capital Introduction',
@@ -81,6 +104,37 @@ export default function Navigation() {
                           </div>
                           <div className="text-xs text-slate-400 mt-1">
                             {service.description}
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Locations Dropdown */}
+              <div className="relative group">
+                <button className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">
+                  Locations
+                  <svg className="ml-1 h-4 w-4 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                <div className="absolute left-0 mt-2 w-80 bg-slate-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="py-4 px-6">
+                    <div className="grid grid-cols-1 gap-3">
+                      {locations.map((location) => (
+                        <Link
+                          key={location.href}
+                          href={location.href}
+                          className="block p-3 rounded-md hover:bg-slate-700 transition-colors group"
+                        >
+                          <div className="text-sm font-medium text-white group-hover:text-blue-400">
+                            {location.name}
+                          </div>
+                          <div className="text-xs text-slate-400 mt-1">
+                            {location.description}
                           </div>
                         </Link>
                       ))}
