@@ -8,8 +8,8 @@ import FAQ from '@/components/FAQ';
 import Stats from '@/components/Stats';
 
 export const metadata: Metadata = {
-  title: 'Financial Capital Introduction Services | Venture Capital & Private Equity Connections',
-  description: 'Expert financial capital introduction services connecting startups and growth-stage companies with venture capital, private equity, and angel investors. Specializing in seed funding, Series A, B, C rounds, and strategic capital raising. Get connected with the right investors today.',
+  title: 'Financial Capital Introduction Services | NYC, Austin, Denver VC & PE Connections | Vommuli Ventures',
+  description: 'Expert capital introduction services in New York, Austin, Denver, and nationwide. Connect startups with venture capital, private equity, and angel investors. Specializing in Series A, B, C funding and strategic capital raising.',
   keywords: [
     'financial capital introduction',
     'venture capital services',
@@ -26,6 +26,16 @@ export const metadata: Metadata = {
     'fundraising services',
     'startup capital',
     'business funding',
+    'NYC venture capital',
+    'Austin startup funding',
+    'Denver private equity',
+    'Miami venture capital',
+    'New York capital introduction',
+    'Texas investment advisory',
+    'Colorado growth capital',
+    'Manhattan venture capital firms',
+    'Silicon Hills investors',
+    'Wall Street private equity',
     'capital introduction firm',
     'investor matchmaking',
     'startup investment',

@@ -138,6 +138,19 @@ const routes = [
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   },
+  // Location pages
+  {
+    url: '/locations/new-york',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  },
+  {
+    url: '/locations/austin',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  },
 ];
 
 export async function GET() {
