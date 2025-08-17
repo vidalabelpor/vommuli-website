@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     title: 'Financial Capital Introduction Services | Venture Capital & Private Equity',
     description: 'Connect with the right investors for your startup or growth company. Expert capital introduction services for seed funding, Series A, B, C rounds, and strategic investments.',
     url: 'https://vommuli.com',
-    siteName: 'Vommuli Financial Services',
+    siteName: 'Vommuli Ventures',
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Vommuli Financial Capital Introduction Services',
+        url: '/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Vommuli Ventures Capital Introduction Services',
       },
     ],
     locale: 'en_US',

@@ -156,7 +156,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
               <p className="text-slate-400 text-sm">
-                © {currentYear} Vommuli Financial Services. All rights reserved.
+                © {currentYear} Vommuli Ventures. All rights reserved.
               </p>
               <div className="flex space-x-6">
                 <Link href="/privacy" className="text-slate-400 hover:text-white text-sm transition-colors">
