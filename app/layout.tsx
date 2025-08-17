@@ -20,8 +20,8 @@ const merriweather = Merriweather({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Vommuli Financial Capital Introduction Services | Venture Capital & Private Equity',
-    template: '%s | Vommuli Financial Services'
+    default: 'Vommuli Ventures Capital Introduction Services | Venture Capital & Private Equity',
+    template: '%s | Vommuli Ventures'
   },
   description: 'Expert financial capital introduction services connecting startups and growth-stage companies with venture capital, private equity, and angel investors. Specializing in seed funding, Series A, B, C rounds, and strategic capital raising.',
   keywords: [
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     'startup capital',
     'business funding'
   ],
-  authors: [{ name: 'Vommuli Financial Services' }],
-  creator: 'Vommuli Financial Services',
-  publisher: 'Vommuli Financial Services',
+  authors: [{ name: 'Vommuli Ventures' }],
+  creator: 'Vommuli Ventures',
+  publisher: 'Vommuli Ventures',
   formatDetection: {
     email: false,
     address: false,
@@ -57,23 +57,23 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://vommuli.com',
-    title: 'Vommuli Financial Capital Introduction Services',
+    title: 'Vommuli Ventures Capital Introduction Services',
     description: 'Expert financial capital introduction services connecting startups and growth-stage companies with venture capital, private equity, and angel investors.',
-    siteName: 'Vommuli Financial Services',
+    siteName: 'Vommuli Ventures',
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Vommuli Financial Capital Introduction Services',
+        url: '/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Vommuli Ventures Capital Introduction Services',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vommuli Financial Capital Introduction Services',
+    title: 'Vommuli Ventures Capital Introduction Services',
     description: 'Expert financial capital introduction services connecting startups and growth-stage companies with venture capital, private equity, and angel investors.',
-    images: ['/og-image.jpg'],
+    images: ['/icon-512x512.png'],
   },
   robots: {
     index: true,
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: '3yjR-7uzWoJg_2ksYRUe4NJyIpOOcnEbOw3NfbhG5e4',
   },
 };
 
@@ -114,6 +114,22 @@ export default function RootLayout({
         {/* DNS prefetch for external domains */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        
+        {/* Google Analytics 4 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCD27WFY2P"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-GCD27WFY2P');
+            `,
+          }}
+        />
+        
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="3yjR-7uzWoJg_2ksYRUe4NJyIpOOcnEbOw3NfbhG5e4" />
         
         {/* Schema.org structured data */}
         <SchemaMarkup type="organization" />
