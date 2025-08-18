@@ -1,0 +1,37 @@
+---
+description: Core development rules for Vommuli Ventures website
+globs: 
+  - "src/**/*.{ts,tsx,js,jsx}"
+  - "app/**/*.{ts,tsx}"
+alwaysApply: true
+---
+
+# CORE DEVELOPMENT RULES - VOMMULI VENTURES
+
+## Required Context Reading
+Before making any changes, always read:
+- `PRD.md`: Project requirements and current phase
+- `docs/architecture.md`: System architecture patterns
+- `docs/seo-strategy.md`: SEO requirements and targets
+- `tasks/current-phase.md`: Active development priorities
+
+## TypeScript & React Standards
+- Use TypeScript strict mode with comprehensive typing
+- Prefer Server Components; use Client Components only when necessary
+- Implement proper error boundaries and loading states
+- Use Zod for all data validation and API schemas
+- Structure components: exports → components → helpers → types
+
+## Performance Requirements
+- Target Core Web Vitals: LCP <2.5s, FID <100ms, CLS <0.1
+- Lighthouse scores must be 95+ across all metrics
+- Implement lazy loading for images and non-critical components
+- Use Next.js Image component for all images
+- Optimize bundle size with dynamic imports
+
+## SEO Compliance
+- Every page must include optimized metadata
+- Implement structured data (JSON-LD) for all content types
+- Use semantic HTML with proper heading hierarchy
+- Include alt text for all images with keyword optimization
+- Maintain consistent internal linking strategy

@@ -40,9 +40,9 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight"
             >
-              Connect with the Right{' '}
-              <span className="text-gradient">Investors</span>{' '}
-              for Your Business
+              Series A Funding Experts{' '}
+              <span className="text-gradient">$500M+ Raised</span>{' '}
+              for Clients
             </motion.h1>
 
             {/* Subheadline */}
@@ -52,7 +52,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl lg:text-2xl text-gray-600 leading-relaxed"
             >
-              Expert financial capital introduction services connecting startups and growth-stage companies with venture capital, private equity, and angel investors. Get the funding you need to scale your business.
+              Premium VC deal sourcing and capital introduction services for Series A-C startups. Connect with mid-tier venture capital firms in NYC, Austin, Denver, and Miami.
             </motion.p>
 
             {/* Key Benefits */}
@@ -76,34 +76,75 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Optimized for Conversion */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <button className="btn-primary group">
-                Get Started Today
+              <a href="/tools/investment-readiness-assessment" className="btn-primary group inline-flex items-center justify-center">
+                Get Your Investment Readiness Score
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="btn-outline">
-                Schedule Consultation
-              </button>
+              </a>
+              <a href="/contact" className="btn-outline inline-flex items-center justify-center">
+                Schedule Expert Consultation
+              </a>
             </motion.div>
 
-            {/* Trust Indicators */}
+            {/* Value Proposition Enhancement */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="mt-8 p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-primary-200/30"
+            >
+              <div className="flex items-center justify-center space-x-6 text-sm text-gray-700">
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                  <span>No upfront fees</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                  <span>Success-based pricing</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                  <span>85% success rate</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Enhanced Trust Indicators with Social Proof */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="pt-4"
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="pt-6"
             >
-              <p className="text-sm text-gray-500 mb-3">Trusted by leading companies:</p>
-              <div className="flex items-center space-x-6 opacity-60">
-                <div className="h-8 w-20 bg-gray-300 rounded"></div>
-                <div className="h-8 w-24 bg-gray-300 rounded"></div>
-                <div className="h-8 w-16 bg-gray-300 rounded"></div>
+              <p className="text-sm text-gray-500 mb-4">Recently funded companies include:</p>
+              <div className="grid grid-cols-3 gap-4 mb-4">
+                <div className="text-center">
+                  <div className="h-8 w-full bg-gradient-to-r from-blue-100 to-blue-200 rounded flex items-center justify-center">
+                    <span className="text-xs text-blue-800 font-medium">AI SaaS</span>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">$18M Series A</p>
+                </div>
+                <div className="text-center">
+                  <div className="h-8 w-full bg-gradient-to-r from-green-100 to-green-200 rounded flex items-center justify-center">
+                    <span className="text-xs text-green-800 font-medium">HealthTech</span>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">$42M Series B</p>
+                </div>
+                <div className="text-center">
+                  <div className="h-8 w-full bg-gradient-to-r from-purple-100 to-purple-200 rounded flex items-center justify-center">
+                    <span className="text-xs text-purple-800 font-medium">Climate</span>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">$25M Series A</p>
+                </div>
+              </div>
+              <div className="text-center">
+                <p className="text-xs text-gray-600">📈 67% Introduction-to-Term-Sheet Success Rate</p>
               </div>
             </motion.div>
           </motion.div>

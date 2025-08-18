@@ -1,0 +1,47 @@
+---
+description: Conversion rate optimization rules for lead generation
+globs: 
+  - "src/components/forms/**/*.{ts,tsx}"
+  - "src/components/marketing/**/*.{ts,tsx}"
+  - "src/app/**/contact/**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# CONVERSION OPTIMIZATION RULES
+
+## Form Components Standards
+Lead capture forms must include:
+- Multi-step progression for complex forms
+- Real-time validation with clear error messages
+- Progress indicators for multi-step processes
+- Mobile-optimized input fields and buttons
+- Analytics tracking for conversion funnel analysis
+
+## CTA (Call-to-Action) Requirements
+- Clear, action-oriented copy with urgency
+- Contrasting colors that stand out from background
+- Multiple CTAs per page with varied messaging
+- A/B testing framework integration
+- Conversion tracking with Google Analytics events
+
+## Trust Building Elements
+Every marketing page should include:
+- Client testimonials with photos and company logos
+- Success metrics and case study highlights
+- Security badges and privacy policy links
+- Team member credentials and headshots
+- Industry recognition and media mentions
+
+## Lead Magnet Integration
+- High-value downloadable resources (checklists, templates)
+- Email capture forms with compelling value propositions
+- Progressive profiling for returning visitors
+- Automated email sequences for nurturing leads
+- Gated content strategy for qualified lead generation
+
+## Mobile Conversion Optimization
+- Touch-friendly button sizes (minimum 44px)
+- Simplified forms with minimal required fields
+- Click-to-call buttons for phone numbers
+- Mobile-specific landing page optimizations
+- Fast loading times on mobile networks

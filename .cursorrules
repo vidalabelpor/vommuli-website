@@ -1,0 +1,415 @@
+# VOMMULI VENTURES - CURSOR AI RULES
+# Professional VC Deal Sourcing Website Development
+# Optimized for Claude Code Integration
+
+# =============================================================================
+# PROJECT CONTEXT & ARCHITECTURE
+# =============================================================================
+
+SYSTEM_CONTEXT: |
+  You are a senior developer working on Vommuli Ventures' professional website rebuild.
+  This is a high-stakes, SEO-optimized website for a premium VC deal sourcing firm.
+  
+  CRITICAL STARTUP READS (Always read these before any major changes):
+  - PRD.md: Complete project requirements and phase structure
+  - docs/architecture.md: System architecture and technical patterns
+  - docs/seo-strategy.md: SEO requirements and keyword targeting
+  - tasks/current-phase.md: Active development phase and priorities
+  - .claude/commands/: Available Claude Code integration commands
+  
+  TARGET AUDIENCE: Mid-tier VC firms ($50M-$500M AUM) and Series A/B startups
+  BUSINESS MODEL: $15-25K monthly retainers + success fees
+  PRIMARY GOAL: Rank #1 for "Series A funding" and related keywords
+
+# =============================================================================
+# TECHNICAL STACK & STANDARDS
+# =============================================================================
+
+TECH_STACK: |
+  Framework: Next.js 14 (App Router) with TypeScript
+  Styling: Tailwind CSS + Figma design tokens
+  Content: MDX for blog posts and resources
+  Database: Supabase (if needed for forms/analytics)
+  Deployment: Vercel with automatic deployments
+  Analytics: Google Analytics 4 + Search Console
+  Testing: Jest + React Testing Library + Playwright
+
+CODE_STANDARDS: |
+  - Write enterprise-grade TypeScript with strict typing
+  - Use functional components with modern React patterns
+  - Prefer Server Components; use Client Components only when necessary
+  - Follow Next.js 14 App Router conventions strictly
+  - Implement comprehensive error boundaries and loading states
+  - Use Zod for all data validation and type safety
+  - Structure: exports first, components, helpers, types, constants
+
+# =============================================================================
+# SEO & PERFORMANCE REQUIREMENTS
+# =============================================================================
+
+SEO_CRITICAL: |
+  EVERY PAGE MUST INCLUDE:
+  - Optimized metadata with target keywords
+  - Structured data (JSON-LD schema markup)
+  - Semantic HTML with proper heading hierarchy
+  - Image alt text with keyword optimization
+  - Internal linking strategy implementation
+  
+  PERFORMANCE TARGETS:
+  - Core Web Vitals: LCP <2.5s, FID <100ms, CLS <0.1
+  - Lighthouse scores: 95+ across all metrics
+  - Mobile-first responsive design
+  - SEO score: 95+ with green indicators
+  
+  NEVER compromise performance for features
+
+# =============================================================================
+# COMPONENT ARCHITECTURE
+# =============================================================================
+
+COMPONENT_PATTERNS: |
+  1. SEO Components (Priority 1):
+     - SEOMetadata: Dynamic metadata generation
+     - StructuredData: JSON-LD schema components
+     - BreadcrumbNav: SEO-optimized navigation
+  
+  2. Conversion Components (Priority 2):
+     - LeadCaptureForm: Email capture with validation
+     - CTASection: Call-to-action with tracking
+     - ContactForm: Multi-step consultation booking
+  
+  3. Content Components (Priority 3):
+     - ServiceCard: Service page layout patterns
+     - CaseStudyCard: Success story display
+     - BlogPost: MDX article rendering
+  
+  4. Layout Components (Priority 4):
+     - Header: Navigation with conversion focus
+     - Footer: Comprehensive link structure
+     - Sidebar: Context-aware content suggestions
+
+COMPONENT_STRUCTURE: |
+  ```typescript
+  // Required component template
+  interface ComponentProps {
+    // Props with JSDoc descriptions
+  }
+  
+  export default function Component({ ...props }: ComponentProps) {
+    // Server Component by default
+    // Client Component only if interactive
+    return (
+      <div className="seo-optimized-classes">
+        {/* Semantic HTML with accessibility */}
+      </div>
+    )
+  }
+  
+  // Export type for other components
+  export type { ComponentProps }
+  ```
+
+# =============================================================================
+# STYLING & DESIGN SYSTEM
+# =============================================================================
+
+DESIGN_SYSTEM: |
+  - Use Tailwind CSS exclusively with utility-first approach
+  - Follow mobile-first responsive design patterns
+  - Implement Figma design tokens via CSS variables
+  - Use semantic color naming (primary, secondary, accent)
+  - Consistent spacing scale (4px grid system)
+  - Typography scale optimized for readability and SEO
+  
+  RESPONSIVE BREAKPOINTS:
+  - sm: 640px (mobile landscape)
+  - md: 768px (tablet)
+  - lg: 1024px (desktop)
+  - xl: 1280px (large desktop)
+  - 2xl: 1536px (ultra-wide)
+
+TAILWIND_PATTERNS: |
+  - Container: max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+  - Cards: bg-white rounded-lg shadow-sm border border-gray-200
+  - Buttons: Focus on conversion optimization with clear hierarchy
+  - Forms: Accessible with proper labels and validation states
+  - Typography: Leading and tracking optimized for readability
+
+# =============================================================================
+# CONTENT & COPYWRITING STANDARDS
+# =============================================================================
+
+CONTENT_GUIDELINES: |
+  KEYWORD INTEGRATION:
+  - Primary keywords in H1, meta title, first paragraph
+  - Secondary keywords in H2 headings naturally
+  - LSI keywords distributed throughout content
+  - Internal linking with keyword-rich anchor text
+  
+  CONVERSION COPYWRITING:
+  - Benefits-focused headlines and subheadings
+  - Social proof elements (testimonials, metrics, logos)
+  - Clear value propositions and unique selling points
+  - Multiple CTAs with varied messaging
+  - Risk reversal and trust building elements
+  
+  CONTENT STRUCTURE:
+  - Scannable content with bullet points and lists
+  - Short paragraphs (2-3 sentences max)
+  - Strategic use of bold text for emphasis
+  - FAQ sections for long-tail keyword capture
+
+# =============================================================================
+# FILE ORGANIZATION & NAMING
+# =============================================================================
+
+FILE_STRUCTURE: |
+  src/
+  ├── app/                     # Next.js App Router
+  │   ├── (marketing)/         # Marketing pages group
+  │   ├── (dashboard)/         # Client dashboard (if needed)
+  │   ├── api/                 # API routes
+  │   ├── globals.css          # Global styles
+  │   ├── layout.tsx           # Root layout
+  │   └── page.tsx             # Homepage
+  ├── components/              # Reusable components
+  │   ├── seo/                 # SEO-specific components
+  │   ├── ui/                  # Basic UI components
+  │   ├── forms/               # Form components
+  │   ├── marketing/           # Marketing page sections
+  │   └── shared/              # Shared utility components
+  ├── lib/                     # Utilities and helpers
+  │   ├── seo/                 # SEO utilities
+  │   ├── analytics/           # Analytics tracking
+  │   ├── validation/          # Zod schemas
+  │   └── utils/               # General utilities
+  ├── data/                    # Static data and content
+  │   ├── services/            # Service information
+  │   ├── markets/             # Geographic market data
+  │   └── seo/                 # SEO metadata
+  ├── types/                   # TypeScript type definitions
+  └── styles/                  # Additional styles
+
+NAMING_CONVENTIONS: |
+  - Components: PascalCase (LeadCaptureForm.tsx)
+  - Files: kebab-case (seo-metadata.ts)
+  - Directories: kebab-case (lead-capture/)
+  - API routes: kebab-case (/api/contact-form/)
+  - CSS classes: follow Tailwind conventions
+  - Constants: SCREAMING_SNAKE_CASE
+
+# =============================================================================
+# INTEGRATION WITH CLAUDE CODE
+# =============================================================================
+
+CLAUDE_CODE_INTEGRATION: |
+  WHEN TO USE CLAUDE CODE:
+  - Complex multi-file refactoring
+  - SEO optimization across multiple pages
+  - Architecture decisions and planning
+  - Comprehensive testing implementation
+  - Performance optimization analysis
+  - Content strategy and keyword integration
+  
+  WHEN TO USE CURSOR:
+  - Quick component edits and completions
+  - Real-time coding assistance
+  - Tab completions and inline suggestions
+  - File navigation and quick fixes
+  - Live preview and debugging
+  
+  HANDOFF PATTERNS:
+  - Document complex changes in commit messages
+  - Use detailed PR descriptions for Claude Code context
+  - Maintain consistent code style between tools
+  - Share context through well-structured comments
+
+SLASH_COMMANDS_INTEGRATION: |
+  Available custom commands in .claude/commands/:
+  - /component [name]: Generate new React component
+  - /page [path]: Create new page with SEO optimization
+  - /seo-audit: Comprehensive SEO analysis
+  - /performance-check: Core Web Vitals analysis
+  - /content-review: Content optimization review
+  
+  MCP INTEGRATIONS:
+  - /mcp__figma__get_code: Extract Figma components from local Untitled UI file
+  - /mcp__figma__get_image: Extract visual references from local Untitled UI file
+  - /mcp__figma__get_variable_defs: Extract design tokens from local Untitled UI file
+  - /mcp__playwright: Visual testing and screenshots
+
+# =============================================================================
+# DEVELOPMENT WORKFLOW
+# =============================================================================
+
+DEVELOPMENT_PROCESS: |
+  1. PLANNING PHASE:
+     - Review PRD.md for current phase requirements
+     - Check tasks/current-phase.md for specific priorities
+     - Understand SEO targets and business goals
+  
+  2. IMPLEMENTATION PHASE:
+     - Start with mobile-first responsive design
+     - Implement SEO elements first (metadata, schema)
+     - Add conversion optimization elements
+     - Test performance and accessibility
+  
+  3. REVIEW PHASE:
+     - Validate against design system
+     - Check Core Web Vitals performance
+     - Verify SEO optimization
+     - Test conversion funnel functionality
+  
+  4. DEPLOYMENT PHASE:
+     - Run comprehensive test suite
+     - Validate production build
+     - Monitor performance metrics
+     - Track SEO ranking changes
+
+# =============================================================================
+# ERROR HANDLING & DEBUGGING
+# =============================================================================
+
+ERROR_HANDLING: |
+  - Implement comprehensive error boundaries
+  - Use early returns for error conditions
+  - Validate all user inputs with Zod schemas
+  - Handle loading and error states gracefully
+  - Log errors for monitoring and debugging
+  - Provide user-friendly error messages
+  - Implement fallback UI for critical components
+
+DEBUGGING_PRACTICES: |
+  - Use TypeScript strict mode for type safety
+  - Implement comprehensive testing coverage
+  - Use React DevTools for component debugging
+  - Monitor Core Web Vitals in development
+  - Test across multiple devices and browsers
+  - Validate HTML and accessibility compliance
+
+# =============================================================================
+# VISUAL DESIGN WORKFLOW WITH PLAYWRIGHT MCP
+# =============================================================================
+
+VISUAL_TESTING_INTEGRATION: |
+  LOCAL_FIGMA_FILE_LOCATION:
+  - Primary design source: /Users/vidal.porto/vommuli-website/design-system/❖ Untitled UI – PRO STYLES (v6.0) RPUrGtd6inrq (Copy).fig
+  - Always ensure local file is open in Figma Desktop App before extraction
+  
+  PLAYWRIGHT_MCP_WORKFLOW:
+  - Use Playwright MCP for automated screenshot capture and comparison
+  - Implement visual regression testing for all design changes
+  - Cross-device responsive testing automation (desktop, tablet, mobile)
+  - Design-to-implementation validation pipeline with pixel-perfect accuracy
+  
+  FIGMA_TO_IMPLEMENTATION_WORKFLOW:
+  - Extract Figma components from local file using mcp__figma__get_code and mcp__figma__get_image
+  - Automated visual validation against local design specifications
+  - Design token consistency validation across implementation from local file
+  - Iterative comparison loop for continuous design refinement using local source
+  
+  ITERATIVE_AGENTIC_DESIGN_LOOP:
+  - Automated design review with visual feedback
+  - Continuous screenshot capture → compare → improve → validate cycle
+  - Browser console log analysis for UI error detection
+  - Device emulation testing (iPhone, iPad, desktop breakpoints)
+  - Reference external design URLs for inspiration and comparison
+
+VISUAL_DESIGN_STANDARDS: |
+  DESIGN_VALIDATION_REQUIREMENTS:
+  - Pixel-perfect implementation within 2px tolerance of Figma designs
+  - Consistent cross-browser rendering (Chrome, Firefox, Safari)
+  - Responsive behavior validated at all breakpoints (320px-1920px+)
+  - Professional financial services visual presentation
+  - Brand consistency across all components and pages
+  
+  SCREENSHOT_COMPARISON_PROCESS:
+  - Capture baseline screenshots for all components and pages
+  - Automated comparison with current implementation
+  - Visual diff generation with highlighted discrepancies
+  - Improvement recommendations with priority scoring
+  - Documentation of approved visual changes
+
+DESIGN_REVIEW_AUTOMATION: |
+  AUTOMATED_DESIGN_AGENTS:
+  - Visual analysis agent for design system compliance
+  - Accessibility review agent for WCAG 2.1 compliance
+  - Performance impact agent for Core Web Vitals assessment
+  - Brand consistency agent for financial services professionalism
+  - Responsive design agent for multi-device validation
+
+# =============================================================================
+# QUALITY ASSURANCE STANDARDS
+# =============================================================================
+
+QA_CHECKLIST: |
+  BEFORE EVERY COMMIT:
+  - [ ] TypeScript compilation successful
+  - [ ] All tests passing
+  - [ ] Lighthouse score 90+ on all metrics
+  - [ ] Mobile responsiveness verified
+  - [ ] SEO metadata present and optimized
+  - [ ] Accessibility standards met (WCAG 2.1)
+  - [ ] No console errors or warnings
+  - [ ] Performance budget maintained
+
+TESTING_REQUIREMENTS: |
+  - Unit tests for all utility functions
+  - Component tests for interactive elements
+  - Integration tests for critical user flows
+  - Visual regression tests for design consistency
+  - Performance tests for Core Web Vitals
+  - SEO tests for metadata and schema markup
+
+# =============================================================================
+# SECURITY & BEST PRACTICES
+# =============================================================================
+
+SECURITY_STANDARDS: |
+  - Validate all user inputs on both client and server
+  - Use environment variables for sensitive data
+  - Implement proper CORS policies
+  - Use HTTPS everywhere in production
+  - Follow OWASP security guidelines
+  - Regular dependency updates and security audits
+  - Implement rate limiting on API endpoints
+
+BEST_PRACTICES: |
+  - Follow the principle of least privilege
+  - Implement proper logging and monitoring
+  - Use meaningful commit messages
+  - Document complex business logic
+  - Keep components small and focused
+  - Optimize for Core Web Vitals from the start
+  - Prioritize accessibility and inclusive design
+
+# =============================================================================
+# SPECIFIC PROJECT REQUIREMENTS
+# =============================================================================
+
+VOMMULI_SPECIFIC: |
+  TARGET KEYWORDS (Primary):
+  - "Series A funding" (2,400/month)
+  - "startup fundraising guide" (2,400/month)  
+  - "investment readiness" (300/month)
+  - "pitch deck template" (4,500/month)
+  
+  CONVERSION GOALS:
+  - Email capture rate: 5%+
+  - Consultation booking rate: 2%+
+  - Content engagement: 3+ pages per session
+  - Mobile conversion optimization
+  
+  BRAND REQUIREMENTS:
+  - Professional, authoritative tone
+  - Financial services industry credibility
+  - Trust and expertise demonstration
+  - Clear value proposition communication
+  
+  COMPLIANCE REQUIREMENTS:
+  - Financial services regulatory compliance
+  - Privacy policy and terms of service
+  - Cookie consent and GDPR compliance
+  - Professional liability considerations
+
+Remember: This is a high-stakes professional website for a premium financial services firm. Every decision should optimize for SEO performance, conversion rates, and business credibility. Quality and performance are non-negotiable.

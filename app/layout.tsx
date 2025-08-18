@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import { Inter, Merriweather } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import PerformanceMonitor from '@/components/PerformanceMonitor';
 import './globals.css';
 
 const inter = Inter({ 
@@ -138,6 +141,9 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <PerformanceMonitor />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

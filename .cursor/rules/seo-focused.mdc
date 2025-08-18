@@ -1,0 +1,47 @@
+---
+description: SEO-specific development rules for content and optimization
+globs: 
+  - "src/app/**/page.tsx"
+  - "src/components/seo/**/*.{ts,tsx}"
+  - "content/**/*.mdx"
+alwaysApply: true
+---
+
+# SEO-FOCUSED DEVELOPMENT RULES
+
+## Page Development Requirements
+Every page.tsx file must include:
+- Dynamic metadata generation with target keywords
+- Structured data schema markup (JSON-LD)
+- Canonical URL specification
+- Open Graph and Twitter Card optimization
+- Mobile-first responsive implementation
+
+## Content Optimization
+- Primary keyword in H1, meta title, and first paragraph
+- Secondary keywords in H2 headings naturally integrated
+- LSI keywords distributed throughout content
+- Internal linking with descriptive anchor text
+- FAQ sections for long-tail keyword capture
+
+## Component SEO Standards
+SEO components must include:
+- TypeScript interfaces for all props
+- Comprehensive JSDoc documentation
+- Error handling for missing data
+- Default values for optional SEO fields
+- Testing coverage for critical SEO functionality
+
+## Target Keywords Integration
+Primary targets for Vommuli Ventures:
+- "Series A funding" (2,400/month) - Homepage, main service page
+- "startup fundraising guide" (2,400/month) - Blog content hub
+- "investment readiness" (300/month) - Assessment tools page
+- "pitch deck template" (4,500/month) - Resources section
+
+## Performance SEO
+- Implement lazy loading for non-critical content
+- Optimize images with WebP format and proper sizing
+- Minimize layout shift with reserved space
+- Use preloading for critical resources
+- Implement proper caching strategies
