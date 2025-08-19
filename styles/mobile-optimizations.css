@@ -1,0 +1,313 @@
+/* Mobile Responsiveness Optimizations - Phase 6 QA Improvements */
+/* Addresses issues identified in QA testing for touch targets and form usability */
+
+/* Improved touch targets for mobile devices */
+@media (max-width: 768px) {
+  /* Ensure minimum 44px touch targets (iOS guidelines) */
+  button,
+  .btn,
+  .btn-primary,
+  .btn-outline,
+  input[type="submit"],
+  input[type="button"],
+  a[role="button"] {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important; /* Prevents zoom on iOS */
+  }
+  
+  /* Form input optimizations for small screens */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea,
+  select {
+    min-height: 44px !important;
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    border: 2px solid #e2e8f0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Focus states for better accessibility */
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: 2px solid #3b82f6 !important;
+    outline-offset: 2px !important;
+    border-color: #3b82f6 !important;
+  }
+  
+  /* Improved spacing for form elements */
+  .form-group,
+  .mb-4,
+  .mb-6 {
+    margin-bottom: 20px !important;
+  }
+  
+  /* Enhanced readability for labels */
+  label {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+  }
+}
+
+/* Specific optimizations for iPhone SE and small screens */
+@media (max-width: 375px) {
+  /* Ensure content doesn't overflow */
+  .container,
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-4xl {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  /* Optimize heading sizes for small screens */
+  h1 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+  
+  h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* Improve text readability */
+  p,
+  .text-base {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Optimize button text for small screens */
+  .btn {
+    font-size: 14px !important;
+    padding: 12px 20px !important;
+  }
+  
+  /* Ensure CTAs are prominent */
+  .btn-primary {
+    width: 100% !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+/* Assessment tool specific optimizations */
+@media (max-width: 390px) {
+  /* Investment readiness assessment form */
+  .assessment-form .form-group {
+    margin-bottom: 24px !important;
+  }
+  
+  .assessment-form input[type="radio"],
+  .assessment-form input[type="checkbox"] {
+    width: 20px !important;
+    height: 20px !important;
+    margin-right: 12px !important;
+  }
+  
+  .assessment-form label {
+    display: flex !important;
+    align-items: flex-start !important;
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Progress indicators */
+  .progress-bar {
+    height: 8px !important;
+    border-radius: 4px !important;
+  }
+  
+  /* Results display */
+  .assessment-results {
+    padding: 20px 16px !important;
+    margin: 20px 0 !important;
+  }
+}
+
+/* Contact form specific optimizations */
+@media (max-width: 390px) {
+  .contact-form {
+    padding: 20px 16px !important;
+  }
+  
+  .contact-form .form-row {
+    flex-direction: column !important;
+  }
+  
+  .contact-form .form-col {
+    width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+  
+  /* File upload improvements */
+  .file-upload {
+    padding: 20px !important;
+    border: 2px dashed #cbd5e0 !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    min-height: 80px !important;
+  }
+  
+  /* Submit button optimization */
+  .contact-form .btn-submit {
+    width: 100% !important;
+    margin-top: 20px !important;
+    padding: 16px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+  }
+}
+
+/* Navigation optimizations for mobile */
+@media (max-width: 768px) {
+  /* Mobile menu improvements */
+  .mobile-menu {
+    padding: 20px !important;
+  }
+  
+  .mobile-menu a {
+    display: block !important;
+    padding: 16px 0 !important;
+    font-size: 18px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+  
+  /* Hamburger menu touch target */
+  .mobile-menu-button {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    padding: 8px !important;
+  }
+  
+  /* Close button */
+  .mobile-menu-close {
+    position: absolute !important;
+    top: 16px !important;
+    right: 16px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+}
+
+/* Horizontal scroll prevention */
+@media (max-width: 400px) {
+  /* Prevent any horizontal overflow */
+  body {
+    overflow-x: hidden !important;
+  }
+  
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Ensure images are responsive */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Prevent wide tables from causing horizontal scroll */
+  table {
+    width: 100% !important;
+    table-layout: fixed !important;
+  }
+  
+  /* Responsive text containers */
+  .text-container {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+}
+
+/* Performance optimizations for older devices */
+@media (max-width: 375px) {
+  /* Reduce animations on slower devices */
+  .animation-reduced {
+    animation-duration: 0.1s !important;
+    transition-duration: 0.1s !important;
+  }
+  
+  /* Optimize hero sections */
+  .hero-section {
+    padding: 40px 16px !important;
+  }
+  
+  .hero-title {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 24px !important;
+  }
+}
+
+/* Accessibility improvements for mobile */
+@media (max-width: 768px) {
+  /* High contrast focus indicators */
+  *:focus {
+    outline: 3px solid #fbbf24 !important;
+    outline-offset: 2px !important;
+  }
+  
+  /* Skip links for mobile */
+  .skip-link {
+    position: absolute !important;
+    top: -40px !important;
+    left: 16px !important;
+    background: #1f2937 !important;
+    color: white !important;
+    padding: 8px 12px !important;
+    text-decoration: none !important;
+    z-index: 1000 !important;
+    border-radius: 4px !important;
+  }
+  
+  .skip-link:focus {
+    top: 16px !important;
+  }
+  
+  /* Improve text contrast */
+  .text-gray-600 {
+    color: #4b5563 !important;
+  }
+  
+  .text-gray-500 {
+    color: #6b7280 !important;
+  }
+}
+
+/* Print styles (bonus) */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid !important;
+  }
+}

@@ -1,6 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import { 
   Sprout, 
   TrendingUp, 
@@ -110,13 +107,7 @@ export default function Services() {
     <section className="section-padding bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Comprehensive{' '}
             <span className="text-gradient">Capital Introduction</span>{' '}
@@ -125,17 +116,13 @@ export default function Services() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             From seed funding to private equity, we provide targeted introductions to the right investors for every stage of your business growth.
           </p>
-        </motion.div>
+        </div>
 
         {/* Services Grid */}
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <motion.div
+            <div
               key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
               className="group"
             >
               <div className="card h-full hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-gray-50 to-white">
@@ -185,18 +172,12 @@ export default function Services() {
                   </button>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
+        <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl p-8 lg:p-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               Ready to Connect with the Right Investors?
@@ -213,7 +194,7 @@ export default function Services() {
               </button>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

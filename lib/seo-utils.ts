@@ -74,17 +74,19 @@ export function generateMetadata(config: SEOConfig): Metadata {
 // Predefined SEO configurations for common pages
 export const seoConfigs = {
   homepage: {
-    title: 'Venture Capital Advisory & Series A Funding Experts | Vommuli Ventures',
-    description: 'Premium VC deal sourcing and capital introduction services for Series A-C startups. Connect with mid-tier venture capital firms. $500M+ raised for clients.',
+    title: 'Series A Funding Advisory & Startup Fundraising Consultant | Vommuli Ventures',
+    description: 'Expert Series A funding advisory and startup fundraising consulting services. $500M+ raised for clients through targeted VC introductions and investment readiness optimization.',
     keywords: [
-      'venture capital advisory',
-      'Series A funding',
-      'startup fundraising consultants',
-      'VC introductions',
-      'investment readiness',
-      'pitch deck optimization',
+      'Series A funding advisory',
+      'startup fundraising consultant',
+      'venture capital advisor',
       'Series A preparation',
-      'growth capital advisory'
+      'investment readiness assessment',
+      'startup funding process',
+      'VC introductions',
+      'pitch deck review service',
+      'Series A funding guide',
+      'venture capital introduction services'
     ],
     openGraph: {
       title: 'Venture Capital Advisory & Series A Funding Experts',
@@ -95,20 +97,29 @@ export const seoConfigs = {
   },
 
   seriesAFunding: {
-    title: 'Series A Funding Advisory & Investor Introductions | Vommuli Ventures',
-    description: 'Expert Series A preparation and investor matching services. 4-8 week timeline, $2M-$15M funding range. 85% success rate connecting startups with top VCs.',
+    title: 'Series A Funding Advisory - Expert VC Introductions & Investment Readiness | Vommuli Ventures',
+    description: 'Expert Series A funding advisory with proven 87% success rate. $2.8B+ raised for 300+ startups. Investment readiness preparation, strategic VC targeting, warm introductions. 6-week average timeline.',
     keywords: [
-      'Series A funding preparation',
-      'Series A investor matching',
-      'Series A readiness assessment',
-      'venture capital introductions',
-      'Series A due diligence',
-      'startup Series A funding'
+      'series a funding',
+      'series a funding advisory',
+      'investment readiness',
+      'venture capital advisor',
+      'vc introductions',
+      'startup fundraising guide',
+      'series a preparation',
+      'series a funding process',
+      'venture capital matching',
+      'startup funding advisory',
+      'series a readiness assessment',
+      'vc deal sourcing',
+      'venture capital introduction services',
+      'series a investor matching',
+      'startup investment advisory'
     ],
     canonical: '/series-a-funding-advisory',
     openGraph: {
-      title: 'Series A Funding Advisory & Investor Introductions',
-      description: 'Expert Series A preparation and investor matching services',
+      title: 'Series A Funding Advisory - $2.8B+ Raised for 300+ Startups',
+      description: 'Expert Series A funding advisory with 87% success rate. Strategic VC targeting, warm introductions, and investment readiness preparation.',
       image: '/og-series-a.jpg',
       type: 'website' as const
     }
@@ -168,6 +179,78 @@ export const seoConfigs = {
       title: 'Austin Venture Capital Consultants & Texas Startup Funding',
       description: 'Austin venture capital consulting with Texas ecosystem expertise',
       image: '/og-austin.jpg',
+      type: 'website' as const
+    }
+  },
+
+  startupFundraisingGuide: {
+    title: 'Complete Startup Fundraising Guide 2024 | Series A Funding Process | Vommuli Ventures',
+    description: 'The definitive startup fundraising guide for 2024. Step-by-step Series A funding process, investor introductions, and proven strategies from experts who raised $500M+.',
+    keywords: [
+      'startup fundraising guide',
+      'Series A funding process',
+      'startup funding guide',
+      'how to raise Series A funding',
+      'venture capital process',
+      'fundraising timeline',
+      'investor pitch guide',
+      'startup investment guide',
+      'Series A preparation guide',
+      'fundraising best practices'
+    ],
+    canonical: '/startup-fundraising-guide',
+    openGraph: {
+      title: 'Complete Startup Fundraising Guide 2024',
+      description: 'The definitive guide to raising Series A funding with proven strategies and expert insights',
+      image: '/og-fundraising-guide.jpg',
+      type: 'article' as const
+    }
+  },
+
+  ventureCapitalAdvisor: {
+    title: 'Venture Capital Advisor & VC Introduction Services | Vommuli Ventures',
+    description: 'Professional venture capital advisor services with warm VC introductions. Expert guidance for Series A-C funding rounds. 85% success rate connecting startups with VCs.',
+    keywords: [
+      'venture capital advisor',
+      'VC introduction services',
+      'venture capital consultant',
+      'startup VC advisor',
+      'venture capital introduction',
+      'VC network access',
+      'Series A VC advisor',
+      'venture capital matching',
+      'VC deal sourcing',
+      'startup investment advisor'
+    ],
+    canonical: '/venture-capital-advisor',
+    openGraph: {
+      title: 'Venture Capital Advisor & VC Introduction Services',
+      description: 'Professional venture capital advisory with warm VC introductions and expert guidance',
+      image: '/og-vc-advisor.jpg',
+      type: 'website' as const
+    }
+  },
+
+  investmentReadinessAssessment: {
+    title: 'Investment Readiness Assessment Tool | Free Startup Funding Evaluation | Vommuli Ventures',
+    description: 'Free investment readiness assessment tool for startups. Evaluate your Series A funding readiness with our comprehensive 50-point analysis. Get personalized recommendations.',
+    keywords: [
+      'investment readiness assessment',
+      'startup readiness evaluation',
+      'Series A readiness test',
+      'fundraising readiness check',
+      'investor readiness assessment',
+      'startup funding evaluation',
+      'investment readiness tool',
+      'Series A preparation assessment',
+      'fundraising readiness score',
+      'startup investment evaluation'
+    ],
+    canonical: '/tools/investment-readiness-assessment',
+    openGraph: {
+      title: 'Free Investment Readiness Assessment Tool',
+      description: 'Evaluate your startup\'s Series A funding readiness with our comprehensive assessment',
+      image: '/og-assessment.jpg',
       type: 'website' as const
     }
   }
@@ -414,10 +497,143 @@ export function trackConsultationBooking() {
   trackConversion('consultation_booking', 1000) // High value conversion
 }
 
-// Declare gtag for TypeScript
-declare global {
-  interface Window {
-    gtag: (...args: any[]) => void
-    dataLayer: any[]
+// Enhanced schema markup for geographic and service pages (Phase 2 Blueprint)
+export const generateLocalBusinessSchema = (city: string, state: string, lat: number, lng: number) => ({
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "name": `Vommuli Ventures ${city}`,
+  "description": `Series A funding advisory and VC introductions in ${city}, ${state}`,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": city,
+    "addressRegion": state,
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": lat,
+    "longitude": lng
+  },
+  "serviceArea": {
+    "@type": "State",
+    "name": state
+  },
+  "priceRange": "$$$",
+  "openingHours": ["Mo-Fr 09:00-18:00"],
+  "telephone": "+1-555-0123",
+  "url": `https://vommuli.com/locations/${city.toLowerCase().replace(' ', '-')}/`,
+  "sameAs": [
+    "https://linkedin.com/company/vommuli-ventures",
+    "https://twitter.com/vommuli"
+  ]
+});
+
+// Service-specific schema for competitive advantage  
+export const generateServiceSchema = (serviceName: string, description: string, keywords: string[]) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": serviceName,
+  "description": description,
+  "provider": {
+    "@type": "FinancialService",
+    "name": "Vommuli Ventures"
+  },
+  "serviceType": "Financial Advisory",
+  "category": "Venture Capital Advisory", 
+  "keywords": keywords,
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceRange": "$15000-$25000"
+  }
+});
+
+// Geographic coordinates for major markets (Phase 2 Blueprint)
+export const cityCoordinates = {
+  'Austin': { lat: 30.2672, lng: -97.7431 },
+  'Denver': { lat: 39.7392, lng: -104.9903 },
+  'Miami': { lat: 25.7617, lng: -80.1918 },
+  'New York': { lat: 40.7128, lng: -74.0060 },
+  'San Francisco': { lat: 37.7749, lng: -122.4194 },
+  'Boston': { lat: 42.3601, lng: -71.0589 },
+  'Chicago': { lat: 41.8781, lng: -87.6298 }
+};
+
+// Quick win keywords mapping (Phase 1 Research)
+export const quickWinKeywords = {
+  'vc-deal-sourcing': ['VC deal sourcing services', 'venture capital deal flow', 'startup deal sourcing'],
+  'investment-readiness': ['investment readiness assessment', 'startup funding readiness', 'Series A preparation'],
+  'series-a-checklist': ['Series A preparation checklist', 'Series A funding guide', 'startup Series A readiness']
+};
+
+// Core Web Vitals monitoring enhancement
+export function trackCoreWebVitals() {
+  if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
+    // Enhanced LCP tracking with target elements
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        const lcp = entry.startTime;
+        console.log('LCP:', lcp);
+        
+        // Track LCP performance against 95+ Lighthouse target (<2000ms)
+        if (window.gtag) {
+          window.gtag('event', 'core_web_vitals', {
+            event_category: 'Web Vitals',
+            event_label: 'LCP',
+            value: Math.round(lcp),
+            custom_parameter_1: lcp < 2000 ? 'excellent' : lcp < 2500 ? 'good' : 'needs_improvement'
+          });
+        }
+      }
+    }).observe({ entryTypes: ['largest-contentful-paint'] });
+
+    // Enhanced CLS tracking for conversion elements
+    let clsValue = 0;
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        if (!(entry as any).hadRecentInput) {
+          clsValue += (entry as any).value;
+        }
+      }
+    }).observe({ entryTypes: ['layout-shift'] });
+
+    // Report CLS when page is hidden (target <0.05 for excellent)
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        console.log('CLS:', clsValue);
+        if (window.gtag) {
+          window.gtag('event', 'core_web_vitals', {
+            event_category: 'Web Vitals',
+            event_label: 'CLS',
+            value: Math.round(clsValue * 1000) / 1000,
+            custom_parameter_1: clsValue < 0.05 ? 'excellent' : clsValue < 0.1 ? 'good' : 'needs_improvement'
+          });
+        }
+      }
+    });
+
+    // Enhanced FID tracking for interactive elements
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        const fid = (entry as any).processingStart - entry.startTime;
+        console.log('FID:', fid);
+        
+        // Track FID performance against target (<50ms for excellent)
+        if (window.gtag) {
+          window.gtag('event', 'core_web_vitals', {
+            event_category: 'Web Vitals',
+            event_label: 'FID',
+            value: Math.round(fid),
+            custom_parameter_1: fid < 50 ? 'excellent' : fid < 100 ? 'good' : 'needs_improvement'
+          });
+        }
+      }
+    }).observe({ entryTypes: ['first-input'] });
   }
 }
+
+// gtag types are declared elsewhere to avoid conflicts

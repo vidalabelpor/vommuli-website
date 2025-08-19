@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: 'Denver Capital Introduction Services | Colorado Venture Capital & Private Equity | Vommuli Ventures',
   description: 'Premier Denver capital introduction services connecting Colorado companies with Rocky Mountain investors, venture capital firms, and private equity partners. Expert Denver fundraising advisory.',
   keywords: [
+    // Phase 1 research: Quick-win keywords + geographic expansion
+    'VC deal sourcing services',
+    'venture capital deal flow',
+    'startup deal sourcing',
+    'investment readiness assessment',
     'Denver venture capital',
     'Colorado startup funding',
     'Denver private equity',

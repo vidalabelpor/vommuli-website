@@ -1,44 +1,167 @@
+# Robots.txt for Vommuli Ventures - Phase 6 Launch Optimization
+# Business Objective: $50K+ monthly revenue from organic search traffic
+# SEO Strategy: Maximum crawlability for revenue-generating pages
+
+# Primary search engines - Priority access to revenue-critical content
+User-agent: Googlebot
+Allow: /
+Allow: /series-a-funding-advisory
+Allow: /pitch-deck-review-consulting  
+Allow: /startup-fundraising-guide
+Allow: /venture-capital-advisor
+Allow: /tools/investment-readiness-assessment
+Allow: /locations/
+Allow: /blog/
+Allow: /resources/
+Allow: /downloads/
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# All other legitimate search engines
 User-agent: *
 Allow: /
 
-# AI/LLM Crawlers - Explicit Allow
-User-agent: GPTBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-# Allow access to key financial content
+# Revenue-critical pages - Explicit allows for maximum SEO visibility
+Allow: /series-a-funding-advisory
+Allow: /pitch-deck-review-consulting
+Allow: /startup-fundraising-guide
+Allow: /venture-capital-advisor
+Allow: /tools/investment-readiness-assessment
+Allow: /contact
+Allow: /about
 Allow: /services/
 Allow: /resources/
-Allow: /about/
-Allow: /compliance/
 Allow: /insights/
+Allow: /blog/
+Allow: /downloads/
+Allow: /locations/
 
-# Block sensitive areas
-Disallow: /admin/
-Disallow: /private/
+# High-value location pages for local SEO
+Allow: /locations/new-york
+Allow: /locations/austin
+Allow: /locations/denver
+Allow: /locations/miami
+Allow: /locations/boston
+Allow: /locations/chicago
+Allow: /locations/san-francisco
+
+# Content cluster pages for topical authority
+Allow: /resources/venture-capital-guide
+Allow: /resources/series-a-funding-checklist
+Allow: /resources/startup-pitch-deck-guide
+Allow: /about/competitive-advantages
+Allow: /insights/human-vs-ai-fundraising
+
+# High-value blog content targeting Phase 1 keywords
+Allow: /blog/vc-deal-sourcing-services-complete-guide-2025
+Allow: /blog/investment-readiness-assessment-guide-series-a-funding
+Allow: /blog/series-a-preparation-checklist-startup-funding-2025
+
+# Lead magnets and conversion tools
+Allow: /downloads/series-a-pitch-deck-template
+Allow: /downloads/series-a-financial-model
+
+# Block non-essential directories to optimize crawl budget
 Disallow: /api/
 Disallow: /_next/
+Disallow: /.well-known/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /test/
+Disallow: /staging/
+Disallow: /dev/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.env*
+Disallow: /scripts/
 Disallow: /thank-you/
+Disallow: /preview/
+Disallow: /draft/
 
-# Important files
+# Block duplicate content and tracking parameters
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+Disallow: /*?campaign=*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+Disallow: /search?*
+Disallow: /*?*&*&*
+Disallow: /*?print=*
+
+# Block potential security/development paths
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /temp/
+
+# Allow essential assets for proper page rendering
+Allow: *.css
+Allow: *.js
+Allow: *.png
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
+Allow: *.ico
+Allow: *.pdf
 Allow: /robots.txt
 Allow: /sitemap.xml
 Allow: /favicon.ico
 
-# Crawl optimization
+# Social media crawlers - optimized for sharing and visibility
+User-agent: facebookexternalhit
+Allow: /
+User-agent: Twitterbot
+Allow: /
+User-agent: LinkedInBot
+Allow: /
+
+# AI/LLM Crawlers - Strategic access for brand visibility
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: CCBot
+Allow: /
+
+# Archive crawlers - controlled access
+User-agent: ia_archiver
+Allow: /
+Crawl-delay: 60
+
+# Block aggressive SEO crawlers that don't provide business value
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot  
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+User-agent: DotBot
+Disallow: /
+
+# Performance optimization - Standard crawl delay
 Crawl-delay: 1
 
-# Sitemaps
+# Priority sitemaps for maximum SEO impact
 Sitemap: https://vommuli.com/sitemap.xml
 Sitemap: https://vommuli.com/image-sitemap.xml
+
+# Host directive for clarity
+Host: vommuli.com
+
+# Last updated: Phase 6 Launch Optimization
+# Target: Top 3 rankings for primary keywords within 90 days

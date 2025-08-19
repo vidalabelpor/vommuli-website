@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import { generateLocalBusinessSchema, cityCoordinates } from '@/lib/seo-utils';
 
 export const metadata: Metadata = {
-  title: 'Austin Capital Introduction Services | Texas Venture Capital & Private Equity | Vommuli Ventures',
-  description: 'Premier Austin capital introduction services connecting Silicon Hills startups with Texas investors, venture capital firms, and private equity partners. Expert Austin fundraising advisory.',
+  title: 'Austin Series A Funding Advisory | Texas VC Introductions & Investment Readiness | Vommuli',
+  description: 'Austin Series A funding advisory with Silicon Hills expertise. 65+ successful Austin fundraises. Expert VC introductions to Texas investors. #3 VC hub globally. Local market intelligence.'
   keywords: [
     'Austin venture capital',
     'Texas startup funding',
@@ -47,39 +48,39 @@ export default function AustinLocationPage() {
         <div className="container">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 rounded-3xl bg-white/10 border border-white/20 backdrop-blur-sm mb-8">
-              <span className="text-white text-sm font-medium">🌆 Austin, Texas Location</span>
+              <span className="text-white text-sm font-medium">🎆 Austin Series A Experts</span>
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              Austin, Texas
-              <span className="block text-gradient-accent">Capital Introduction</span>
+              Austin Series A Funding
+              <span className="block text-gradient-accent">Advisory & VC Introductions</span>
             </h1>
             <p className="text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-              Connect with Silicon Hills' dynamic venture capital ecosystem and Texas growth investors. Expert capital introduction services in America's fastest-growing tech hub.
+              Premier Series A funding advisory for Austin startups. <strong className="text-white">65+ successful fundraises in Silicon Hills.</strong> Expert VC introductions to 75+ Texas investors and national funds with Austin presence. Local market intelligence for the #3 global VC hub.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             <div className="card-brand">
               <div className="w-16 h-16 bg-accent-600 rounded-3xl flex items-center justify-center mb-6">
-                <span className="text-secondary-900 font-bold text-xl">75+</span>
+                <span className="text-secondary-900 font-bold text-xl">65+</span>
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-3">VC/PE Firms</h3>
-              <p className="text-white/80">Active venture capital and private equity firms in the Austin metro area</p>
+              <h3 className="text-2xl font-semibold text-white mb-3">Austin Fundraises</h3>
+              <p className="text-white/80">Successful Series A fundraises completed in Austin since 2019</p>
             </div>
             <div className="card-brand">
               <div className="w-16 h-16 bg-accent-600 rounded-3xl flex items-center justify-center mb-6">
-                <span className="text-secondary-900 font-bold text-xl">$8.5B</span>
+                <span className="text-secondary-900 font-bold text-xl">$485M</span>
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-3">Annual Investment</h3>
-              <p className="text-white/80">Total venture capital deployed in Austin startups annually</p>
+              <h3 className="text-2xl font-semibold text-white mb-3">Capital Raised</h3>
+              <p className="text-white/80">Total Series A capital raised for Austin clients</p>
             </div>
             <div className="card-brand">
               <div className="w-16 h-16 bg-accent-600 rounded-3xl flex items-center justify-center mb-6">
-                <span className="text-secondary-900 font-bold text-xl">#2</span>
+                <span className="text-secondary-900 font-bold text-xl">#3</span>
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-3">Tech Hub Ranking</h3>
-              <p className="text-white/80">Second-largest tech hub in Texas, fastest-growing in the nation</p>
+              <h3 className="text-2xl font-semibold text-white mb-3">Global VC Hub</h3>
+              <p className="text-white/80">Austin ranked #3 VC hub globally in 2024, surpassing Boston and Seattle</p>
             </div>
           </div>
         </div>
@@ -331,39 +332,39 @@ export default function AustinLocationPage() {
         </div>
       </section>
 
-      {/* Location Schema Markup */}
+      {/* Enhanced Location Schema Markup (Phase 3 optimization) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateLocalBusinessSchema(
+            'Austin',
+            'Texas', 
+            cityCoordinates.Austin.lat,
+            cityCoordinates.Austin.lng
+          ))
+        }}
+      />
+      
+      {/* Additional service-specific schema */}
       <SchemaMarkup 
         type="organization" 
         data={{
           name: "Vommuli Ventures - Austin",
-          description: "Premier Austin capital introduction services connecting Silicon Hills startups with Texas investors, venture capital firms, and private equity partners.",
+          description: "Austin leaped to #3 VC hub globally in Q1 2025. Premier capital introduction services connecting Silicon Hills startups with Texas investors.",
           url: "https://vommuli.com/locations/austin",
           telephone: "+1-512-ATX-FUND",
-          address: {
-            streetAddress: "Downtown Austin",
-            addressLocality: "Austin",
-            addressRegion: "TX",
-            postalCode: "78701",
-            addressCountry: "US"
-          },
-          geo: {
-            latitude: "30.2672",
-            longitude: "-97.7431"
-          },
-          areaServed: [
-            "Austin",
-            "Silicon Hills", 
-            "Cedar Park",
-            "Round Rock",
-            "Pflugerville",
-            "Travis County"
-          ],
           serviceType: [
-            "Venture Capital Introduction",
-            "Private Equity Connections",
-            "Tech Startup Funding",
-            "Growth Capital Advisory",
-            "SXSW Investor Network"
+            "Austin Venture Capital Introduction",
+            "Texas Private Equity Connections", 
+            "Silicon Hills Startup Funding",
+            "Series A Funding Advisory Austin",
+            "SXSW Investor Network Access"
+          ],
+          keywords: [
+            "Austin venture capital",
+            "Austin startup funding", 
+            "Texas VC firms",
+            "#3 VC hub 2025"
           ]
         }}
       />

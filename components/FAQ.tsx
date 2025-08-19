@@ -1,8 +1,6 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
+import { HelpCircle } from 'lucide-react';
+import SchemaMarkup from './SchemaMarkup';
+import FAQInteractive from './FAQInteractive';
 
 const faqs = [
   {
@@ -79,27 +77,14 @@ const faqs = [
   }
 ];
 
-const categories = ['All', 'Service Understanding', 'Pricing & Fees', 'Funding Stages', 'Process & Timeline', 'Company Differentiation', 'Industry Coverage', 'Company Requirements', 'Matching Process', 'Support Services', 'Post-Funding Support', 'Success Metrics', 'Getting Started'];
+export { faqs };
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState('All');
-
-  const filteredFaqs = selectedCategory === 'All' 
-    ? faqs 
-    : faqs.filter(faq => faq.category === selectedCategory);
-
   return (
     <section className="section-padding bg-gradient-neutral">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <div className="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <HelpCircle className="w-10 h-10 text-primary-600" />
           </div>
@@ -110,87 +95,13 @@ export default function FAQ() {
           <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
             Get answers to the most common questions about our financial capital introduction services and how we can help your business secure the funding it needs.
           </p>
-        </motion.div>
-
-        {/* Category Filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
-        >
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                selectedCategory === category
-                  ? 'bg-primary-600 text-white shadow-md'
-                  : 'bg-white text-secondary-600 hover:bg-primary-50 border border-neutral-200 hover:border-primary-200'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* FAQ Items */}
-        <div className="max-w-4xl mx-auto space-y-4">
-          {filteredFaqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="faq-item"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="faq-header"
-              >
-                <h3 className="text-lg font-semibold text-secondary-900 pr-4 text-left">
-                  {faq.question}
-                </h3>
-                {openIndex === index ? (
-                  <ChevronUp className="w-5 h-5 text-primary-600 flex-shrink-0" />
-                ) : (
-                  <ChevronDown className="w-5 h-5 text-secondary-400 flex-shrink-0" />
-                )}
-              </button>
-              
-              {openIndex === index && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="faq-content"
-                >
-                  <p className="mb-4">{faq.answer}</p>
-                  <div className="pt-4 border-t border-neutral-100">
-                    <div className="text-sm text-secondary-500">
-                      <span className="font-medium">Category:</span> {faq.category}
-                    </div>
-                    <div className="text-sm text-secondary-500 mt-1">
-                      <span className="font-medium">Keywords:</span> {faq.keywords.join(', ')}
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </motion.div>
-          ))}
         </div>
 
+        {/* Interactive FAQ Component */}
+        <FAQInteractive />
+
         {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
+        <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 lg:p-12 border border-neutral-200">
             <h3 className="text-3xl font-bold text-secondary-900 mb-4">
               Still Have Questions?
@@ -207,8 +118,19 @@ export default function FAQ() {
               </button>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
+
+      {/* FAQ Schema Markup for Featured Snippets */}
+      <SchemaMarkup 
+        type="faq"
+        data={{
+          faqs: faqs.map(faq => ({
+            question: faq.question,
+            answer: faq.answer
+          }))
+        }}
+      />
     </section>
   );
 }

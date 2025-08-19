@@ -1,6 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
   Phone, 
@@ -71,51 +68,51 @@ export default function CTASection() {
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div
+            // initial={{ opacity: 0, x: -30 }}
+            // whileInView={{ opacity: 1, x: 0 }}
+            // transition={{ duration: 0.8 }}
+            // viewport={{ once: true }}
             className="space-y-8"
           >
             {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+            <div
+              // initial={{ opacity: 0, scale: 0.9 }}
+              // whileInView={{ opacity: 1, scale: 1 }}
+              // transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium"
             >
               <CheckCircle className="w-4 h-4 mr-2" />
               Limited Availability - Book Your Spot Today
-            </motion.div>
+            </div>
 
             {/* Main Headline */}
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+            <h2
+              // initial={{ opacity: 0, y: 20 }}
+              // whileInView={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.8, delay: 0.3 }}
               className="text-4xl lg:text-5xl font-bold text-white leading-tight"
             >
               Ready to Secure the{' '}
               <span className="text-accent-200">Funding</span>{' '}
               Your Business Needs?
-            </motion.h2>
+            </h2>
 
             {/* Subheadline */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+            <p
+              // initial={{ opacity: 0, y: 20 }}
+              // whileInView={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl lg:text-2xl text-primary-100 leading-relaxed"
             >
               Join hundreds of successful companies who have trusted Vommuli to connect them with the right investors. Your next funding round starts with a simple conversation.
-            </motion.p>
+            </p>
 
             {/* Benefits */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+            <div
+              // initial={{ opacity: 0, y: 20 }}
+              // whileInView={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.8, delay: 0.5 }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
               {benefits.map((benefit, index) => (
@@ -129,39 +126,39 @@ export default function CTASection() {
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
 
             {/* Primary CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+            <div
+              // initial={{ opacity: 0, y: 20 }}
+              // whileInView={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.8, delay: 0.6 }}
               className="pt-4"
             >
               <button className="bg-white text-primary-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-2xl group">
                 Start Your Funding Journey Today
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform inline" />
               </button>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Right Column - Contact Form & Methods */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
+          <div
+            // initial={{ opacity: 0, x: 30 }}
+            // whileInView={{ opacity: 1, x: 0 }}
+            // transition={{ duration: 0.8, delay: 0.4 }}
+            // viewport={{ once: true }}
             className="space-y-8"
           >
             {/* Contact Methods */}
             <div className="space-y-4">
               {contactMethods.map((method, index) => (
-                <motion.div
+                <div
                   key={method.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                  viewport={{ once: true }}
+                  // initial={{ opacity: 0, y: 20 }}
+                  // whileInView={{ opacity: 1, y: 0 }}
+                  // transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                  // viewport={{ once: true }}
                 >
                   <a
                     href={method.href}
@@ -178,16 +175,16 @@ export default function CTASection() {
                       <div className="text-accent-200 font-medium">{method.action}</div>
                     </div>
                   </a>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* Trust Indicators */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              viewport={{ once: true }}
+            <div
+              // initial={{ opacity: 0, y: 20 }}
+              // whileInView={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.8, delay: 0.8 }}
+              // viewport={{ once: true }}
               className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
             >
               <div className="text-center">
@@ -203,16 +200,16 @@ export default function CTASection() {
                   Join 500+ companies who have successfully raised capital
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
+        <div
+          // initial={{ opacity: 0, y: 30 }}
+          // whileInView={{ opacity: 1, y: 0 }}
+          // transition={{ duration: 0.8, delay: 0.8 }}
+          // viewport={{ once: true }}
           className="text-center mt-20"
         >
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
@@ -231,7 +228,7 @@ export default function CTASection() {
               </button>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

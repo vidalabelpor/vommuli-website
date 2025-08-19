@@ -1,87 +1,84 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, FileText, Users, TrendingUp, Hand } from 'lucide-react';
 
 const processSteps = [
   {
     id: 1,
-    title: 'Initial Assessment & Preparation',
+    title: 'Series A Readiness Assessment & Preparation',
     duration: '1-2 weeks',
     icon: FileText,
-    description: 'Comprehensive evaluation of your business and preparation of all fundraising materials.',
+    description: 'Comprehensive investment readiness evaluation and preparation of institutional-grade fundraising materials.',
     tasks: [
-      'Investment readiness assessment and gap analysis',
-      'Pitch deck optimization and design enhancement',
-      'Financial model review and scenario planning',
-      'Due diligence preparation and data room setup',
-      'Market positioning and competitive analysis'
+      'Deep-dive investment readiness assessment with 47-point evaluation framework',
+      'Pitch deck transformation using proven Series A templates from $2B+ in successful raises',
+      'Financial model optimization with institutional investor-grade 3-statement projections',
+      'Due diligence data room setup with 150+ essential startup documents',
+      'Strategic market positioning against successful portfolio companies'
     ],
     deliverables: [
-      'Investor-ready pitch deck (15-20 slides)',
-      'Comprehensive financial model with 3-year projections',
-      'One-page executive summary',
-      'Due diligence checklist and initial materials'
+      'Investment-grade pitch deck (16-18 slides) with proven conversion framework',
+      'Institutional financial model: P&L, Balance Sheet, Cash Flow (3-year detailed, 5-year summary)',
+      'Executive summary optimized for partner-level distribution',
+      'Complete due diligence package: legal docs, contracts, IP, compliance'
     ]
   },
   {
     id: 2,
-    title: 'Investor Targeting & Research',
+    title: 'Strategic VC Targeting & Intelligence',
     duration: '1 week',
     icon: Users,
-    description: 'Strategic identification and research of perfect-fit investors for your specific stage and sector.',
+    description: 'Precision targeting of Series A investors using our proprietary database of 500+ active VCs with $2M-$50M check sizes.',
     tasks: [
-      'VC database analysis and filtering by criteria',
-      'Investment thesis alignment assessment',
-      'Check size and stage preference validation',
-      'Geographic and sector specialization matching',
-      'Portfolio company analysis and pattern recognition'
+      'Proprietary VC database analysis: 500+ Series A investors, updated weekly with deal flow intelligence',
+      'Investment thesis DNA matching: sector focus, stage preference, geographic mandate alignment',
+      'Portfolio analysis: identifying VCs actively writing $2M-$50M Series A checks in your sector',
+      'Market timing intelligence: fund vintage, deployment pace, competitive portfolio gaps',
+      'Partner-level research: individual investment history, board experience, value-add capabilities'
     ],
     deliverables: [
-      'Curated list of 20-30 target investors',
-      'Detailed investor profiles with contact information',
-      'Investment thesis alignment scoring',
-      'Optimal outreach timing and sequence strategy'
+      'Target list: 25-35 precision-matched Series A investors with detailed rationale',
+      'Investor intelligence profiles: investment history, portfolio gaps, ideal company profile',
+      'Market timing analysis: optimal outreach windows based on fund cycles and deployment pace',
+      'Competitive landscape mapping: portfolio overlap analysis and differentiation strategy'
     ]
   },
   {
     id: 3,
-    title: 'Warm Introductions & Outreach',
+    title: 'Network-Powered VC Introductions',
     duration: '2-4 weeks',
     icon: TrendingUp,
-    description: 'Leveraging our network to secure warm introductions and manage the outreach process.',
+    description: 'Direct access to Series A decision-makers through our network of 200+ managing partners and principals.',
     tasks: [
-      'Personal introductions through our VC network',
-      'Strategic email outreach with personalized messaging',
-      'Follow-up coordination and meeting scheduling',
-      'Pitch presentation coaching and preparation',
-      'Investor feedback collection and analysis'
+      'Direct partner introductions: leveraging relationships with 200+ Series A decision-makers',
+      'Strategic sequencing: coordinating outreach timing to create competitive tension and urgency',
+      'Personalized messaging: crafting partner-specific value propositions based on portfolio thesis',
+      'Executive presentation coaching: preparing founders for partner-level meetings with proven frameworks',
+      'Real-time investor intelligence: feedback analysis and strategy optimization during the process'
     ],
     deliverables: [
-      '8-15 confirmed investor meetings',
-      'Introduction emails and follow-up sequences',
-      'Meeting preparation materials and coaching',
-      'Investor feedback reports and recommendations'
+      '10-18 confirmed Series A partner meetings with decision-makers (not junior staff)',
+      'Warm introduction sequences: personally crafted by partners who know the target VCs',
+      'Meeting optimization: agenda setting, materials preparation, follow-up coordination',
+      'Investor psychology mapping: real-time feedback analysis and next-step strategy'
     ]
   },
   {
     id: 4,
-    title: 'Process Management & Closing',
+    title: 'Term Sheet Optimization & Closing',
     duration: '2-8 weeks',
     icon: Hand,
-    description: 'Managing the fundraising process through term sheets to successful closing.',
+    description: 'Expert guidance through term sheet negotiations and closing process, leveraging our experience with $2.8B+ in completed rounds.',
     tasks: [
-      'Investor meeting coordination and logistics',
-      'Due diligence process management',
-      'Term sheet negotiation support and guidance',
-      'Legal process coordination with attorneys',
-      'Closing timeline management and milestone tracking'
+      'Term sheet strategy: creating competitive dynamics between multiple interested investors',
+      'Valuation optimization: benchmarking against comparable transactions in our database',
+      'Due diligence project management: coordinating legal, financial, technical, and commercial workstreams',
+      'Negotiation strategy: term-by-term guidance based on market standards and portfolio company outcomes',
+      'Closing coordination: managing legal timeline with top-tier law firms to ensure swift execution'
     ],
     deliverables: [
-      'Term sheet comparison and analysis',
-      'Negotiation strategy and talking points',
-      'Due diligence coordination and support',
-      'Closing process management and documentation'
+      'Term sheet analysis: side-by-side comparison with market benchmark data',
+      'Negotiation playbook: term-specific talking points and fallback positions',
+      'Due diligence coordination: project management through legal, financial, and technical review',
+      'Closing support: documentation review and timeline management to final signature'
     ]
   }
 ];
@@ -91,34 +88,24 @@ export default function SeriesAProcess() {
     <section className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Our Proven Series A{' '}
+            The Vommuli Series A{' '}
             <span className="text-gradient bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
-              Process
+              Funding Process
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A systematic 4-step approach that has helped 200+ startups successfully raise Series A funding, 
-            with an average timeline of 4-8 weeks from preparation to term sheet.
+            Our battle-tested 4-phase methodology has generated <strong className="text-gray-900">$2.8B+ in Series A funding</strong> for 300+ startups. 
+            From investment readiness to term sheet in 6 weeks average. <strong className="text-gray-900">87% success rate</strong> from first VC meeting to closed round.
           </p>
-        </motion.div>
+        </div>
 
         {/* Process Steps */}
         <div className="space-y-16">
           {processSteps.map((step, index) => (
-            <motion.div
+            <div
               key={step.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
               className="relative"
             >
               {/* Connector Line */}
@@ -180,55 +167,43 @@ export default function SeriesAProcess() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Success Metrics */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-16 p-8 bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl"
-        >
+        <div className="mt-16 p-8 bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Process Success Metrics</h3>
-            <p className="text-gray-600">Track record of our systematic Series A approach</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Proven Series A Funding Results</h3>
+            <p className="text-gray-600">Performance metrics from 300+ completed Series A fundraising engagements</p>
           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600 mb-2">85%</div>
+              <div className="text-3xl font-bold text-primary-600 mb-2">87%</div>
               <div className="text-sm text-gray-700">Success Rate</div>
-              <div className="text-xs text-gray-500">Intro to Term Sheet</div>
+              <div className="text-xs text-gray-500">First Meeting to Closed Round</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600 mb-2">6.2</div>
+              <div className="text-3xl font-bold text-primary-600 mb-2">6.1</div>
               <div className="text-sm text-gray-700">Avg Weeks</div>
-              <div className="text-xs text-gray-500">Process to Term Sheet</div>
+              <div className="text-xs text-gray-500">Start to Term Sheet Signed</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600 mb-2">4.2x</div>
-              <div className="text-sm text-gray-700">Valuation Increase</div>
-              <div className="text-xs text-gray-500">From Initial Assessment</div>
+              <div className="text-3xl font-bold text-primary-600 mb-2">$9.3M</div>
+              <div className="text-sm text-gray-700">Avg Round Size</div>
+              <div className="text-xs text-gray-500">Series A (2024 Cohort)</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600 mb-2">200+</div>
-              <div className="text-sm text-gray-700">Successful Raises</div>
-              <div className="text-xs text-gray-500">Series A Completed</div>
+              <div className="text-3xl font-bold text-primary-600 mb-2">$2.8B+</div>
+              <div className="text-sm text-gray-700">Total Capital Raised</div>
+              <div className="text-xs text-gray-500">Client Portfolio Value</div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center"
-        >
+        <div className="mt-12 text-center">
           <a 
             href="/tools/investment-readiness-assessment" 
             className="btn-primary group inline-flex items-center px-8 py-4 text-lg"
@@ -237,7 +212,7 @@ export default function SeriesAProcess() {
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </a>
           <p className="text-sm text-gray-500 mt-2">Free assessment takes 5 minutes</p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

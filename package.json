@@ -8,7 +8,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "export": "next export",
+    "production-build": "npm run lint && next build && npm run start",
+    "performance-audit": "lighthouse http://localhost:3000 --only-categories=performance,seo,accessibility --output=json --output-path=./audit-results.json",
+    "analyze-bundle": "ANALYZE=true npm run build",
+    "deploy-vercel": "vercel --prod",
+    "health-check": "curl -f http://localhost:3000/api/health || exit 1"
   },
   "dependencies": {
     "@executeautomation/playwright-mcp-server": "^1.0.6",
@@ -16,6 +21,7 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "autoprefixer": "^10.4.16",
+    "clsx": "^2.1.1",
     "framer-motion": "^10.16.0",
     "lucide-react": "^0.292.0",
     "next": "^14.0.0",
@@ -23,7 +29,9 @@
     "postcss": "^8.4.31",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwindcss": "^3.3.0"
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^3.3.0",
+    "web-vitals": "^5.1.0"
   },
   "devDependencies": {
     "@types/node": "^20.8.0",

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Venture Capital Introduction Services | Series A, B, C Funding | Vommuli Ventures',
   description: 'Expert venture capital introduction services connecting growth companies with tier-1 VC firms. Specialized in Series A, B, C funding rounds with 67% introduction-to-term-sheet success rate.',
   keywords: [
+    'VC deal sourcing services', // Phase 1 quick win keyword (170 searches, 35 difficulty)
+    'venture capital deal flow',
+    'startup deal sourcing',
     'venture capital introduction',
     'VC introduction services',
     'Series A funding introduction',

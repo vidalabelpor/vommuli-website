@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: 'AI & Tech Funding Advisory | Artificial Intelligence Startup Capital Introduction | Vommuli',
   description: 'Specialized AI and technology funding advisory services. Expert introductions to AI-focused VCs and tech investors with deep understanding of machine learning, deep tech, and artificial intelligence markets.',
   keywords: [
+    // Phase 1 research: Quick-win keyword integration
+    'VC deal sourcing services',
+    'venture capital deal flow',
+    'startup deal sourcing',
     'AI funding advisory',
     'artificial intelligence funding',
     'AI startup funding',

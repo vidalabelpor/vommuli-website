@@ -138,6 +138,70 @@ const routes = [
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   },
+  // Flagship Service Pages (Phase 4)
+  {
+    url: '/series-a-funding-advisory',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 1.0,
+  },
+  {
+    url: '/pitch-deck-review-consulting',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.95,
+  },
+  {
+    url: '/tools/investment-readiness-assessment',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  },
+  // High-Intent Keyword Landing Pages (SEO Optimization)
+  {
+    url: '/startup-fundraising-guide',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.95,
+  },
+  {
+    url: '/venture-capital-advisor',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  },
+  // Content Cluster Resources (Topical Authority)
+  {
+    url: '/resources/venture-capital-guide',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  },
+  {
+    url: '/resources/series-a-funding-checklist',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  },
+  {
+    url: '/resources/startup-pitch-deck-guide',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  },
+  // Competitive Differentiation Content
+  {
+    url: '/about/competitive-advantages',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  },
+  {
+    url: '/insights/human-vs-ai-fundraising',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  },
   // Location pages
   {
     url: '/locations/new-york',
@@ -162,6 +226,86 @@ const routes = [
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.9,
+  },
+  {
+    url: '/locations/boston',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  },
+  {
+    url: '/locations/chicago',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  },
+  {
+    url: '/locations/san-francisco',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  },
+  // Blog Section (Phase 4 Content Marketing)
+  {
+    url: '/blog',
+    lastModified: new Date(),
+    changeFrequency: 'daily' as const,
+    priority: 0.8,
+  },
+  // Phase 4: High-value blog content targeting Phase 1 research keywords
+  {
+    url: '/blog/vc-deal-sourcing-services-complete-guide-2025',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.95, // Quick-win keyword (170 searches, 35 difficulty)
+  },
+  {
+    url: '/blog/investment-readiness-assessment-guide-series-a-funding',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.95, // High-value keyword (300 searches, 40 difficulty)
+  },
+  {
+    url: '/blog/series-a-preparation-checklist-startup-funding-2025',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9, // Quick-win keyword (140 searches, 32 difficulty)
+  },
+  {
+    url: '/blog/complete-guide-series-a-fundraising-2024',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  },
+  {
+    url: '/blog/pitch-deck-mistakes-that-kill-series-a-deals',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  },
+  {
+    url: '/downloads/series-a-pitch-deck-template',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  },
+  {
+    url: '/downloads/series-a-financial-model',
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  },
+  {
+    url: '/resources',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  },
+  {
+    url: '/insights',
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
   },
 ];
 

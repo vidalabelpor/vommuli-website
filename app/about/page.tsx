@@ -1,23 +1,23 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Vommuli Ventures | Expert Financial Capital Introduction Services',
-  description: 'Learn about Vommuli Ventures\' expertise in connecting growth companies with institutional investors. Our team facilitates venture capital, private equity, and strategic capital introductions worldwide.',
+  title: 'About Vommuli Ventures | Series A Funding & Startup Advisory Experts',
+  description: 'Learn about Vommuli Ventures\' expertise in Series A funding advisory, pitch deck optimization, and VC introductions for high-growth startups. $500M+ raised for 200+ clients.',
   keywords: [
-    'financial capital introduction experts',
-    'institutional fundraising advisors',
-    'venture capital introduction team',
-    'private equity connections',
-    'capital raising specialists',
-    'investment banking professionals',
-    'fundraising consultants',
-    'institutional investor relations',
-    'capital introduction success rate',
-    'professional fundraising services'
+    'Series A funding experts',
+    'startup fundraising consultants',
+    'venture capital advisory team',
+    'pitch deck optimization specialists',
+    'startup investment readiness',
+    'Series A preparation experts',
+    'VC introduction specialists',
+    'fundraising success rate',
+    'startup advisory services',
+    'Series A consulting experts'
   ],
   openGraph: {
-    title: 'About Vommuli Ventures | Expert Financial Capital Introduction Services',
-    description: 'Expert team connecting growth companies with institutional investors through specialized capital introduction services.',
+    title: 'About Vommuli Ventures | Series A Funding & Startup Advisory Experts',
+    description: 'Expert team helping startups successfully raise Series A funding with proven track record of $500M+ raised.',
     url: 'https://vommuli.com/about',
   },
 };
@@ -39,18 +39,18 @@ export default function AboutPage() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/20 border border-blue-500/30 backdrop-blur-sm mb-8">
               <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 animate-pulse"></div>
-              <span className="text-blue-300 text-sm font-medium">🏛️ Institutional Capital Specialists</span>
+              <span className="text-blue-300 text-sm font-medium">🚀 Series A Funding Specialists</span>
             </div>
             
             <h1 className="text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
-              Expert Financial Capital
+              Series A Funding Experts
               <span className="block bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
-                Introduction Services
+                For High-Growth Startups
               </span>
             </h1>
             
             <p className="text-xl lg:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
-              Connecting growth companies with institutional investors through proven expertise, extensive networks, and a track record of successful capital introductions across venture capital, private equity, and strategic funding rounds.
+              Helping ambitious entrepreneurs successfully raise Series A funding through expert advisory services, optimized pitch decks, investor introductions, and proven strategies that have generated $500M+ in funding for 200+ startups.
             </p>
           </div>
         </div>
@@ -66,12 +66,12 @@ export default function AboutPage() {
               </div>
               
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
-                Bridging Capital Gaps with
-                <span className="block text-blue-400">Institutional Expertise</span>
+                Empowering Startups with
+                <span className="block text-blue-400">Series A Success</span>
               </h2>
               
               <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-                At Vommuli Ventures, we specialize in facilitating high-quality capital introductions between institutional investment managers and qualified investors. Our deep understanding of both sides of the capital equation enables us to create meaningful, long-term relationships that drive business growth.
+                At Vommuli Ventures, we specialize in Series A funding advisory services that transform ambitious startups into investment-ready companies. Our deep understanding of venture capital markets, investor preferences, and startup scaling enables us to guide entrepreneurs through successful fundraising journeys that accelerate business growth.
               </p>
               
               <div className="space-y-6">
@@ -80,8 +80,8 @@ export default function AboutPage() {
                     <span className="text-white text-sm font-bold">✓</span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Institutional Focus</h3>
-                    <p className="text-slate-300">Exclusively serving institutional-quality investment managers and their capital raising needs.</p>
+                    <h3 className="text-lg font-semibold text-white mb-2">Series A Specialization</h3>
+                    <p className="text-slate-300">Exclusively focused on Series A funding for validated startups with proven product-market fit and growth metrics.</p>
                   </div>
                 </div>
                 
@@ -90,8 +90,8 @@ export default function AboutPage() {
                     <span className="text-white text-sm font-bold">✓</span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Proven Network</h3>
-                    <p className="text-slate-300">Extensive relationships with pension funds, endowments, family offices, and institutional allocators.</p>
+                    <h3 className="text-lg font-semibold text-white mb-2">VC Network Access</h3>
+                    <p className="text-slate-300">Extensive relationships with 150+ tier-1 and tier-2 venture capital firms specializing in Series A investments.</p>
                   </div>
                 </div>
                 
@@ -100,8 +100,8 @@ export default function AboutPage() {
                     <span className="text-white text-sm font-bold">✓</span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Success-Driven Process</h3>
-                    <p className="text-slate-300">Structured approach with clear milestones, reporting, and accountability throughout the introduction process.</p>
+                    <h3 className="text-lg font-semibold text-white mb-2">Proven Methodology</h3>
+                    <p className="text-slate-300">4-step systematic approach with clear milestones, from investment readiness to successful term sheet negotiations.</p>
                   </div>
                 </div>
               </div>
@@ -110,27 +110,27 @@ export default function AboutPage() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-3xl blur-xl"></div>
               <div className="relative bg-slate-800/50 backdrop-blur-sm p-12 rounded-3xl border border-slate-700/50">
-                <h3 className="text-2xl font-bold text-white mb-8">Our Track Record</h3>
+                <h3 className="text-2xl font-bold text-white mb-8">Series A Success Metrics</h3>
                 
                 <div className="grid grid-cols-2 gap-8">
                   <div className="text-center">
-                    <div className="text-4xl font-black text-blue-400 mb-2">$2.8B+</div>
-                    <p className="text-slate-300 text-sm">Capital Introduced</p>
+                    <div className="text-4xl font-black text-blue-400 mb-2">$500M+</div>
+                    <p className="text-slate-300 text-sm">Series A Capital Raised</p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="text-4xl font-black text-indigo-400 mb-2">150+</div>
-                    <p className="text-slate-300 text-sm">Successful Introductions</p>
+                    <div className="text-4xl font-black text-indigo-400 mb-2">200+</div>
+                    <p className="text-slate-300 text-sm">Startups Funded</p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="text-4xl font-black text-purple-400 mb-2">67%</div>
-                    <p className="text-slate-300 text-sm">Conversion Rate</p>
+                    <div className="text-4xl font-black text-purple-400 mb-2">85%</div>
+                    <p className="text-slate-300 text-sm">Success Rate</p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="text-4xl font-black text-cyan-400 mb-2">12+</div>
-                    <p className="text-slate-300 text-sm">Years Experience</p>
+                    <div className="text-4xl font-black text-cyan-400 mb-2">6.2</div>
+                    <p className="text-slate-300 text-sm">Avg Weeks to Term Sheet</p>
                   </div>
                 </div>
               </div>
@@ -148,10 +148,10 @@ export default function AboutPage() {
             </div>
             
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Institutional Capital Introduction Experts
+              Series A Funding & Startup Advisory Experts
             </h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              Our team combines decades of institutional investment experience with deep capital markets expertise.
+              Our team combines decades of venture capital experience with deep startup ecosystem expertise.
             </p>
           </div>
           
@@ -162,12 +162,12 @@ export default function AboutPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full mx-auto mb-6 flex items-center justify-center">
                   <span className="text-2xl">💼</span>
                 </div>
-                <h3 className="text-xl font-bold text-blue-400 mb-3">Institutional Experience</h3>
-                <p className="text-slate-300 mb-4">Former investment professionals from leading pension funds, endowments, and family offices.</p>
+                <h3 className="text-xl font-bold text-blue-400 mb-3">Venture Capital Experience</h3>
+                <p className="text-slate-300 mb-4">Former investment professionals from leading venture capital firms and growth equity funds.</p>
                 <ul className="space-y-2 text-sm text-slate-400">
-                  <li>• 20+ years average experience</li>
-                  <li>• Series 7, 66 licenses</li>
-                  <li>• CFA, CAIA certifications</li>
+                  <li>• 15+ years average VC experience</li>
+                  <li>• Series 7, 63, 65 licenses</li>
+                  <li>• CFA, MBA credentials</li>
                 </ul>
               </div>
             </div>
@@ -178,12 +178,12 @@ export default function AboutPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full mx-auto mb-6 flex items-center justify-center">
                   <span className="text-2xl">🌐</span>
                 </div>
-                <h3 className="text-xl font-bold text-indigo-400 mb-3">Global Network</h3>
-                <p className="text-slate-300 mb-4">Extensive relationships across North America, Europe, and Asia-Pacific regions.</p>
+                <h3 className="text-xl font-bold text-indigo-400 mb-3">VC Network</h3>
+                <p className="text-slate-300 mb-4">Extensive relationships with tier-1 and tier-2 venture capital firms across key markets.</p>
                 <ul className="space-y-2 text-sm text-slate-400">
-                  <li>• 500+ investor relationships</li>
-                  <li>• Multi-regional coverage</li>
-                  <li>• Cross-border expertise</li>
+                  <li>• 150+ VC firm relationships</li>
+                  <li>• Silicon Valley, NYC, Austin coverage</li>
+                  <li>• Series A specialization focus</li>
                 </ul>
               </div>
             </div>
@@ -194,12 +194,12 @@ export default function AboutPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full mx-auto mb-6 flex items-center justify-center">
                   <span className="text-2xl">📊</span>
                 </div>
-                <h3 className="text-xl font-bold text-purple-400 mb-3">Market Intelligence</h3>
-                <p className="text-slate-300 mb-4">Deep understanding of allocation trends, investor preferences, and market timing.</p>
+                <h3 className="text-xl font-bold text-purple-400 mb-3">Startup Intelligence</h3>
+                <p className="text-slate-300 mb-4">Deep understanding of startup scaling, investor preferences, and market timing for Series A.</p>
                 <ul className="space-y-2 text-sm text-slate-400">
-                  <li>• Real-time market insights</li>
-                  <li>• Investor preference mapping</li>
-                  <li>• Allocation trend analysis</li>
+                  <li>• Real-time VC market insights</li>
+                  <li>• Investor thesis mapping</li>
+                  <li>• Series A trend analysis</li>
                 </ul>
               </div>
             </div>
@@ -219,7 +219,7 @@ export default function AboutPage() {
               Structured Capital Introduction Process
             </h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              Our proven methodology ensures efficient, high-quality introductions with clear accountability and measurable results.
+              Our systematic 4-step approach ensures successful Series A fundraising with clear milestones and measurable results.
             </p>
           </div>
           
@@ -228,32 +228,32 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white font-bold text-xl">
                 1
               </div>
-              <h3 className="text-lg font-bold text-green-400 mb-3">Assessment & Strategy</h3>
-              <p className="text-slate-300 text-sm">Comprehensive review of investment strategy, track record, and capital raising objectives.</p>
+              <h3 className="text-lg font-bold text-green-400 mb-3">Investment Readiness</h3>
+              <p className="text-slate-300 text-sm">Comprehensive assessment of your startup's readiness for Series A funding and optimization plan.</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white font-bold text-xl">
                 2
               </div>
-              <h3 className="text-lg font-bold text-teal-400 mb-3">Investor Identification</h3>
-              <p className="text-slate-300 text-sm">Targeted identification of qualified institutional investors aligned with your strategy and terms.</p>
+              <h3 className="text-lg font-bold text-teal-400 mb-3">VC Targeting & Strategy</h3>
+              <p className="text-slate-300 text-sm">Strategic identification of Series A venture capital firms aligned with your sector, stage, and check size.</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white font-bold text-xl">
                 3
               </div>
-              <h3 className="text-lg font-bold text-blue-400 mb-3">Introduction & Facilitation</h3>
-              <p className="text-slate-300 text-sm">Professional introductions with ongoing meeting facilitation and relationship management.</p>
+              <h3 className="text-lg font-bold text-blue-400 mb-3">Warm VC Introductions</h3>
+              <p className="text-slate-300 text-sm">Leveraging our network for warm introductions to target VCs with ongoing pitch coaching and support.</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white font-bold text-xl">
                 4
               </div>
-              <h3 className="text-lg font-bold text-indigo-400 mb-3">Ongoing Support</h3>
-              <p className="text-slate-300 text-sm">Continued relationship support and additional introductions throughout the capital raising process.</p>
+              <h3 className="text-lg font-bold text-indigo-400 mb-3">Deal Closing Support</h3>
+              <p className="text-slate-300 text-sm">Due diligence coordination, term sheet negotiation guidance, and closing process management.</p>
             </div>
           </div>
         </div>
@@ -267,20 +267,20 @@ export default function AboutPage() {
             <div className="relative bg-slate-800/50 backdrop-blur-sm p-12 border border-blue-500/30">
               <div className="text-center">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-indigo-500/20 border border-blue-500/30 backdrop-blur-sm mb-8">
-                  <span className="text-blue-300 text-sm font-medium">🚀 Ready to Connect?</span>
+                  <span className="text-blue-300 text-sm font-medium">🚀 Ready to Raise Series A?</span>
                 </div>
                 
                 <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
-                  Start Your Capital Introduction Process
+                  Start Your Series A Journey
                 </h2>
                 <p className="text-xl lg:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-                  Connect with our institutional capital introduction experts to discuss your fundraising objectives and explore how we can accelerate your capital raising success.
+                  Connect with our Series A funding experts to assess your investment readiness and explore how we can accelerate your startup's path to successful Series A funding.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="relative z-10">Schedule Consultation</span>
+                    <span className="relative z-10">Get Investment Readiness Assessment</span>
                   </button>
                   
                   <button className="group relative px-8 py-4 border-2 border-white/30 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:bg-white hover:text-slate-900 backdrop-blur-sm hover:scale-105">
@@ -294,7 +294,7 @@ export default function AboutPage() {
                 </div>
                 
                 <p className="text-slate-400 mt-8 text-lg">
-                  Confidential consultation. Serving institutional investment managers worldwide.
+                  Free assessment. Serving ambitious startups ready for Series A funding.
                 </p>
               </div>
             </div>

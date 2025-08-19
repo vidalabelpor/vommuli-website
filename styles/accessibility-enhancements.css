@@ -1,0 +1,443 @@
+/* WCAG 2.1 AA Accessibility Enhancements - Phase 6 QA Improvements */
+/* Comprehensive accessibility improvements for launch readiness */
+
+/* ===== FOCUS MANAGEMENT ===== */
+
+/* Enhanced focus indicators for all interactive elements */
+*:focus,
+*:focus-visible {
+  outline: 3px solid #fbbf24 !important; /* High contrast yellow */
+  outline-offset: 2px !important;
+  border-radius: 4px !important;
+}
+
+/* Remove default focus for mouse users while preserving for keyboard users */
+*:focus:not(:focus-visible) {
+  outline: none !important;
+}
+
+/* Specific focus styles for buttons */
+button:focus-visible,
+.btn:focus-visible,
+.btn-primary:focus-visible,
+.btn-outline:focus-visible {
+  outline: 3px solid #fbbf24 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 5px #fbbf24 !important;
+}
+
+/* Enhanced focus for form elements */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #3b82f6 !important;
+  outline-offset: 2px !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 1px #3b82f6 !important;
+}
+
+/* Focus for links */
+a:focus-visible {
+  outline: 3px solid #fbbf24 !important;
+  outline-offset: 2px !important;
+  background-color: rgba(251, 191, 36, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+/* ===== SKIP LINKS ===== */
+
+.skip-link {
+  position: absolute !important;
+  top: -40px !important;
+  left: 16px !important;
+  background: #1f2937 !important;
+  color: #ffffff !important;
+  padding: 8px 16px !important;
+  text-decoration: none !important;
+  border-radius: 4px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  z-index: 9999 !important;
+  transition: top 0.2s ease !important;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 16px !important;
+  outline: 3px solid #fbbf24 !important;
+  outline-offset: 2px !important;
+}
+
+/* ===== COLOR CONTRAST IMPROVEMENTS ===== */
+
+/* Ensure text meets WCAG AA contrast ratios */
+.text-gray-500 {
+  color: #4b5563 !important; /* Improved contrast from #6b7280 */
+}
+
+.text-gray-400 {
+  color: #6b7280 !important; /* Improved contrast from #9ca3af */
+}
+
+.text-gray-600 {
+  color: #374151 !important; /* Maintain good contrast */
+}
+
+/* Button contrast improvements */
+.btn-outline {
+  border-width: 2px !important;
+  color: #1f2937 !important; /* Dark text for better contrast */
+}
+
+.btn-outline:hover {
+  color: #ffffff !important;
+  background-color: #1f2937 !important;
+  border-color: #1f2937 !important;
+}
+
+/* Link contrast */
+a {
+  color: #1d4ed8 !important; /* Darker blue for better contrast */
+}
+
+a:hover {
+  color: #1e40af !important;
+  text-decoration: underline !important;
+}
+
+/* ===== FORM ACCESSIBILITY ===== */
+
+/* Enhanced form labels */
+label {
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+  font-size: 14px !important;
+}
+
+/* Required field indicators */
+.required::after {
+  content: " *" !important;
+  color: #dc2626 !important;
+  font-weight: bold !important;
+}
+
+/* Form error states */
+.form-error {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+}
+
+.form-error:focus {
+  outline-color: #dc2626 !important;
+  border-color: #dc2626 !important;
+}
+
+/* Error message styling */
+.error-message {
+  color: #dc2626 !important;
+  font-size: 14px !important;
+  margin-top: 4px !important;
+  font-weight: 500 !important;
+}
+
+/* Success states */
+.form-success {
+  border-color: #16a34a !important;
+  background-color: #f0fdf4 !important;
+}
+
+.success-message {
+  color: #16a34a !important;
+  font-size: 14px !important;
+  margin-top: 4px !important;
+  font-weight: 500 !important;
+}
+
+/* ===== HEADING HIERARCHY ===== */
+
+/* Ensure proper heading structure */
+h1 {
+  font-size: 2.25rem !important; /* 36px */
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  color: #1f2937 !important;
+  margin-bottom: 1rem !important;
+}
+
+h2 {
+  font-size: 1.875rem !important; /* 30px */
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  color: #1f2937 !important;
+  margin-bottom: 0.75rem !important;
+  margin-top: 2rem !important;
+}
+
+h3 {
+  font-size: 1.5rem !important; /* 24px */
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  color: #1f2937 !important;
+  margin-bottom: 0.5rem !important;
+  margin-top: 1.5rem !important;
+}
+
+h4 {
+  font-size: 1.25rem !important; /* 20px */
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  color: #1f2937 !important;
+  margin-bottom: 0.5rem !important;
+  margin-top: 1rem !important;
+}
+
+h5 {
+  font-size: 1.125rem !important; /* 18px */
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  color: #1f2937 !important;
+  margin-bottom: 0.5rem !important;
+  margin-top: 1rem !important;
+}
+
+h6 {
+  font-size: 1rem !important; /* 16px */
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  color: #1f2937 !important;
+  margin-bottom: 0.5rem !important;
+  margin-top: 1rem !important;
+}
+
+/* ===== INTERACTIVE ELEMENTS ===== */
+
+/* Radio buttons and checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+  width: 18px !important;
+  height: 18px !important;
+  margin-right: 8px !important;
+  vertical-align: top !important;
+  margin-top: 2px !important;
+}
+
+/* Custom radio and checkbox labels */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  line-height: 1.5 !important;
+}
+
+/* Enhanced button accessibility */
+button,
+.btn {
+  cursor: pointer !important;
+  font-family: inherit !important;
+  transition: all 0.2s ease !important;
+}
+
+button:disabled,
+.btn:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  background-color: #9ca3af !important;
+  color: #ffffff !important;
+  border-color: #9ca3af !important;
+}
+
+/* ===== SCREEN READER ENHANCEMENTS ===== */
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Hide decorative elements from screen readers */
+.aria-hidden {
+  aria-hidden: true;
+}
+
+/* ===== TABLE ACCESSIBILITY ===== */
+
+/* Accessible table styling */
+table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+}
+
+th {
+  background-color: #f9fafb !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+  padding: 12px !important;
+  border: 1px solid #d1d5db !important;
+}
+
+td {
+  padding: 12px !important;
+  border: 1px solid #d1d5db !important;
+  vertical-align: top !important;
+}
+
+/* Table caption styling */
+caption {
+  font-weight: 600 !important;
+  text-align: left !important;
+  margin-bottom: 8px !important;
+  color: #1f2937 !important;
+}
+
+/* ===== NAVIGATION ACCESSIBILITY ===== */
+
+/* Enhanced navigation landmarks */
+nav[role="navigation"] {
+  position: relative !important;
+}
+
+/* Breadcrumb accessibility */
+.breadcrumb {
+  margin-bottom: 1rem !important;
+}
+
+.breadcrumb ol {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: "/" !important;
+  margin: 0 8px !important;
+  color: #6b7280 !important;
+}
+
+/* ===== MODAL AND OVERLAY ACCESSIBILITY ===== */
+
+/* Modal focus trapping */
+.modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 1000 !important;
+}
+
+.modal-content {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 24px !important;
+  max-width: 500px !important;
+  width: 90% !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  position: relative !important;
+}
+
+.modal-close {
+  position: absolute !important;
+  top: 16px !important;
+  right: 16px !important;
+  background: none !important;
+  border: none !important;
+  font-size: 24px !important;
+  cursor: pointer !important;
+  padding: 4px !important;
+  line-height: 1 !important;
+}
+
+/* ===== RESPONSIVE ACCESSIBILITY ===== */
+
+@media (max-width: 768px) {
+  /* Larger touch targets on mobile */
+  button,
+  .btn,
+  input,
+  select,
+  textarea {
+    min-height: 44px !important;
+  }
+  
+  /* Improved spacing for mobile accessibility */
+  .form-group {
+    margin-bottom: 24px !important;
+  }
+  
+  /* Enhanced focus indicators on mobile */
+  *:focus-visible {
+    outline-width: 4px !important;
+  }
+}
+
+/* ===== PRINT ACCESSIBILITY ===== */
+
+@media print {
+  /* Ensure good contrast in print */
+  * {
+    background: transparent !important;
+    color: #000000 !important;
+  }
+  
+  /* Print-friendly focus indicators */
+  *:focus {
+    outline: 2px solid #000000 !important;
+  }
+  
+  /* Ensure links are identifiable in print */
+  a::after {
+    content: " (" attr(href) ")" !important;
+    font-size: smaller !important;
+  }
+}
+
+/* ===== ANIMATION ACCESSIBILITY ===== */
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== HIGH CONTRAST MODE SUPPORT ===== */
+
+@media (prefers-contrast: high) {
+  /* Enhanced contrast for high contrast mode */
+  * {
+    border-color: currentColor !important;
+  }
+  
+  button,
+  .btn {
+    border: 2px solid currentColor !important;
+  }
+  
+  input,
+  textarea,
+  select {
+    border: 2px solid currentColor !important;
+  }
+}

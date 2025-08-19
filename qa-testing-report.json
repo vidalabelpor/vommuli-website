@@ -1,0 +1,1564 @@
+{
+  "timestamp": "2025-08-18T22:38:18.062Z",
+  "phase": "Phase 6 QA Testing",
+  "overallPassRate": 86,
+  "launchReady": false,
+  "summary": {
+    "browser": {
+      "total": 42,
+      "passed": 42,
+      "passRate": 100
+    },
+    "mobile": {
+      "total": 35,
+      "passed": 30,
+      "passRate": 86
+    },
+    "accessibility": {
+      "total": 7,
+      "passed": 5,
+      "passRate": 71
+    },
+    "performance": {
+      "total": 21,
+      "passed": 13,
+      "passRate": 62
+    }
+  },
+  "detailedResults": {
+    "browser": [
+      {
+        "category": "browser",
+        "testName": "Chrome 120+ - Homepage",
+        "browser": "Chrome",
+        "page": "/",
+        "priority": "high",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "browser",
+        "testName": "Safari 16+ - Homepage",
+        "browser": "Safari",
+        "page": "/",
+        "priority": "high",
+        "passed": true,
+        "score": 97,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring"
+        ],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "browser",
+        "testName": "Firefox 115+ - Homepage",
+        "browser": "Firefox",
+        "page": "/",
+        "priority": "medium",
+        "passed": true,
+        "score": 95,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring",
+          "Monitor font rendering performance"
+        ],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "browser",
+        "testName": "Edge 120+ - Homepage",
+        "browser": "Edge",
+        "page": "/",
+        "priority": "medium",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "browser",
+        "testName": "Mobile Safari 16+ - Homepage",
+        "browser": "Mobile Safari",
+        "page": "/",
+        "priority": "high",
+        "passed": true,
+        "score": 97,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring"
+        ],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "browser",
+        "testName": "Chrome Mobile 120+ - Homepage",
+        "browser": "Chrome Mobile",
+        "page": "/",
+        "priority": "high",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "browser",
+        "testName": "Chrome 120+ - Series A Advisory",
+        "browser": "Chrome",
+        "page": "/series-a-funding-advisory",
+        "priority": "high",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "browser",
+        "testName": "Safari 16+ - Series A Advisory",
+        "browser": "Safari",
+        "page": "/series-a-funding-advisory",
+        "priority": "high",
+        "passed": true,
+        "score": 97,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring"
+        ],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "browser",
+        "testName": "Firefox 115+ - Series A Advisory",
+        "browser": "Firefox",
+        "page": "/series-a-funding-advisory",
+        "priority": "medium",
+        "passed": true,
+        "score": 95,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring",
+          "Monitor font rendering performance"
+        ],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "browser",
+        "testName": "Edge 120+ - Series A Advisory",
+        "browser": "Edge",
+        "page": "/series-a-funding-advisory",
+        "priority": "medium",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "browser",
+        "testName": "Mobile Safari 16+ - Series A Advisory",
+        "browser": "Mobile Safari",
+        "page": "/series-a-funding-advisory",
+        "priority": "high",
+        "passed": true,
+        "score": 97,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring"
+        ],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "browser",
+        "testName": "Chrome Mobile 120+ - Series A Advisory",
+        "browser": "Chrome Mobile",
+        "page": "/series-a-funding-advisory",
+        "priority": "high",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "browser",
+        "testName": "Chrome 120+ - Pitch Deck Review",
+        "browser": "Chrome",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "high",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "browser",
+        "testName": "Safari 16+ - Pitch Deck Review",
+        "browser": "Safari",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "high",
+        "passed": true,
+        "score": 97,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring"
+        ],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "browser",
+        "testName": "Firefox 115+ - Pitch Deck Review",
+        "browser": "Firefox",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "medium",
+        "passed": true,
+        "score": 95,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring",
+          "Monitor font rendering performance"
+        ],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "browser",
+        "testName": "Edge 120+ - Pitch Deck Review",
+        "browser": "Edge",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "medium",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "browser",
+        "testName": "Mobile Safari 16+ - Pitch Deck Review",
+        "browser": "Mobile Safari",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "high",
+        "passed": true,
+        "score": 97,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring"
+        ],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "browser",
+        "testName": "Chrome Mobile 120+ - Pitch Deck Review",
+        "browser": "Chrome Mobile",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "high",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "browser",
+        "testName": "Chrome 120+ - Assessment Tool",
+        "browser": "Chrome",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "high",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "browser",
+        "testName": "Safari 16+ - Assessment Tool",
+        "browser": "Safari",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "high",
+        "passed": true,
+        "score": 97,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring"
+        ],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "browser",
+        "testName": "Firefox 115+ - Assessment Tool",
+        "browser": "Firefox",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "medium",
+        "passed": true,
+        "score": 93,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring",
+          "Verify form validation animations",
+          "Monitor font rendering performance"
+        ],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "browser",
+        "testName": "Edge 120+ - Assessment Tool",
+        "browser": "Edge",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "medium",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "browser",
+        "testName": "Mobile Safari 16+ - Assessment Tool",
+        "browser": "Mobile Safari",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "high",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring",
+          "Verify touch interactions for assessment tool"
+        ],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "browser",
+        "testName": "Chrome Mobile 120+ - Assessment Tool",
+        "browser": "Chrome Mobile",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "high",
+        "passed": true,
+        "score": 97,
+        "issues": [],
+        "recommendations": [
+          "Verify touch interactions for assessment tool"
+        ],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "browser",
+        "testName": "Chrome 120+ - Fundraising Guide",
+        "browser": "Chrome",
+        "page": "/startup-fundraising-guide",
+        "priority": "high",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "browser",
+        "testName": "Safari 16+ - Fundraising Guide",
+        "browser": "Safari",
+        "page": "/startup-fundraising-guide",
+        "priority": "high",
+        "passed": true,
+        "score": 97,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring"
+        ],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "browser",
+        "testName": "Firefox 115+ - Fundraising Guide",
+        "browser": "Firefox",
+        "page": "/startup-fundraising-guide",
+        "priority": "medium",
+        "passed": true,
+        "score": 95,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring",
+          "Monitor font rendering performance"
+        ],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "browser",
+        "testName": "Edge 120+ - Fundraising Guide",
+        "browser": "Edge",
+        "page": "/startup-fundraising-guide",
+        "priority": "medium",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "browser",
+        "testName": "Mobile Safari 16+ - Fundraising Guide",
+        "browser": "Mobile Safari",
+        "page": "/startup-fundraising-guide",
+        "priority": "high",
+        "passed": true,
+        "score": 97,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring"
+        ],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "browser",
+        "testName": "Chrome Mobile 120+ - Fundraising Guide",
+        "browser": "Chrome Mobile",
+        "page": "/startup-fundraising-guide",
+        "priority": "high",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "browser",
+        "testName": "Chrome 120+ - Contact Page",
+        "browser": "Chrome",
+        "page": "/contact",
+        "priority": "high",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "browser",
+        "testName": "Safari 16+ - Contact Page",
+        "browser": "Safari",
+        "page": "/contact",
+        "priority": "high",
+        "passed": true,
+        "score": 97,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring"
+        ],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "browser",
+        "testName": "Firefox 115+ - Contact Page",
+        "browser": "Firefox",
+        "page": "/contact",
+        "priority": "medium",
+        "passed": true,
+        "score": 93,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring",
+          "Verify form validation animations",
+          "Monitor font rendering performance"
+        ],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "browser",
+        "testName": "Edge 120+ - Contact Page",
+        "browser": "Edge",
+        "page": "/contact",
+        "priority": "medium",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "browser",
+        "testName": "Mobile Safari 16+ - Contact Page",
+        "browser": "Mobile Safari",
+        "page": "/contact",
+        "priority": "high",
+        "passed": true,
+        "score": 97,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring"
+        ],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "browser",
+        "testName": "Chrome Mobile 120+ - Contact Page",
+        "browser": "Chrome Mobile",
+        "page": "/contact",
+        "priority": "high",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "browser",
+        "testName": "Chrome 120+ - About Page",
+        "browser": "Chrome",
+        "page": "/about",
+        "priority": "high",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/about"
+      },
+      {
+        "category": "browser",
+        "testName": "Safari 16+ - About Page",
+        "browser": "Safari",
+        "page": "/about",
+        "priority": "high",
+        "passed": true,
+        "score": 97,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring"
+        ],
+        "pageUrl": "https://vommuli.com/about"
+      },
+      {
+        "category": "browser",
+        "testName": "Firefox 115+ - About Page",
+        "browser": "Firefox",
+        "page": "/about",
+        "priority": "medium",
+        "passed": true,
+        "score": 95,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring",
+          "Monitor font rendering performance"
+        ],
+        "pageUrl": "https://vommuli.com/about"
+      },
+      {
+        "category": "browser",
+        "testName": "Edge 120+ - About Page",
+        "browser": "Edge",
+        "page": "/about",
+        "priority": "medium",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/about"
+      },
+      {
+        "category": "browser",
+        "testName": "Mobile Safari 16+ - About Page",
+        "browser": "Mobile Safari",
+        "page": "/about",
+        "priority": "high",
+        "passed": true,
+        "score": 97,
+        "issues": [],
+        "recommendations": [
+          "Web Vitals polyfill recommended for optimal monitoring"
+        ],
+        "pageUrl": "https://vommuli.com/about"
+      },
+      {
+        "category": "browser",
+        "testName": "Chrome Mobile 120+ - About Page",
+        "browser": "Chrome Mobile",
+        "page": "/about",
+        "priority": "high",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/about"
+      }
+    ],
+    "mobile": [
+      {
+        "category": "mobile",
+        "testName": "iPhone 14 (390x844) - Homepage",
+        "device": "iPhone 14",
+        "viewport": "390x844",
+        "page": "/",
+        "priority": "high",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues"
+        ],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPhone SE (375x667) - Homepage",
+        "device": "iPhone SE",
+        "viewport": "375x667",
+        "page": "/",
+        "priority": "high",
+        "passed": true,
+        "score": 91,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues",
+          "Monitor performance on older devices"
+        ],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "mobile",
+        "testName": "Samsung Galaxy S23 (360x780) - Homepage",
+        "device": "Samsung Galaxy S23",
+        "viewport": "360x780",
+        "page": "/",
+        "priority": "high",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues"
+        ],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPad Air (820x1180) - Homepage",
+        "device": "iPad Air",
+        "viewport": "820x1180",
+        "page": "/",
+        "priority": "medium",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPad Mini (744x1133) - Homepage",
+        "device": "iPad Mini",
+        "viewport": "744x1133",
+        "page": "/",
+        "priority": "medium",
+        "passed": true,
+        "score": 98,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu"
+        ],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPhone 14 (390x844) - Series A Advisory",
+        "device": "iPhone 14",
+        "viewport": "390x844",
+        "page": "/series-a-funding-advisory",
+        "priority": "high",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues"
+        ],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPhone SE (375x667) - Series A Advisory",
+        "device": "iPhone SE",
+        "viewport": "375x667",
+        "page": "/series-a-funding-advisory",
+        "priority": "high",
+        "passed": false,
+        "score": 88,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Verify text readability on smaller screens",
+          "Check for horizontal scroll issues",
+          "Monitor performance on older devices"
+        ],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "mobile",
+        "testName": "Samsung Galaxy S23 (360x780) - Series A Advisory",
+        "device": "Samsung Galaxy S23",
+        "viewport": "360x780",
+        "page": "/series-a-funding-advisory",
+        "priority": "high",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues"
+        ],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPad Air (820x1180) - Series A Advisory",
+        "device": "iPad Air",
+        "viewport": "820x1180",
+        "page": "/series-a-funding-advisory",
+        "priority": "medium",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPad Mini (744x1133) - Series A Advisory",
+        "device": "iPad Mini",
+        "viewport": "744x1133",
+        "page": "/series-a-funding-advisory",
+        "priority": "medium",
+        "passed": true,
+        "score": 98,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu"
+        ],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPhone 14 (390x844) - Pitch Deck Review",
+        "device": "iPhone 14",
+        "viewport": "390x844",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "high",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues"
+        ],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPhone SE (375x667) - Pitch Deck Review",
+        "device": "iPhone SE",
+        "viewport": "375x667",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "high",
+        "passed": true,
+        "score": 91,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues",
+          "Monitor performance on older devices"
+        ],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "mobile",
+        "testName": "Samsung Galaxy S23 (360x780) - Pitch Deck Review",
+        "device": "Samsung Galaxy S23",
+        "viewport": "360x780",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "high",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues"
+        ],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPad Air (820x1180) - Pitch Deck Review",
+        "device": "iPad Air",
+        "viewport": "820x1180",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "medium",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPad Mini (744x1133) - Pitch Deck Review",
+        "device": "iPad Mini",
+        "viewport": "744x1133",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "medium",
+        "passed": true,
+        "score": 98,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu"
+        ],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPhone 14 (390x844) - Assessment Tool",
+        "device": "iPhone 14",
+        "viewport": "390x844",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "high",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues"
+        ],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPhone SE (375x667) - Assessment Tool",
+        "device": "iPhone SE",
+        "viewport": "375x667",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "high",
+        "passed": false,
+        "score": 81,
+        "issues": [],
+        "recommendations": [
+          "Verify form usability on smaller screens",
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues",
+          "Monitor performance on older devices",
+          "Verify assessment tool interactivity"
+        ],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "mobile",
+        "testName": "Samsung Galaxy S23 (360x780) - Assessment Tool",
+        "device": "Samsung Galaxy S23",
+        "viewport": "360x780",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "high",
+        "passed": false,
+        "score": 77,
+        "issues": [
+          "Touch targets may be too small for comfortable interaction"
+        ],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues",
+          "Verify assessment tool interactivity"
+        ],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPad Air (820x1180) - Assessment Tool",
+        "device": "iPad Air",
+        "viewport": "820x1180",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "medium",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPad Mini (744x1133) - Assessment Tool",
+        "device": "iPad Mini",
+        "viewport": "744x1133",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "medium",
+        "passed": true,
+        "score": 98,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu"
+        ],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPhone 14 (390x844) - Fundraising Guide",
+        "device": "iPhone 14",
+        "viewport": "390x844",
+        "page": "/startup-fundraising-guide",
+        "priority": "high",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues"
+        ],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPhone SE (375x667) - Fundraising Guide",
+        "device": "iPhone SE",
+        "viewport": "375x667",
+        "page": "/startup-fundraising-guide",
+        "priority": "high",
+        "passed": true,
+        "score": 91,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues",
+          "Monitor performance on older devices"
+        ],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "mobile",
+        "testName": "Samsung Galaxy S23 (360x780) - Fundraising Guide",
+        "device": "Samsung Galaxy S23",
+        "viewport": "360x780",
+        "page": "/startup-fundraising-guide",
+        "priority": "high",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues"
+        ],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPad Air (820x1180) - Fundraising Guide",
+        "device": "iPad Air",
+        "viewport": "820x1180",
+        "page": "/startup-fundraising-guide",
+        "priority": "medium",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPad Mini (744x1133) - Fundraising Guide",
+        "device": "iPad Mini",
+        "viewport": "744x1133",
+        "page": "/startup-fundraising-guide",
+        "priority": "medium",
+        "passed": true,
+        "score": 98,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu"
+        ],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPhone 14 (390x844) - Contact Page",
+        "device": "iPhone 14",
+        "viewport": "390x844",
+        "page": "/contact",
+        "priority": "high",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues"
+        ],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPhone SE (375x667) - Contact Page",
+        "device": "iPhone SE",
+        "viewport": "375x667",
+        "page": "/contact",
+        "priority": "high",
+        "passed": false,
+        "score": 86,
+        "issues": [],
+        "recommendations": [
+          "Verify form usability on smaller screens",
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues",
+          "Monitor performance on older devices"
+        ],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "mobile",
+        "testName": "Samsung Galaxy S23 (360x780) - Contact Page",
+        "device": "Samsung Galaxy S23",
+        "viewport": "360x780",
+        "page": "/contact",
+        "priority": "high",
+        "passed": false,
+        "score": 82,
+        "issues": [
+          "Touch targets may be too small for comfortable interaction"
+        ],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues"
+        ],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPad Air (820x1180) - Contact Page",
+        "device": "iPad Air",
+        "viewport": "820x1180",
+        "page": "/contact",
+        "priority": "medium",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPad Mini (744x1133) - Contact Page",
+        "device": "iPad Mini",
+        "viewport": "744x1133",
+        "page": "/contact",
+        "priority": "medium",
+        "passed": true,
+        "score": 98,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu"
+        ],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPhone 14 (390x844) - About Page",
+        "device": "iPhone 14",
+        "viewport": "390x844",
+        "page": "/about",
+        "priority": "high",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues"
+        ],
+        "pageUrl": "https://vommuli.com/about"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPhone SE (375x667) - About Page",
+        "device": "iPhone SE",
+        "viewport": "375x667",
+        "page": "/about",
+        "priority": "high",
+        "passed": true,
+        "score": 91,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues",
+          "Monitor performance on older devices"
+        ],
+        "pageUrl": "https://vommuli.com/about"
+      },
+      {
+        "category": "mobile",
+        "testName": "Samsung Galaxy S23 (360x780) - About Page",
+        "device": "Samsung Galaxy S23",
+        "viewport": "360x780",
+        "page": "/about",
+        "priority": "high",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu",
+          "Check for horizontal scroll issues"
+        ],
+        "pageUrl": "https://vommuli.com/about"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPad Air (820x1180) - About Page",
+        "device": "iPad Air",
+        "viewport": "820x1180",
+        "page": "/about",
+        "priority": "medium",
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "recommendations": [],
+        "pageUrl": "https://vommuli.com/about"
+      },
+      {
+        "category": "mobile",
+        "testName": "iPad Mini (744x1133) - About Page",
+        "device": "iPad Mini",
+        "viewport": "744x1133",
+        "page": "/about",
+        "priority": "medium",
+        "passed": true,
+        "score": 98,
+        "issues": [],
+        "recommendations": [
+          "Verify mobile navigation hamburger menu"
+        ],
+        "pageUrl": "https://vommuli.com/about"
+      }
+    ],
+    "accessibility": [
+      {
+        "category": "accessibility",
+        "testName": "WCAG 2.1 AA Compliance - Homepage",
+        "page": "/",
+        "priority": "critical",
+        "passed": true,
+        "score": 92,
+        "issues": [],
+        "recommendations": [
+          "Verify hero section color contrast meets AA standards",
+          "Verify all images have descriptive alt text",
+          "Verify focus indicators are visible and consistent",
+          "Verify skip links for keyboard navigation"
+        ],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "accessibility",
+        "testName": "WCAG 2.1 AA Compliance - Series A Advisory",
+        "page": "/series-a-funding-advisory",
+        "priority": "critical",
+        "passed": true,
+        "score": 91,
+        "issues": [],
+        "recommendations": [
+          "Verify complex layouts are properly announced by screen readers",
+          "Verify all images have descriptive alt text",
+          "Verify focus indicators are visible and consistent",
+          "Verify skip links for keyboard navigation"
+        ],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "accessibility",
+        "testName": "WCAG 2.1 AA Compliance - Pitch Deck Review",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "critical",
+        "passed": true,
+        "score": 92,
+        "issues": [],
+        "recommendations": [
+          "Verify all images have descriptive alt text",
+          "Verify proper heading hierarchy (h1->h2->h3)",
+          "Verify focus indicators are visible and consistent",
+          "Verify skip links for keyboard navigation"
+        ],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "accessibility",
+        "testName": "WCAG 2.1 AA Compliance - Assessment Tool",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "critical",
+        "passed": false,
+        "score": 84,
+        "issues": [],
+        "recommendations": [
+          "Test complete form navigation using only keyboard",
+          "Verify all images have descriptive alt text",
+          "Verify focus indicators are visible and consistent",
+          "Verify all form inputs have proper labels and ARIA attributes",
+          "Verify ARIA attributes for interactive assessment elements",
+          "Verify skip links for keyboard navigation"
+        ],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "accessibility",
+        "testName": "WCAG 2.1 AA Compliance - Fundraising Guide",
+        "page": "/startup-fundraising-guide",
+        "priority": "high",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Verify all images have descriptive alt text",
+          "Verify focus indicators are visible and consistent",
+          "Verify skip links for keyboard navigation"
+        ],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "accessibility",
+        "testName": "WCAG 2.1 AA Compliance - Contact Page",
+        "page": "/contact",
+        "priority": "high",
+        "passed": false,
+        "score": 88,
+        "issues": [],
+        "recommendations": [
+          "Test complete form navigation using only keyboard",
+          "Verify all images have descriptive alt text",
+          "Verify focus indicators are visible and consistent",
+          "Verify all form inputs have proper labels and ARIA attributes",
+          "Verify skip links for keyboard navigation"
+        ],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "accessibility",
+        "testName": "WCAG 2.1 AA Compliance - About Page",
+        "page": "/about",
+        "priority": "medium",
+        "passed": true,
+        "score": 94,
+        "issues": [],
+        "recommendations": [
+          "Verify all images have descriptive alt text",
+          "Verify focus indicators are visible and consistent",
+          "Verify skip links for keyboard navigation"
+        ],
+        "pageUrl": "https://vommuli.com/about"
+      }
+    ],
+    "performance": [
+      {
+        "category": "performance",
+        "testName": "Desktop Performance - Homepage",
+        "device": "Desktop",
+        "page": "/",
+        "priority": "critical",
+        "passed": true,
+        "score": 93,
+        "issues": [],
+        "recommendations": [
+          "Maintain LCP <3.5s target achieved in Phase 5"
+        ],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "performance",
+        "testName": "Mobile Performance - Homepage",
+        "device": "Mobile",
+        "page": "/",
+        "priority": "critical",
+        "passed": true,
+        "score": 86,
+        "issues": [],
+        "recommendations": [
+          "Maintain LCP <3.5s target achieved in Phase 5",
+          "Monitor Core Web Vitals on mobile networks"
+        ],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "performance",
+        "testName": "Tablet Performance - Homepage",
+        "device": "Tablet",
+        "page": "/",
+        "priority": "critical",
+        "passed": true,
+        "score": 90,
+        "issues": [],
+        "recommendations": [
+          "Maintain LCP <3.5s target achieved in Phase 5"
+        ],
+        "pageUrl": "https://vommuli.com/"
+      },
+      {
+        "category": "performance",
+        "testName": "Desktop Performance - Series A Advisory",
+        "device": "Desktop",
+        "page": "/series-a-funding-advisory",
+        "priority": "critical",
+        "passed": true,
+        "score": 91,
+        "issues": [],
+        "recommendations": [
+          "LCP of 3.38s is good, optimize to <3s for mobile"
+        ],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "performance",
+        "testName": "Mobile Performance - Series A Advisory",
+        "device": "Mobile",
+        "page": "/series-a-funding-advisory",
+        "priority": "critical",
+        "passed": false,
+        "score": 84,
+        "issues": [],
+        "recommendations": [
+          "LCP of 3.38s is good, optimize to <3s for mobile",
+          "Monitor Core Web Vitals on mobile networks"
+        ],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "performance",
+        "testName": "Tablet Performance - Series A Advisory",
+        "device": "Tablet",
+        "page": "/series-a-funding-advisory",
+        "priority": "critical",
+        "passed": true,
+        "score": 88,
+        "issues": [],
+        "recommendations": [
+          "LCP of 3.38s is good, optimize to <3s for mobile"
+        ],
+        "pageUrl": "https://vommuli.com/series-a-funding-advisory"
+      },
+      {
+        "category": "performance",
+        "testName": "Desktop Performance - Pitch Deck Review",
+        "device": "Desktop",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "critical",
+        "passed": true,
+        "score": 88,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics"
+        ],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "performance",
+        "testName": "Mobile Performance - Pitch Deck Review",
+        "device": "Mobile",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "critical",
+        "passed": false,
+        "score": 81,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics",
+          "Monitor Core Web Vitals on mobile networks"
+        ],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "performance",
+        "testName": "Tablet Performance - Pitch Deck Review",
+        "device": "Tablet",
+        "page": "/pitch-deck-review-consulting",
+        "priority": "critical",
+        "passed": true,
+        "score": 85,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics"
+        ],
+        "pageUrl": "https://vommuli.com/pitch-deck-review-consulting"
+      },
+      {
+        "category": "performance",
+        "testName": "Desktop Performance - Assessment Tool",
+        "device": "Desktop",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "critical",
+        "passed": true,
+        "score": 85,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics",
+          "Monitor JavaScript execution time for interactive elements"
+        ],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "performance",
+        "testName": "Mobile Performance - Assessment Tool",
+        "device": "Mobile",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "critical",
+        "passed": false,
+        "score": 78,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics",
+          "Monitor JavaScript execution time for interactive elements",
+          "Monitor Core Web Vitals on mobile networks"
+        ],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "performance",
+        "testName": "Tablet Performance - Assessment Tool",
+        "device": "Tablet",
+        "page": "/tools/investment-readiness-assessment",
+        "priority": "critical",
+        "passed": false,
+        "score": 82,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics",
+          "Monitor JavaScript execution time for interactive elements"
+        ],
+        "pageUrl": "https://vommuli.com/tools/investment-readiness-assessment"
+      },
+      {
+        "category": "performance",
+        "testName": "Desktop Performance - Fundraising Guide",
+        "device": "Desktop",
+        "page": "/startup-fundraising-guide",
+        "priority": "high",
+        "passed": true,
+        "score": 88,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics"
+        ],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "performance",
+        "testName": "Mobile Performance - Fundraising Guide",
+        "device": "Mobile",
+        "page": "/startup-fundraising-guide",
+        "priority": "high",
+        "passed": false,
+        "score": 81,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics",
+          "Monitor Core Web Vitals on mobile networks"
+        ],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "performance",
+        "testName": "Tablet Performance - Fundraising Guide",
+        "device": "Tablet",
+        "page": "/startup-fundraising-guide",
+        "priority": "high",
+        "passed": true,
+        "score": 85,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics"
+        ],
+        "pageUrl": "https://vommuli.com/startup-fundraising-guide"
+      },
+      {
+        "category": "performance",
+        "testName": "Desktop Performance - Contact Page",
+        "device": "Desktop",
+        "page": "/contact",
+        "priority": "high",
+        "passed": true,
+        "score": 87,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics",
+          "Optimize form validation to minimize render blocking"
+        ],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "performance",
+        "testName": "Mobile Performance - Contact Page",
+        "device": "Mobile",
+        "page": "/contact",
+        "priority": "high",
+        "passed": false,
+        "score": 80,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics",
+          "Monitor Core Web Vitals on mobile networks",
+          "Optimize form validation to minimize render blocking"
+        ],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "performance",
+        "testName": "Tablet Performance - Contact Page",
+        "device": "Tablet",
+        "page": "/contact",
+        "priority": "high",
+        "passed": false,
+        "score": 84,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics",
+          "Optimize form validation to minimize render blocking"
+        ],
+        "pageUrl": "https://vommuli.com/contact"
+      },
+      {
+        "category": "performance",
+        "testName": "Desktop Performance - About Page",
+        "device": "Desktop",
+        "page": "/about",
+        "priority": "medium",
+        "passed": true,
+        "score": 88,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics"
+        ],
+        "pageUrl": "https://vommuli.com/about"
+      },
+      {
+        "category": "performance",
+        "testName": "Mobile Performance - About Page",
+        "device": "Mobile",
+        "page": "/about",
+        "priority": "medium",
+        "passed": false,
+        "score": 81,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics",
+          "Monitor Core Web Vitals on mobile networks"
+        ],
+        "pageUrl": "https://vommuli.com/about"
+      },
+      {
+        "category": "performance",
+        "testName": "Tablet Performance - About Page",
+        "device": "Tablet",
+        "page": "/about",
+        "priority": "medium",
+        "passed": true,
+        "score": 85,
+        "issues": [],
+        "recommendations": [
+          "Run Lighthouse audit to verify performance metrics"
+        ],
+        "pageUrl": "https://vommuli.com/about"
+      }
+    ]
+  }
+}

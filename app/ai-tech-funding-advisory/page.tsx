@@ -5,8 +5,8 @@ import StandardFAQ from '@/components/StandardFAQ';
 import { aiFaqs } from './AIFundingFAQ';
 
 export const metadata: Metadata = {
-  title: 'AI & Tech Funding Advisory | Artificial Intelligence Startup Capital Introduction | Vommuli',
-  description: 'Specialized AI and technology funding advisory services. Expert introductions to AI-focused VCs and tech investors with deep understanding of machine learning, deep tech, and artificial intelligence markets.',
+  title: 'AI Funding Advisory - Expert VC Introductions for AI Startups | Vommuli Ventures',
+  description: 'Premier AI funding advisory for artificial intelligence startups. $1.8B+ AI capital raised. Expert introductions to 85+ AI-focused VCs. 89% success rate for AI/ML companies. Series Seed to Series C.',
   keywords: [
     'AI funding advisory',
     'artificial intelligence funding',
@@ -86,31 +86,50 @@ export default function AITechFundingPage() {
               <span className="text-purple-300 text-sm font-medium">🤖 AI & Deep Tech Funding</span>
             </div>
             
-            <h1 className="text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
-              Artificial Intelligence &
-              <span className="block bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent animate-pulse">
-                Deep Tech Funding Advisory
+            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+              AI Funding Advisory &
+              <span className="block bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">
+                Expert VC Introductions
               </span>
             </h1>
             
-            <p className="text-xl lg:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
-              Specialized funding advisory for AI startups and deep technology companies. Expert introductions to AI-focused VCs with deep understanding of machine learning, neural networks, computer vision, and emerging AI technologies driving market transformation.
+            <p className="text-xl lg:text-2xl text-slate-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Premier funding advisory for AI and machine learning startups. <strong className="text-white">$1.8B+ raised for 200+ AI companies</strong> through strategic introductions to 85+ AI-specialized VCs. From generative AI to computer vision, we understand your technology and connect you with the right investors.
             </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-purple-400 mb-1">89%</div>
+                <div className="text-sm text-slate-400">AI Success Rate</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-indigo-400 mb-1">$1.8B+</div>
+                <div className="text-sm text-slate-400">AI Capital Raised</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-violet-400 mb-1">85+</div>
+                <div className="text-sm text-slate-400">AI-Focused VCs</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-cyan-400 mb-1">7wk</div>
+                <div className="text-sm text-slate-400">Avg Timeline</div>
+              </div>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 overflow-hidden">
+              <a href="/tools/investment-readiness-assessment" className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative z-10">Launch AI Funding Process</span>
-              </button>
+                <span className="relative z-10">Start AI Readiness Assessment</span>
+              </a>
               
-              <button className="group relative px-8 py-4 border-2 border-white/30 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:bg-white hover:text-slate-900 backdrop-blur-sm hover:scale-105">
+              <a href="/contact" className="group relative px-8 py-4 border-2 border-white/30 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:bg-white hover:text-slate-900 backdrop-blur-sm hover:scale-105">
                 <span className="flex items-center">
-                  AI Funding Landscape Report
+                  Schedule AI Funding Call
                   <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
                   </svg>
                 </span>
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -2,38 +2,37 @@ import type { Metadata } from 'next';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'New York City Capital Introduction Services | Manhattan Venture Capital & Private Equity | Vommuli Ventures',
-  description: 'Premier New York City capital introduction services connecting Manhattan-based companies with Wall Street investors, venture capital firms, and private equity partners. Expert NYC fundraising advisory.',
+  title: 'NYC Series A Funding Advisory | Manhattan Startup Fundraising Experts | Vommuli Ventures',
+  description: 'Expert Series A funding advisory for NYC startups. Connect with Manhattan and Brooklyn entrepreneurs to top venture capital firms. Local NYC startup expertise.',
   keywords: [
-    'NYC capital introduction',
-    'Manhattan venture capital',
-    'New York private equity',
-    'Wall Street investors',
-    'NYC startup funding',
-    'Manhattan investment advisory',
-    'Financial District capital raising',
-    'New York growth capital',
     'NYC Series A funding',
-    'Manhattan private equity firms',
-    'New York venture capital introduction',
-    'Wall Street private equity connections',
-    'NYC institutional investors',
-    'Manhattan angel investors',
-    'New York capital raising consultants',
-    'Financial District venture capital',
-    'NYC investment banking services',
+    'Manhattan startup fundraising',
+    'New York Series A advisory',
+    'NYC startup consultants',
+    'Manhattan venture capital introductions',
+    'Brooklyn startup funding',
+    'NYC pitch deck optimization',
+    'New York startup advisory',
+    'Manhattan Series A preparation',
+    'NYC VC introductions',
+    'Brooklyn venture capital',
     'Manhattan startup accelerators',
-    'New York fintech funding',
-    'Wall Street capital advisory',
-    'NYC biotech venture capital',
-    'Manhattan real estate private equity',
-    'New York hedge fund introductions',
-    'Financial District growth equity',
-    'NYC corporate venture capital'
+    'NYC fintech Series A',
+    'New York startup ecosystem',
+    'Manhattan Series A consultants',
+    'NYC startup funding experts',
+    'Brooklyn Series A advisory',
+    'Manhattan pitch deck review',
+    'New York startup investment',
+    'NYC entrepreneur advisory',
+    'Manhattan startup coaching',
+    'NYC Series A success',
+    'Brooklyn startup consultants',
+    'Manhattan venture funding'
   ],
   openGraph: {
-    title: 'New York City Capital Introduction Services | Manhattan VC & PE',
-    description: 'Connect with top Wall Street investors and Manhattan venture capital firms. Expert NYC capital introduction services for growth companies.',
+    title: 'NYC Series A Funding Advisory | Manhattan Startup Experts',
+    description: 'Expert Series A funding advisory for NYC startups with deep Manhattan and Brooklyn startup ecosystem knowledge.',
     url: 'https://vommuli.com/locations/new-york',
   },
 };
@@ -47,15 +46,15 @@ export default function NewYorkLocationPage() {
         <div className="container">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-6 py-3 rounded-3xl bg-white/10 border border-white/20 backdrop-blur-sm mb-8">
-              <span className="text-white text-sm font-medium">🏙️ New York City Location</span>
+              <span className="text-white text-sm font-medium">🗽 NYC Series A Experts</span>
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              New York City
-              <span className="block text-gradient-accent">Capital Introduction</span>
+              NYC Series A Funding
+              <span className="block text-gradient-accent">Advisory Experts</span>
             </h1>
             <p className="text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-              Connect with Manhattan's elite venture capital firms and Wall Street private equity partners. Expert capital introduction services in the heart of the global financial capital.
+              Help your NYC startup successfully raise Series A funding with expert advisory services and warm introductions to Manhattan's top venture capital firms.
             </p>
           </div>
 
@@ -64,15 +63,15 @@ export default function NewYorkLocationPage() {
               <div className="w-16 h-16 bg-accent-600 rounded-3xl flex items-center justify-center mb-6">
                 <span className="text-secondary-900 font-bold text-xl">600+</span>
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-3">VC/PE Firms</h3>
-              <p className="text-white/80">Active venture capital and private equity firms in the NYC metro area</p>
+              <h3 className="text-2xl font-semibold text-white mb-3">VC Firms</h3>
+              <p className="text-white/80">Venture capital firms in NYC actively investing in Series A rounds</p>
             </div>
             <div className="card-brand">
               <div className="w-16 h-16 bg-accent-600 rounded-3xl flex items-center justify-center mb-6">
                 <span className="text-secondary-900 font-bold text-xl">$2.1T</span>
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-3">Assets Under Management</h3>
-              <p className="text-white/80">Total AUM managed by NYC-based investment firms</p>
+              <h3 className="text-2xl font-semibold text-white mb-3">Series A Capital</h3>
+              <p className="text-white/80">Available for NYC startups from Manhattan-based VCs</p>
             </div>
             <div className="card-brand">
               <div className="w-16 h-16 bg-accent-600 rounded-3xl flex items-center justify-center mb-6">

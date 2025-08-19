@@ -1,0 +1,40 @@
+{
+  "timestamp": "2025-08-18T22:36:35.428Z",
+  "phase": "Phase 6 Launch Validation",
+  "overallScore": 90,
+  "launchReady": true,
+  "targetKeywords": [
+    "series a funding",
+    "startup fundraising guide",
+    "investment readiness",
+    "pitch deck template",
+    "venture capital advisor",
+    "vc deal sourcing",
+    "startup funding",
+    "capital raising",
+    "series a preparation",
+    "investment advisory"
+  ],
+  "criticalPages": [
+    "/",
+    "/series-a-funding-advisory",
+    "/pitch-deck-review-consulting",
+    "/startup-fundraising-guide",
+    "/tools/investment-readiness-assessment",
+    "/venture-capital-advisor",
+    "/about",
+    "/contact",
+    "/blog",
+    "/locations/new-york",
+    "/locations/austin",
+    "/locations/denver"
+  ],
+  "validationResults": {
+    "overallScore": 90,
+    "launchReady": true,
+    "totalScore": 89.75000000000001,
+    "maxScore": 100,
+    "passedPages": 12,
+    "totalPages": 12
+  }
+}

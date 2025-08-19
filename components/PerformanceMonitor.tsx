@@ -1,52 +1,80 @@
 'use client';
 
-import { useEffect } from 'react';
+// Enhanced Performance Monitor Component for Phase 6 Launch
+// Integrates comprehensive analytics and monitoring systems
+
+import { useEffect, useState } from 'react';
+import { createPerformanceMonitor, getLatestPerformanceReport } from '@/lib/monitoring';
+import { initGA, trackPageView, trackWebVitals } from '@/lib/analytics';
+
+interface PerformanceStats {
+  score: number;
+  metrics: Record<string, any>;
+  timestamp: number;
+}
 
 export default function PerformanceMonitor() {
+  const [performanceStats, setPerformanceStats] = useState<PerformanceStats | null>(null);
+  const [isMonitoring, setIsMonitoring] = useState(false);
+
   useEffect(() => {
     // Only run in the browser
     if (typeof window === 'undefined') return;
 
-    // Track Core Web Vitals
-    const trackWebVitals = () => {
-      // Only track if gtag is available
-      if (typeof window.gtag === 'undefined') return;
+    // Initialize enhanced analytics system
+    initGA();
+    
+    // Track initial page view
+    trackPageView(window.location.href, document.title);
 
-      // LCP (Largest Contentful Paint)
+    // Initialize comprehensive performance monitoring
+    const monitor = createPerformanceMonitor();
+    
+    if (monitor) {
+      setIsMonitoring(true);
+    }
+
+    // Track Core Web Vitals with enhanced system
+    const trackEnhancedWebVitals = () => {
+
+      // Enhanced LCP tracking with our monitoring system
       if ('PerformanceObserver' in window) {
         new PerformanceObserver((entryList) => {
           for (const entry of entryList.getEntries()) {
             if (entry.entryType === 'largest-contentful-paint') {
               const lcp = entry.startTime;
-              window.gtag('event', 'web_vitals', {
-                event_category: 'Web Vitals',
-                event_label: 'LCP',
-                value: Math.round(lcp),
-                non_interaction: true
+              
+              // Use enhanced analytics tracking
+              trackWebVitals({
+                name: 'LCP',
+                value: lcp,
+                id: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
               });
               
-              // Console log for development
+              // Development logging with performance targets
               if (process.env.NODE_ENV === 'development') {
-                console.log('LCP:', Math.round(lcp), 'ms');
+                const rating = lcp <= 2500 ? 'good' : lcp <= 4000 ? 'needs-improvement' : 'poor';
+                console.log(`LCP: ${Math.round(lcp)}ms (${rating}) - Target: <2500ms`);
               }
             }
           }
         }).observe({ entryTypes: ['largest-contentful-paint'] });
 
-        // FID (First Input Delay)
+        // Enhanced FID tracking
         new PerformanceObserver((entryList) => {
           for (const entry of entryList.getEntries()) {
             if (entry.entryType === 'first-input') {
               const fid = (entry as any).processingStart - entry.startTime;
-              window.gtag('event', 'web_vitals', {
-                event_category: 'Web Vitals',
-                event_label: 'FID',
-                value: Math.round(fid),
-                non_interaction: true
+              
+              trackWebVitals({
+                name: 'FID',
+                value: fid,
+                id: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
               });
               
               if (process.env.NODE_ENV === 'development') {
-                console.log('FID:', Math.round(fid), 'ms');
+                const rating = fid <= 100 ? 'good' : fid <= 300 ? 'needs-improvement' : 'poor';
+                console.log(`FID: ${Math.round(fid)}ms (${rating}) - Target: <100ms`);
               }
             }
           }
@@ -200,7 +228,7 @@ export default function PerformanceMonitor() {
     };
 
     // Initialize tracking
-    trackWebVitals();
+    trackEnhancedWebVitals();
     trackPageLoad();
     const cleanupConversions = trackConversions();
 
@@ -216,10 +244,4 @@ export default function PerformanceMonitor() {
   return null;
 }
 
-// Extend Window interface for TypeScript
-declare global {
-  interface Window {
-    gtag: (...args: any[]) => void;
-    dataLayer: any[];
-  }
-}
+// gtag types are already declared elsewhere
