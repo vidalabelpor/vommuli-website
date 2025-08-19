@@ -4,7 +4,7 @@ import { generateLocalBusinessSchema, cityCoordinates } from '@/lib/seo-utils';
 
 export const metadata: Metadata = {
   title: 'Austin Series A Funding Advisory | Texas VC Introductions & Investment Readiness | Vommuli',
-  description: 'Austin Series A funding advisory with Silicon Hills expertise. 65+ successful Austin fundraises. Expert VC introductions to Texas investors. #3 VC hub globally. Local market intelligence.'
+  description: 'Austin Series A funding advisory with Silicon Hills expertise. 65+ successful Austin fundraises. Expert VC introductions to Texas investors. #3 VC hub globally. Local market intelligence.',
   keywords: [
     'Austin venture capital',
     'Texas startup funding',
