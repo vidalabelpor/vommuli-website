@@ -1,4 +1,116 @@
+'use client';
+
 import type { Metadata } from 'next';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+
+// Animated Counter Component
+function AnimatedCounter({ end, duration = 2000, prefix = '', suffix = '' }: {
+  end: number;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
+}) {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    let startTime = Date.now();
+    const endTime = startTime + duration;
+    
+    const timer = setInterval(() => {
+      const now = Date.now();
+      const remaining = Math.max((endTime - now) / duration, 0);
+      const value = Math.round(end - (remaining * end));
+      
+      if (now >= endTime) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(value);
+      }
+    }, 16);
+    
+    return () => clearInterval(timer);
+  }, [end, duration]);
+  
+  return <span>{prefix}{count.toLocaleString()}{suffix}</span>;
+}
+
+// Professional Fintech SVG Background Component
+function FintechBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden opacity-8">
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" fill="none">
+        <defs>
+          <linearGradient id="fintechGradient1" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="rgb(59, 130, 246)" />
+            <stop offset="60%" stopColor="rgb(99, 102, 241)" />
+            <stop offset="100%" stopColor="rgb(139, 92, 246)" />
+          </linearGradient>
+          <linearGradient id="fintechGradient2" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="rgb(99, 102, 241)" />
+            <stop offset="60%" stopColor="rgb(139, 92, 246)" />
+            <stop offset="100%" stopColor="rgb(168, 85, 247)" />
+          </linearGradient>
+          <radialGradient id="expertiseGradient" cx="50%" cy="30%">
+            <stop offset="0%" stopColor="rgb(99, 102, 241)" />
+            <stop offset="100%" stopColor="rgb(59, 130, 246)" />
+          </radialGradient>
+        </defs>
+        
+        {/* Professional fintech chart lines */}
+        <path 
+          d="M0,600 L200,580 L400,520 L600,480 L800,440 L1000,400 L1200,360" 
+          fill="none" 
+          stroke="url(#fintechGradient1)" 
+          strokeWidth="3"
+          className="animate-pulse"
+          style={{ animationDelay: '0s', animationDuration: '4s' }}
+        />
+        <path 
+          d="M0,650 L200,620 L400,580 L600,540 L800,500 L1000,460 L1200,420" 
+          fill="none" 
+          stroke="url(#fintechGradient2)" 
+          strokeWidth="2"
+          className="animate-pulse"
+          style={{ animationDelay: '1s', animationDuration: '5s' }}
+        />
+        
+        {/* Expertise indicators */}
+        <circle cx="400" cy="200" r="40" fill="url(#expertiseGradient)" className="animate-pulse" style={{ animationDelay: '0.5s' }} />
+        
+        {/* Floating fintech indicators */}
+        <g className="animate-bounce" style={{ animationDelay: '0.5s' }}>
+          <circle cx="200" cy="300" r="3" fill="rgb(99, 102, 241)" />
+          <text x="210" y="305" fill="rgb(99, 102, 241)" fontSize="10" fontFamily="monospace">$500M+</text>
+        </g>
+        <g className="animate-bounce" style={{ animationDelay: '1.5s' }}>
+          <circle cx="600" cy="250" r="3" fill="rgb(139, 92, 246)" />
+          <text x="610" y="255" fill="rgb(139, 92, 246)" fontSize="10" fontFamily="monospace">200+</text>
+        </g>
+        <g className="animate-bounce" style={{ animationDelay: '2.5s' }}>
+          <circle cx="1000" cy="200" r="3" fill="rgb(168, 85, 247)" />
+          <text x="1010" y="205" fill="rgb(168, 85, 247)" fontSize="10" fontFamily="monospace">85%</text>
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+// Floating Card Component
+function FloatingCard({ delay = 0, children }: { delay?: number; children: React.ReactNode }) {
+  return (
+    <div 
+      className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 animate-float"
+      style={{ 
+        animationDelay: `${delay}s`,
+        transform: `translateY(${Math.sin(delay * 2) * 8}px)`
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
 export const metadata: Metadata = {
   title: 'About Vommuli Ventures | Series A Funding & Startup Advisory Experts',
@@ -23,15 +135,44 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KPGcgZmlsbD0iIzM5OEVGRiIgZmlsbC1vcGFjaXR5PSIwLjAzIj4KPHBhdGggZD0iTTM2IDM0djEwaC0yVjM0aDJ6bTAtMTBWMTRoLTJWMjRoMnptLTEwIDEwdjEwSDE2VjM0aDEwem0wLTEwVjE0SDE2VjI0aDEweiIvPgo8L2c+CjwvZz4KPC9zdmc+')] opacity-30"></div>
+      <FintechBackground />
+      
+      {/* Professional Fintech Environment Imagery */}
+      <div className="absolute inset-0 opacity-5">
+        <img 
+          src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+          alt="Professional Fintech Environment" 
+          className="w-full h-full object-cover"
+        />
+      </div>
       
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute top-40 right-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       <div className="absolute bottom-20 left-1/3 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      
+      {/* Floating Expertise Cards */}
+      <div className="absolute top-32 right-20 hidden lg:block">
+        <FloatingCard delay={0.5}>
+          <div className="text-white/90 text-sm font-medium">Capital Raised</div>
+          <div className="text-2xl font-bold text-white">
+            <AnimatedCounter end={500} prefix="$" suffix="M+" />
+          </div>
+        </FloatingCard>
+      </div>
+      
+      <div className="absolute top-96 left-20 hidden lg:block">
+        <FloatingCard delay={1}>
+          <div className="text-white/90 text-sm font-medium">Success Rate</div>
+          <div className="text-2xl font-bold text-white">
+            <AnimatedCounter end={85} suffix="%" />
+          </div>
+        </FloatingCard>
+      </div>
 
       {/* Hero Section */}
       <section className="relative py-32 px-6 lg:px-8 z-10">
@@ -114,22 +255,30 @@ export default function AboutPage() {
                 
                 <div className="grid grid-cols-2 gap-8">
                   <div className="text-center">
-                    <div className="text-4xl font-black text-blue-400 mb-2">$500M+</div>
+                    <div className="text-4xl font-black text-blue-400 mb-2">
+                      <AnimatedCounter end={500} prefix="$" suffix="M+" />
+                    </div>
                     <p className="text-slate-300 text-sm">Series A Capital Raised</p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="text-4xl font-black text-indigo-400 mb-2">200+</div>
+                    <div className="text-4xl font-black text-indigo-400 mb-2">
+                      <AnimatedCounter end={200} suffix="+" />
+                    </div>
                     <p className="text-slate-300 text-sm">Startups Funded</p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="text-4xl font-black text-purple-400 mb-2">85%</div>
+                    <div className="text-4xl font-black text-purple-400 mb-2">
+                      <AnimatedCounter end={85} suffix="%" />
+                    </div>
                     <p className="text-slate-300 text-sm">Success Rate</p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="text-4xl font-black text-cyan-400 mb-2">6.2</div>
+                    <div className="text-4xl font-black text-cyan-400 mb-2">
+                      <AnimatedCounter end={6} suffix=".2" />
+                    </div>
                     <p className="text-slate-300 text-sm">Avg Weeks to Term Sheet</p>
                   </div>
                 </div>
@@ -155,7 +304,7 @@ export default function AboutPage() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="group relative overflow-hidden rounded-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-indigo-600/20 group-hover:from-blue-600/30 group-hover:to-indigo-600/30 transition-all duration-300"></div>
               <div className="relative p-8 border border-blue-500/30 group-hover:border-blue-400/50 transition-all duration-300">
@@ -165,9 +314,10 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold text-blue-400 mb-3">Venture Capital Experience</h3>
                 <p className="text-slate-300 mb-4">Former investment professionals from leading venture capital firms and growth equity funds.</p>
                 <ul className="space-y-2 text-sm text-slate-400">
-                  <li>• 15+ years average VC experience</li>
+                  <li>• <AnimatedCounter end={15} suffix="+" /> years average VC experience</li>
                   <li>• Series 7, 63, 65 licenses</li>
                   <li>• CFA, MBA credentials</li>
+                  <li>• <AnimatedCounter end={50} suffix="+" /> portfolio companies managed</li>
                 </ul>
               </div>
             </div>
@@ -181,9 +331,10 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold text-indigo-400 mb-3">VC Network</h3>
                 <p className="text-slate-300 mb-4">Extensive relationships with tier-1 and tier-2 venture capital firms across key markets.</p>
                 <ul className="space-y-2 text-sm text-slate-400">
-                  <li>• 150+ VC firm relationships</li>
+                  <li>• <AnimatedCounter end={150} suffix="+" /> VC firm relationships</li>
                   <li>• Silicon Valley, NYC, Austin coverage</li>
                   <li>• Series A specialization focus</li>
+                  <li>• Direct partner-level access</li>
                 </ul>
               </div>
             </div>
@@ -200,7 +351,83 @@ export default function AboutPage() {
                   <li>• Real-time VC market insights</li>
                   <li>• Investor thesis mapping</li>
                   <li>• Series A trend analysis</li>
+                  <li>• <AnimatedCounter end={20} suffix="+" /> sectors covered</li>
                 </ul>
+              </div>
+            </div>
+          </div>
+          
+          {/* Enhanced Team Leadership Section */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-indigo-600/10 rounded-3xl blur-xl"></div>
+              <div className="relative bg-slate-800/30 backdrop-blur-sm p-8 rounded-3xl border border-blue-500/20">
+                <div className="flex items-center mb-6">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full mr-6 flex items-center justify-center">
+                    <span className="text-3xl">👨‍💼</span>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-blue-400">Leadership Team</h3>
+                    <p className="text-slate-300">Former VC Partners & Investment Directors</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center py-3 border-b border-slate-700/50">
+                    <span className="text-slate-300">Average Investment Experience</span>
+                    <span className="text-blue-400 font-bold">
+                      <AnimatedCounter end={18} suffix=" years" />
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-slate-700/50">
+                    <span className="text-slate-300">Combined Deals Executed</span>
+                    <span className="text-blue-400 font-bold">
+                      <AnimatedCounter end={800} suffix="+" />
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-slate-700/50">
+                    <span className="text-slate-300">Portfolio Company Exits</span>
+                    <span className="text-blue-400 font-bold">
+                      <AnimatedCounter end={45} suffix=" IPOs/M&A" />
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center py-3">
+                    <span className="text-slate-300">Industry Recognition</span>
+                    <span className="text-blue-400 font-bold">Top 1% VCs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 rounded-3xl blur-xl"></div>
+              <div className="relative bg-slate-800/30 backdrop-blur-sm p-8 rounded-3xl border border-purple-500/20">
+                <div className="flex items-center mb-6">
+                  <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full mr-6 flex items-center justify-center">
+                    <span className="text-3xl">🎯</span>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-purple-400">Expertise Areas</h3>
+                    <p className="text-slate-300">Specialized Investment Focus</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-slate-700/30 p-4 rounded-lg">
+                    <h4 className="text-purple-400 font-semibold mb-2">Technology</h4>
+                    <p className="text-slate-300 text-sm">SaaS, AI/ML, Enterprise Software</p>
+                  </div>
+                  <div className="bg-slate-700/30 p-4 rounded-lg">
+                    <h4 className="text-purple-400 font-semibold mb-2">Fintech</h4>
+                    <p className="text-slate-300 text-sm">Payments, Banking, RegTech</p>
+                  </div>
+                  <div className="bg-slate-700/30 p-4 rounded-lg">
+                    <h4 className="text-purple-400 font-semibold mb-2">Healthcare</h4>
+                    <p className="text-slate-300 text-sm">Digital Health, Biotech, MedTech</p>
+                  </div>
+                  <div className="bg-slate-700/30 p-4 rounded-lg">
+                    <h4 className="text-purple-400 font-semibold mb-2">Consumer</h4>
+                    <p className="text-slate-300 text-sm">E-commerce, Marketplaces, D2C</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -278,19 +505,25 @@ export default function AboutPage() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105 overflow-hidden">
+                  <Link 
+                    href="/tools/investment-readiness-assessment"
+                    className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105 overflow-hidden text-center"
+                  >
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <span className="relative z-10">Get Investment Readiness Assessment</span>
-                  </button>
+                  </Link>
                   
-                  <button className="group relative px-8 py-4 border-2 border-white/30 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:bg-white hover:text-slate-900 backdrop-blur-sm hover:scale-105">
-                    <span className="flex items-center">
+                  <Link 
+                    href="/services"
+                    className="group relative px-8 py-4 border-2 border-white/30 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:bg-white hover:text-slate-900 backdrop-blur-sm hover:scale-105 text-center"
+                  >
+                    <span className="flex items-center justify-center">
                       View Our Services
                       <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                       </svg>
                     </span>
-                  </button>
+                  </Link>
                 </div>
                 
                 <p className="text-slate-400 mt-8 text-lg">

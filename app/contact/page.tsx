@@ -1,4 +1,117 @@
+'use client';
+
 import type { Metadata } from 'next';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+
+// Animated Counter Component
+function AnimatedCounter({ end, duration = 2000, prefix = '', suffix = '' }: {
+  end: number;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
+}) {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    let startTime = Date.now();
+    const endTime = startTime + duration;
+    
+    const timer = setInterval(() => {
+      const now = Date.now();
+      const remaining = Math.max((endTime - now) / duration, 0);
+      const value = Math.round(end - (remaining * end));
+      
+      if (now >= endTime) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(value);
+      }
+    }, 16);
+    
+    return () => clearInterval(timer);
+  }, [end, duration]);
+  
+  return <span>{prefix}{count.toLocaleString()}{suffix}</span>;
+}
+
+// Professional Contact SVG Background Component
+function ContactBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden opacity-8">
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" fill="none">
+        <defs>
+          <linearGradient id="contactGradient1" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="rgb(16, 185, 129)" />
+            <stop offset="60%" stopColor="rgb(20, 184, 166)" />
+            <stop offset="100%" stopColor="rgb(34, 197, 94)" />
+          </linearGradient>
+          <linearGradient id="contactGradient2" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="rgb(20, 184, 166)" />
+            <stop offset="60%" stopColor="rgb(34, 197, 94)" />
+            <stop offset="100%" stopColor="rgb(101, 163, 13)" />
+          </linearGradient>
+          <radialGradient id="supportGradient" cx="50%" cy="30%">
+            <stop offset="0%" stopColor="rgb(20, 184, 166)" />
+            <stop offset="100%" stopColor="rgb(16, 185, 129)" />
+          </radialGradient>
+        </defs>
+        
+        {/* Professional contact network lines */}
+        <path 
+          d="M0,500 L300,480 L600,440 L900,400 L1200,360" 
+          fill="none" 
+          stroke="url(#contactGradient1)" 
+          strokeWidth="3"
+          className="animate-pulse"
+          style={{ animationDelay: '0s', animationDuration: '4s' }}
+        />
+        <path 
+          d="M0,550 L250,530 L500,490 L750,450 L1000,410 L1200,380" 
+          fill="none" 
+          stroke="url(#contactGradient2)" 
+          strokeWidth="2"
+          className="animate-pulse"
+          style={{ animationDelay: '1s', animationDuration: '5s' }}
+        />
+        
+        {/* Global connection nodes */}
+        <circle cx="300" cy="200" r="35" fill="url(#supportGradient)" className="animate-pulse" style={{ animationDelay: '0.5s' }} />
+        <circle cx="900" cy="180" r="25" fill="url(#supportGradient)" className="animate-pulse" style={{ animationDelay: '1.5s' }} />
+        
+        {/* Floating contact indicators */}
+        <g className="animate-bounce" style={{ animationDelay: '0.5s' }}>
+          <circle cx="200" cy="300" r="3" fill="rgb(20, 184, 166)" />
+          <text x="210" y="305" fill="rgb(20, 184, 166)" fontSize="10" fontFamily="monospace">24h</text>
+        </g>
+        <g className="animate-bounce" style={{ animationDelay: '1.5s' }}>
+          <circle cx="600" cy="250" r="3" fill="rgb(34, 197, 94)" />
+          <text x="610" y="255" fill="rgb(34, 197, 94)" fontSize="10" fontFamily="monospace">Global</text>
+        </g>
+        <g className="animate-bounce" style={{ animationDelay: '2.5s' }}>
+          <circle cx="1000" cy="200" r="3" fill="rgb(16, 185, 129)" />
+          <text x="1010" y="205" fill="rgb(16, 185, 129)" fontSize="10" fontFamily="monospace">Support</text>
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+// Floating Card Component
+function FloatingContactCard({ delay = 0, children }: { delay?: number; children: React.ReactNode }) {
+  return (
+    <div 
+      className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 animate-float"
+      style={{ 
+        animationDelay: `${delay}s`,
+        transform: `translateY(${Math.sin(delay * 2) * 8}px)`
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
 export const metadata: Metadata = {
   title: 'Contact Vommuli Ventures | Schedule Series A Funding Consultation',
@@ -23,15 +136,76 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    phone: '',
+    fundingStage: '',
+    message: '',
+    privacy: false
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+    }));
+  };
+  
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmissionStatus('success');
+      setTimeout(() => setSubmissionStatus('idle'), 5000);
+    }, 2000);
+  };
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-teal-900 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KPGcgZmlsbD0iIzEwREM2MSIgZmlsbC1vcGFjaXR5PSIwLjAzIj4KPHBhdGggZD0iTTM2IDM0djEwaC0yVjM0aDJ6bTAtMTBWMTRoLTJWMjRoMnptLTEwIDEwdjEwSDE2VjM0aDEwem0wLTEwVjE0SDE2VjI0aDEweiIvPgo8L2c+CjwvZz4KPC9zdmc+')] opacity-30"></div>
+      <ContactBackground />
+      
+      {/* Professional Contact Environment Imagery */}
+      <div className="absolute inset-0 opacity-5">
+        <img 
+          src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+          alt="Professional Contact Environment" 
+          className="w-full h-full object-cover"
+        />
+      </div>
       
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute top-40 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       <div className="absolute bottom-20 left-1/3 w-64 h-64 bg-green-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      
+      {/* Floating Contact Cards */}
+      <div className="absolute top-32 right-20 hidden lg:block">
+        <FloatingContactCard delay={0.5}>
+          <div className="text-white/90 text-sm font-medium">Response Time</div>
+          <div className="text-2xl font-bold text-white">
+            <AnimatedCounter end={24} suffix="h" />
+          </div>
+        </FloatingContactCard>
+      </div>
+      
+      <div className="absolute top-96 left-20 hidden lg:block">
+        <FloatingContactCard delay={1}>
+          <div className="text-white/90 text-sm font-medium">Global Offices</div>
+          <div className="text-2xl font-bold text-white">
+            <AnimatedCounter end={6} suffix="+" />
+          </div>
+        </FloatingContactCard>
+      </div>
 
       {/* Hero Section */}
       <section className="relative py-32 px-6 lg:px-8 z-10">
@@ -77,7 +251,21 @@ export default function ContactPage() {
                   </p>
                 </div>
                 
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {submissionStatus === 'success' && (
+                    <div className="bg-emerald-500/20 border border-emerald-500/30 rounded-lg p-4 mb-6">
+                      <div className="flex items-center">
+                        <div className="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center mr-3">
+                          <span className="text-white text-sm">✓</span>
+                        </div>
+                        <div>
+                          <h4 className="text-emerald-400 font-semibold">Thank you for your submission!</h4>
+                          <p className="text-emerald-300 text-sm">We'll contact you within 24 hours to schedule your assessment.</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="firstName" className="block text-sm font-medium text-slate-300 mb-2">
@@ -87,8 +275,10 @@ export default function ContactPage() {
                         type="text"
                         id="firstName"
                         name="firstName"
+                        value={formData.firstName}
+                        onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
                         placeholder="Your first name"
                       />
                     </div>
@@ -101,8 +291,10 @@ export default function ContactPage() {
                         type="text"
                         id="lastName"
                         name="lastName"
+                        value={formData.lastName}
+                        onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
                         placeholder="Your last name"
                       />
                     </div>
@@ -116,8 +308,10 @@ export default function ContactPage() {
                       type="email"
                       id="email"
                       name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
                       placeholder="your.email@company.com"
                     />
                   </div>
@@ -130,8 +324,10 @@ export default function ContactPage() {
                       type="text"
                       id="company"
                       name="company"
+                      value={formData.company}
+                      onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
                       placeholder="Your startup or company name"
                     />
                   </div>
@@ -144,7 +340,9 @@ export default function ContactPage() {
                       type="tel"
                       id="phone"
                       name="phone"
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
                       placeholder="Your phone number"
                     />
                   </div>
@@ -156,8 +354,10 @@ export default function ContactPage() {
                     <select
                       id="fundingStage"
                       name="fundingStage"
+                      value={formData.fundingStage}
+                      onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
                     >
                       <option value="">Select funding stage</option>
                       <option value="series-a">Series A ($2M-$15M)</option>
@@ -177,9 +377,11 @@ export default function ContactPage() {
                     <textarea
                       id="message"
                       name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       rows={4}
                       required
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none transition-all duration-300"
                       placeholder="Please describe your startup, traction metrics, funding timeline, and Series A goals..."
                     ></textarea>
                   </div>
@@ -190,8 +392,10 @@ export default function ContactPage() {
                         id="privacy"
                         name="privacy"
                         type="checkbox"
+                        checked={formData.privacy}
+                        onChange={handleInputChange}
                         required
-                        className="w-4 h-4 text-emerald-600 bg-slate-700 border-slate-600 rounded focus:ring-emerald-500"
+                        className="w-4 h-4 text-emerald-600 bg-slate-700 border-slate-600 rounded focus:ring-emerald-500 transition-all duration-300"
                       />
                     </div>
                     <div className="ml-3 text-sm">
@@ -203,10 +407,23 @@ export default function ContactPage() {
                   
                   <button
                     type="submit"
-                    className="group relative w-full px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/25 hover:scale-105 overflow-hidden"
+                    disabled={isSubmitting}
+                    className="group relative w-full px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/25 hover:scale-105 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="relative z-10">Get Free Assessment</span>
+                    <span className="relative z-10 flex items-center justify-center">
+                      {isSubmitting ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Submitting...
+                        </>
+                      ) : (
+                        'Get Free Assessment'
+                      )}
+                    </span>
                   </button>
                 </form>
               </div>
@@ -274,31 +491,75 @@ export default function ContactPage() {
                 </div>
               </div>
               
-              {/* Office Information */}
+              {/* Enhanced Global Office Display */}
               <div className="relative overflow-hidden rounded-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/20 to-teal-600/20"></div>
                 <div className="relative p-8 border border-emerald-500/30">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center mr-4">
-                      <span className="text-xl">🏢</span>
+                      <span className="text-xl">🌍</span>
                     </div>
                     <h3 className="text-2xl font-bold text-emerald-400">Global Presence</h3>
                   </div>
                   
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-slate-700/30 p-4 rounded-lg text-center">
+                      <div className="text-2xl font-bold text-emerald-400 mb-1">
+                        <AnimatedCounter end={6} suffix="+" />
+                      </div>
+                      <p className="text-slate-300 text-sm">Global Offices</p>
+                    </div>
+                    <div className="bg-slate-700/30 p-4 rounded-lg text-center">
+                      <div className="text-2xl font-bold text-emerald-400 mb-1">
+                        <AnimatedCounter end={15} suffix="+" />
+                      </div>
+                      <p className="text-slate-300 text-sm">Time Zones</p>
+                    </div>
+                  </div>
+                  
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Primary Markets</h4>
-                      <p className="text-slate-300">Silicon Valley • New York • Austin • Miami</p>
+                      <h4 className="font-semibold text-white mb-3">Key Markets</h4>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        <div className="flex items-center text-slate-300">
+                          <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2"></span>
+                          Silicon Valley
+                        </div>
+                        <div className="flex items-center text-slate-300">
+                          <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2"></span>
+                          New York
+                        </div>
+                        <div className="flex items-center text-slate-300">
+                          <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2"></span>
+                          Austin
+                        </div>
+                        <div className="flex items-center text-slate-300">
+                          <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2"></span>
+                          Miami
+                        </div>
+                        <div className="flex items-center text-slate-300">
+                          <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2"></span>
+                          Boston
+                        </div>
+                        <div className="flex items-center text-slate-300">
+                          <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2"></span>
+                          Chicago
+                        </div>
+                      </div>
                     </div>
                     
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Startup Coverage</h4>
-                      <p className="text-slate-300">US & Canada • Europe • Remote-First Startups</p>
+                      <h4 className="font-semibold text-white mb-2">Regional Coverage</h4>
+                      <p className="text-slate-300 text-sm">United States • Canada • United Kingdom • European Union</p>
                     </div>
                     
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Meeting Options</h4>
-                      <p className="text-slate-300">In-person • Video Conference • Phone</p>
+                      <h4 className="font-semibold text-white mb-2">Meeting Formats</h4>
+                      <div className="flex flex-wrap gap-2 text-sm">
+                        <span className="bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full">In-Person</span>
+                        <span className="bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full">Video Conference</span>
+                        <span className="bg-green-500/20 text-green-300 px-3 py-1 rounded-full">Phone</span>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -1,5 +1,119 @@
+'use client';
+
 import type { Metadata } from 'next';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import SchemaMarkup from '@/components/SchemaMarkup';
+
+// Animated Counter Component
+function AnimatedCounter({ end, duration = 2000, prefix = '', suffix = '' }: {
+  end: number;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
+}) {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    let startTime = Date.now();
+    const endTime = startTime + duration;
+    
+    const timer = setInterval(() => {
+      const now = Date.now();
+      const remaining = Math.max((endTime - now) / duration, 0);
+      const value = Math.round(end - (remaining * end));
+      
+      if (now >= endTime) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(value);
+      }
+    }, 16);
+    
+    return () => clearInterval(timer);
+  }, [end, duration]);
+  
+  return <span>{prefix}{count.toLocaleString()}{suffix}</span>;
+}
+
+// Growth Capital SVG Background Component
+function GrowthCapitalBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden opacity-8">
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" fill="none">
+        <defs>
+          <linearGradient id="growthGradient1" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="rgb(16, 185, 129)" />
+            <stop offset="60%" stopColor="rgb(34, 197, 94)" />
+            <stop offset="100%" stopColor="rgb(20, 184, 166)" />
+          </linearGradient>
+          <linearGradient id="growthGradient2" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="rgb(34, 197, 94)" />
+            <stop offset="60%" stopColor="rgb(20, 184, 166)" />
+            <stop offset="100%" stopColor="rgb(6, 182, 212)" />
+          </linearGradient>
+          <radialGradient id="scalingGradient" cx="50%" cy="30%">
+            <stop offset="0%" stopColor="rgb(20, 184, 166)" />
+            <stop offset="100%" stopColor="rgb(16, 185, 129)" />
+          </radialGradient>
+        </defs>
+        
+        {/* Growth trajectory lines */}
+        <path 
+          d="M0,600 L300,480 L600,360 L900,240 L1200,120" 
+          fill="none" 
+          stroke="url(#growthGradient1)" 
+          strokeWidth="4"
+          className="animate-pulse"
+          style={{ animationDelay: '0s', animationDuration: '3s' }}
+        />
+        <path 
+          d="M0,650 L250,530 L500,410 L750,290 L1000,170 L1200,150" 
+          fill="none" 
+          stroke="url(#growthGradient2)" 
+          strokeWidth="3"
+          className="animate-pulse"
+          style={{ animationDelay: '1s', animationDuration: '4s' }}
+        />
+        
+        {/* Growth milestone nodes */}
+        <circle cx="300" cy="480" r="35" fill="url(#scalingGradient)" className="animate-pulse" style={{ animationDelay: '0.5s' }} />
+        <circle cx="600" cy="360" r="30" fill="url(#scalingGradient)" className="animate-pulse" style={{ animationDelay: '1.5s' }} />
+        <circle cx="900" cy="240" r="25" fill="url(#scalingGradient)" className="animate-pulse" style={{ animationDelay: '2.5s' }} />
+        
+        {/* Floating growth indicators */}
+        <g className="animate-bounce" style={{ animationDelay: '0.5s' }}>
+          <circle cx="200" cy="500" r="3" fill="rgb(16, 185, 129)" />
+          <text x="210" y="505" fill="rgb(16, 185, 129)" fontSize="10" fontFamily="monospace">ARR</text>
+        </g>
+        <g className="animate-bounce" style={{ animationDelay: '1.5s' }}>
+          <circle cx="500" cy="350" r="3" fill="rgb(34, 197, 94)" />
+          <text x="510" y="355" fill="rgb(34, 197, 94)" fontSize="10" fontFamily="monospace">%</text>
+        </g>
+        <g className="animate-bounce" style={{ animationDelay: '2.5s' }}>
+          <circle cx="800" cy="200" r="3" fill="rgb(20, 184, 166)" />
+          <text x="810" y="205" fill="rgb(20, 184, 166)" fontSize="10" fontFamily="monospace">M</text>
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+// Floating Growth Card Component
+function FloatingGrowthCard({ delay = 0, children }: { delay?: number; children: React.ReactNode }) {
+  return (
+    <div 
+      className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 animate-float"
+      style={{ 
+        animationDelay: `${delay}s`,
+        transform: `translateY(${Math.sin(delay * 2) * 8}px)`
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
 export const metadata: Metadata = {
   title: 'Growth Capital Advisory Services | Growth Equity Funding | Vommuli Ventures',
@@ -62,15 +176,44 @@ export const metadata: Metadata = {
 };
 
 export default function GrowthCapitalAdvisoryPage() {
+  const [hoveredSection, setHoveredSection] = useState<string | null>(null);
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-green-900 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KPGcgZmlsbD0iIzEwQjk4MSIgZmlsbC1vcGFjaXR5PSIwLjAzIj4KPHBhdGggZD0iTTM2IDM0djEwaC0yVjM0aDJ6bTAtMTBWMTRoLTJWMjRoMnptLTEwIDEwdjEwSDE2VjM0aDEwem0wLTEwVjE0SDE2VjI0aDEweiIvPgo8L2c+CjwvZz4KPC9zdmc+')] opacity-30"></div>
+      <GrowthCapitalBackground />
+      
+      {/* Professional Growth Capital Environment Imagery */}
+      <div className="absolute inset-0 opacity-5">
+        <img 
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+          alt="Growth Capital Environment" 
+          className="w-full h-full object-cover"
+        />
+      </div>
       
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute top-40 right-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       <div className="absolute bottom-20 left-1/3 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      
+      {/* Floating Growth Metrics Cards */}
+      <div className="absolute top-32 right-20 hidden lg:block">
+        <FloatingGrowthCard delay={0.5}>
+          <div className="text-white/90 text-sm font-medium">Growth Success Rate</div>
+          <div className="text-2xl font-bold text-white">
+            <AnimatedCounter end={71} suffix="%" />
+          </div>
+        </FloatingGrowthCard>
+      </div>
+      
+      <div className="absolute top-96 left-20 hidden lg:block">
+        <FloatingGrowthCard delay={1}>
+          <div className="text-white/90 text-sm font-medium">Avg Investment</div>
+          <div className="text-2xl font-bold text-white">
+            <AnimatedCounter end={45} prefix="$" suffix="M" />
+          </div>
+        </FloatingGrowthCard>
+      </div>
 
       {/* Hero Section */}
       <section className="relative py-32 px-6 lg:px-8 z-10">
@@ -93,43 +236,89 @@ export default function GrowthCapitalAdvisoryPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/25 hover:scale-105 overflow-hidden">
+              <Link 
+                href="/contact"
+                className="group relative px-8 py-4 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/25 hover:scale-105 overflow-hidden text-center"
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10">Start Growth Capital Process</span>
-              </button>
+              </Link>
               
-              <button className="group relative px-8 py-4 border-2 border-white/30 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:bg-white hover:text-slate-900 backdrop-blur-sm hover:scale-105">
-                <span className="flex items-center">
-                  Download Growth Capital Guide
+              <Link 
+                href="/tools/investment-readiness-assessment"
+                className="group relative px-8 py-4 border-2 border-white/30 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:bg-white hover:text-slate-900 backdrop-blur-sm hover:scale-105 text-center"
+              >
+                <span className="flex items-center justify-center">
+                  Growth Readiness Assessment
                   <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Key Statistics */}
-      <section className="relative py-16 px-6 lg:px-8 z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-black text-emerald-400 mb-2">$5M-$200M</div>
-              <div className="text-slate-300 font-medium">Typical Growth Funding Range</div>
+      {/* Growth Capital Market Statistics */}
+      <section className="relative py-24 px-6 lg:px-8 z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 backdrop-blur-sm mb-6">
+              <span className="text-emerald-300 text-sm font-medium">📊 Market Intelligence</span>
             </div>
-            <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-black text-green-400 mb-2">71%</div>
-              <div className="text-slate-300 font-medium">Introduction to Funding Success</div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Growth Capital Market Leadership
+            </h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              Leading the growth equity ecosystem with specialized expertise in scaling proven business models to market dominance.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-4 gap-8">
+            <div className="relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/20 to-green-600/20"></div>
+              <div className="relative p-8 border border-emerald-500/30 text-center">
+                <div className="text-4xl font-black text-emerald-400 mb-2">
+                  $<AnimatedCounter end={5} />M-$<AnimatedCounter end={200} />M
+                </div>
+                <p className="text-slate-300 text-sm mb-1">Typical Growth Funding Range</p>
+                <p className="text-green-400 text-xs">Proven scalability focus</p>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-black text-teal-400 mb-2">100+</div>
-              <div className="text-slate-300 font-medium">Growth Equity Firms Network</div>
+            
+            <div className="relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-600/20 to-teal-600/20"></div>
+              <div className="relative p-8 border border-green-500/30 text-center">
+                <div className="text-4xl font-black text-green-400 mb-2">
+                  <AnimatedCounter end={71} suffix="%" />
+                </div>
+                <p className="text-slate-300 text-sm mb-1">Introduction to Funding Success</p>
+                <p className="text-teal-400 text-xs">Above market average</p>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-black text-emerald-400 mb-2">4-8</div>
-              <div className="text-slate-300 font-medium">Months Average Timeline</div>
+            
+            <div className="relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-600/20 to-cyan-600/20"></div>
+              <div className="relative p-8 border border-teal-500/30 text-center">
+                <div className="text-4xl font-black text-teal-400 mb-2">
+                  <AnimatedCounter end={100} suffix="+" />
+                </div>
+                <p className="text-slate-300 text-sm mb-1">Growth Equity Firms Network</p>
+                <p className="text-cyan-400 text-xs">Global coverage</p>
+              </div>
+            </div>
+            
+            <div className="relative overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/20 to-emerald-600/20"></div>
+              <div className="relative p-8 border border-cyan-500/30 text-center">
+                <div className="text-4xl font-black text-cyan-400 mb-2">
+                  <AnimatedCounter end={6} /> months
+                </div>
+                <p className="text-slate-300 text-sm mb-1">Average Timeline</p>
+                <p className="text-emerald-400 text-xs">Optimized process</p>
+              </div>
             </div>
           </div>
         </div>
@@ -1239,19 +1428,25 @@ export default function GrowthCapitalAdvisoryPage() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-                  <button className="group relative px-8 py-4 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/25 hover:scale-105 overflow-hidden">
+                  <Link 
+                    href="/contact"
+                    className="group relative px-8 py-4 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/25 hover:scale-105 overflow-hidden text-center"
+                  >
                     <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <span className="relative z-10">Start Growth Capital Assessment</span>
-                  </button>
+                  </Link>
                   
-                  <button className="group relative px-8 py-4 border-2 border-white/30 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:bg-white hover:text-slate-900 backdrop-blur-sm hover:scale-105">
-                    <span className="flex items-center">
-                      Download Growth Capital Guide
+                  <Link 
+                    href="/tools/investment-readiness-assessment"
+                    className="group relative px-8 py-4 border-2 border-white/30 text-white rounded-xl text-lg font-semibold transition-all duration-300 hover:bg-white hover:text-slate-900 backdrop-blur-sm hover:scale-105 text-center"
+                  >
+                    <span className="flex items-center justify-center">
+                      Growth Assessment Tool
                       <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                       </svg>
                     </span>
-                  </button>
+                  </Link>
                 </div>
                 
                 <p className="text-slate-400 text-lg">

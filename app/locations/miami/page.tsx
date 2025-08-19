@@ -1,5 +1,112 @@
+'use client';
+
 import type { Metadata } from 'next';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import { useState, useEffect } from 'react';
+
+// Animated Counter Component  
+function AnimatedCounter({ end, duration = 2000, prefix = '', suffix = '' }: {
+  end: number;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
+}) {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    let startTime = Date.now();
+    const endTime = startTime + duration;
+    
+    const timer = setInterval(() => {
+      const now = Date.now();
+      const remaining = Math.max((endTime - now) / duration, 0);
+      const value = Math.round(end - (remaining * end));
+      
+      if (now >= endTime) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(value);
+      }
+    }, 16);
+    
+    return () => clearInterval(timer);
+  }, [end, duration]);
+  
+  return <span>{prefix}{count.toLocaleString()}{suffix}</span>;
+}
+
+// Ocean Wave SVG Background Component
+function OceanWaveBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden opacity-15">
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" fill="none">
+        <defs>
+          <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="rgb(6, 182, 212)" />
+            <stop offset="50%" stopColor="rgb(59, 130, 246)" />
+            <stop offset="100%" stopColor="rgb(147, 51, 234)" />
+          </linearGradient>
+          <linearGradient id="waveGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="rgb(14, 165, 233)" />
+            <stop offset="50%" stopColor="rgb(99, 102, 241)" />
+            <stop offset="100%" stopColor="rgb(168, 85, 247)" />
+          </linearGradient>
+          <radialGradient id="sunGradient" cx="20%" cy="20%">
+            <stop offset="0%" stopColor="rgb(251, 191, 36)" />
+            <stop offset="100%" stopColor="rgb(245, 158, 11)" />
+          </radialGradient>
+        </defs>
+        
+        {/* Flowing wave paths */}
+        <path 
+          d="M0,400 Q300,300 600,350 T1200,320 L1200,800 L0,800 Z" 
+          fill="url(#waveGradient1)" 
+          className="animate-pulse"
+          style={{ animationDelay: '0s', animationDuration: '4s' }}
+        />
+        <path 
+          d="M0,500 Q200,450 500,480 T1000,460 L1200,450 L1200,800 L0,800 Z" 
+          fill="url(#waveGradient2)" 
+          className="animate-pulse"
+          style={{ animationDelay: '1s', animationDuration: '5s' }}
+        />
+        
+        {/* Sun */}
+        <circle cx="200" cy="150" r="45" fill="url(#sunGradient)" className="animate-pulse" style={{ animationDelay: '0.5s' }} />
+        
+        {/* Floating capital markers */}
+        <g className="animate-bounce" style={{ animationDelay: '0.5s' }}>
+          <circle cx="300" cy="250" r="4" fill="rgb(6, 182, 212)" />
+          <text x="310" y="255" fill="rgb(6, 182, 212)" fontSize="12" fontFamily="monospace">$4.2B</text>
+        </g>
+        <g className="animate-bounce" style={{ animationDelay: '1.5s' }}>
+          <circle cx="600" cy="200" r="4" fill="rgb(59, 130, 246)" />
+          <text x="610" y="205" fill="rgb(59, 130, 246)" fontSize="12" fontFamily="monospace">LatAm</text>
+        </g>
+        <g className="animate-bounce" style={{ animationDelay: '2.5s' }}>
+          <circle cx="900" cy="180" r="4" fill="rgb(147, 51, 234)" />
+          <text x="910" y="185" fill="rgb(147, 51, 234)" fontSize="12" fontFamily="monospace">80+ FOs</text>
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+// Floating Coastal Card Component
+function FloatingCoastalCard({ delay = 0, children }: { delay?: number; children: React.ReactNode }) {
+  return (
+    <div 
+      className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 animate-float"
+      style={{ 
+        animationDelay: `${delay}s`,
+        transform: `translateY(${Math.sin(delay * 1.5) * 8}px)`
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
 export const metadata: Metadata = {
   title: 'Miami Capital Introduction Services | Florida Venture Capital & Private Equity | Vommuli Ventures',
@@ -39,52 +146,122 @@ export const metadata: Metadata = {
 };
 
 export default function MiamiLocationPage() {
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-cyan-900 to-blue-900 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KPGcgZmlsbD0iIzA4OTFCMiIgZmlsbC1vcGFjaXR5PSIwLjAzIj4KPHBhdGggZD0iTTM2IDM0djEwaC0yVjM0aDJ6bTAtMTBWMTRoLTJWMjRoMnptLTEwIDEwdjEwSDE2VjM0aDEwem0wLTEwVjE0SDE2VjI0aDEweiIvPgo8L2c+CjwvZz4KPC9zdmc+')] opacity-30"></div>
+    <div className="min-h-screen bg-white relative overflow-hidden">
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 backdrop-blur-sm mb-6">
-              <span className="text-cyan-300 text-sm font-medium">🌴 Miami, Florida Location</span>
+      {/* Coastal Capital Hero Section */}
+      <section className="relative min-h-screen bg-gradient-to-br from-cyan-950 via-blue-900 to-indigo-950 overflow-hidden">
+        <OceanWaveBackground />
+        
+        {/* Tropical Atmosphere Effect */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-400/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        </div>
+        
+        {/* Professional Coastal Business Imagery */}
+        <div className="absolute inset-0 opacity-5">
+          <img 
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+            alt="Miami Business District" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-4 py-24 lg:py-32">
+          <div className="max-w-6xl mx-auto">
+            
+            {/* Floating Coastal Metrics Cards */}
+            <div className="absolute top-20 right-10 hidden lg:block">
+              <FloatingCoastalCard delay={0.5}>
+                <div className="text-white/90 text-sm font-medium">LatAm Gateway</div>
+                <div className="text-2xl font-bold text-white">
+                  <AnimatedCounter end={50} prefix="$" suffix="B+" />
+                </div>
+              </FloatingCoastalCard>
             </div>
             
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              Miami, Florida
-              <span className="block text-gradient">Capital Introduction</span>
-            </h1>
-            <p className="text-xl lg:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Connect with South Florida's dynamic venture capital ecosystem and Latin America gateway investors. Expert capital introduction services in America's international business hub.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
-              <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold text-lg">60+</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">VC/PE Firms</h3>
-              <p className="text-slate-400">Active venture capital and private equity firms in the Miami metro area</p>
+            <div className="absolute top-40 left-10 hidden lg:block">
+              <FloatingCoastalCard delay={1}>
+                <div className="text-white/90 text-sm font-medium">Family Offices</div>
+                <div className="text-2xl font-bold text-white">
+                  <AnimatedCounter end={80} suffix="+" />
+                </div>
+              </FloatingCoastalCard>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold text-lg">$4.2B</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Annual Investment</h3>
-              <p className="text-slate-400">Total venture capital deployed in South Florida startups annually</p>
+            
+            <div className="absolute bottom-40 right-20 hidden lg:block">
+              <FloatingCoastalCard delay={1.5}>
+                <div className="text-white/90 text-sm font-medium">Crypto Capital</div>
+                <div className="text-2xl font-bold text-white">#1</div>
+              </FloatingCoastalCard>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
-              <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold text-lg">#1</span>
+            
+            <div className="text-center">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 hover:bg-white/20 transition-all duration-300">
+                <div className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mr-3 animate-pulse"></div>
+                <span className="text-white text-sm font-medium tracking-wide">LATIN AMERICA GATEWAY CAPITAL</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Latin America Gateway</h3>
-              <p className="text-slate-400">Premier entry point for Latin American investment and expansion</p>
+              
+              <h1 className="text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+                Magic City Capital
+                <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent mt-2">
+                  Global Advantage
+                </span>
+              </h1>
+              
+              <p className="text-xl lg:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
+                Premier international capital introduction platform connecting South Florida's innovation companies with Latin American investors, crypto capital networks, and global fintech institutions.
+              </p>
+              
+              {/* Interactive Metrics Dashboard */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                    <AnimatedCounter end={4} prefix="$" suffix=".2B+" />
+                  </div>
+                  <div className="text-white/70 text-sm">Annual Flow</div>
+                </div>
+                
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                    <AnimatedCounter end={300} suffix="+" />
+                  </div>
+                  <div className="text-white/70 text-sm">Global Network</div>
+                </div>
+                
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                    <AnimatedCounter end={89} suffix="%" />
+                  </div>
+                  <div className="text-white/70 text-sm">Success Rate</div>
+                </div>
+                
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                    <AnimatedCounter end={4} suffix=" Months" />
+                  </div>
+                  <div className="text-white/70 text-sm">Avg Timeline</div>
+                </div>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <button className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-cyan-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-xl">
+                  Schedule Global Strategy Session
+                </button>
+                
+                <button className="bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-xl font-semibold border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  Explore LatAm Network
+                </button>
+              </div>
             </div>
           </div>
         </div>
+        
+        {/* Coastal tide overlay at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white/10 to-transparent backdrop-blur-sm"></div>
       </section>
 
       {/* Miami Market Overview */}

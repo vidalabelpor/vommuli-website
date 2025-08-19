@@ -1,6 +1,113 @@
+'use client';
+
 import type { Metadata } from 'next';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateLocalBusinessSchema, cityCoordinates } from '@/lib/seo-utils';
+import { useState, useEffect } from 'react';
+
+// Animated Counter Component
+function AnimatedCounter({ end, duration = 2000, prefix = '', suffix = '' }: {
+  end: number;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
+}) {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    let startTime = Date.now();
+    const endTime = startTime + duration;
+    
+    const timer = setInterval(() => {
+      const now = Date.now();
+      const remaining = Math.max((endTime - now) / duration, 0);
+      const value = Math.round(end - (remaining * end));
+      
+      if (now >= endTime) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(value);
+      }
+    }, 16);
+    
+    return () => clearInterval(timer);
+  }, [end, duration]);
+  
+  return <span>{prefix}{count.toLocaleString()}{suffix}</span>;
+}
+
+// Texas Tech Skyline SVG Background Component
+function SiliconHillsBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden opacity-12">
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" fill="none">
+        <defs>
+          <linearGradient id="techGradient1" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="rgb(234, 88, 12)" />
+            <stop offset="60%" stopColor="rgb(251, 146, 60)" />
+            <stop offset="100%" stopColor="rgb(253, 186, 116)" />
+          </linearGradient>
+          <linearGradient id="techGradient2" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="rgb(220, 38, 127)" />
+            <stop offset="60%" stopColor="rgb(236, 72, 153)" />
+            <stop offset="100%" stopColor="rgb(249, 168, 212)" />
+          </linearGradient>
+          <radialGradient id="texasSunGradient" cx="70%" cy="25%">
+            <stop offset="0%" stopColor="rgb(251, 191, 36)" />
+            <stop offset="100%" stopColor="rgb(245, 158, 11)" />
+          </radialGradient>
+        </defs>
+        
+        {/* Austin skyline silhouettes */}
+        <path 
+          d="M0,500 L80,480 L100,400 L120,420 L200,350 L220,360 L300,320 L350,340 L400,280 L450,300 L500,250 L550,270 L600,230 L650,250 L700,200 L750,220 L800,180 L850,200 L900,160 L950,180 L1000,140 L1050,160 L1100,120 L1150,140 L1200,100 L1200,800 L0,800 Z" 
+          fill="url(#techGradient1)" 
+          className="animate-pulse"
+          style={{ animationDelay: '0s', animationDuration: '6s' }}
+        />
+        <path 
+          d="M0,600 L100,580 L150,520 L200,540 L280,480 L320,500 L400,460 L480,480 L560,440 L640,460 L720,420 L800,440 L880,400 L960,420 L1040,380 L1120,400 L1200,360 L1200,800 L0,800 Z" 
+          fill="url(#techGradient2)" 
+          className="animate-pulse"
+          style={{ animationDelay: '2s', animationDuration: '5s' }}
+        />
+        
+        {/* Texas sun */}
+        <circle cx="850" cy="200" r="50" fill="url(#texasSunGradient)" className="animate-pulse" style={{ animationDelay: '1s' }} />
+        
+        {/* Floating tech indicators */}
+        <g className="animate-bounce" style={{ animationDelay: '0.5s' }}>
+          <circle cx="250" cy="320" r="4" fill="rgb(251, 146, 60)" />
+          <text x="260" y="325" fill="rgb(251, 146, 60)" fontSize="11" fontFamily="monospace">SXSW</text>
+        </g>
+        <g className="animate-bounce" style={{ animationDelay: '1.5s' }}>
+          <circle cx="500" cy="220" r="4" fill="rgb(236, 72, 153)" />
+          <text x="510" y="225" fill="rgb(236, 72, 153)" fontSize="11" fontFamily="monospace">#3 VC</text>
+        </g>
+        <g className="animate-bounce" style={{ animationDelay: '2.5s' }}>
+          <circle cx="800" cy="160" r="4" fill="rgb(249, 168, 212)" />
+          <text x="810" y="165" fill="rgb(249, 168, 212)" fontSize="11" fontFamily="monospace">$8.5B</text>
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+// Floating Tech Hub Card Component
+function FloatingTechCard({ delay = 0, children }: { delay?: number; children: React.ReactNode }) {
+  return (
+    <div 
+      className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 animate-float"
+      style={{ 
+        animationDelay: `${delay}s`,
+        transform: `translateY(${Math.sin(delay * 1.8) * 12}px)`
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
 export const metadata: Metadata = {
   title: 'Austin Series A Funding Advisory | Texas VC Introductions & Investment Readiness | Vommuli',
@@ -40,50 +147,122 @@ export const metadata: Metadata = {
 };
 
 export default function AustinLocationPage() {
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
       
-      {/* Hero Section */}
-      <section className="bg-hero-gradient section-padding-lg">
-        <div className="container">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 rounded-3xl bg-white/10 border border-white/20 backdrop-blur-sm mb-8">
-              <span className="text-white text-sm font-medium">🎆 Austin Series A Experts</span>
+      {/* Silicon Hills Hero Section */}
+      <section className="relative min-h-screen bg-gradient-to-br from-orange-950 via-pink-900 to-purple-950 overflow-hidden">
+        <SiliconHillsBackground />
+        
+        {/* Texas Tech Energy Effect */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-400/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        </div>
+        
+        {/* Professional Austin Tech Environment Imagery */}
+        <div className="absolute inset-0 opacity-5">
+          <img 
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+            alt="Austin Tech District" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-4 py-24 lg:py-32">
+          <div className="max-w-6xl mx-auto">
+            
+            {/* Floating Silicon Hills Metrics Cards */}
+            <div className="absolute top-20 right-10 hidden lg:block">
+              <FloatingTechCard delay={0.5}>
+                <div className="text-white/90 text-sm font-medium">Global VC Rank</div>
+                <div className="text-2xl font-bold text-white">#3</div>
+              </FloatingTechCard>
             </div>
             
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              Austin Series A Funding
-              <span className="block text-gradient-accent">Advisory & VC Introductions</span>
-            </h1>
-            <p className="text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-              Premier Series A funding advisory for Austin startups. <strong className="text-white">65+ successful fundraises in Silicon Hills.</strong> Expert VC introductions to 75+ Texas investors and national funds with Austin presence. Local market intelligence for the #3 global VC hub.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            <div className="card-brand">
-              <div className="w-16 h-16 bg-accent-600 rounded-3xl flex items-center justify-center mb-6">
-                <span className="text-secondary-900 font-bold text-xl">65+</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-white mb-3">Austin Fundraises</h3>
-              <p className="text-white/80">Successful Series A fundraises completed in Austin since 2019</p>
+            <div className="absolute top-40 left-10 hidden lg:block">
+              <FloatingTechCard delay={1}>
+                <div className="text-white/90 text-sm font-medium">SXSW Network</div>
+                <div className="text-2xl font-bold text-white">
+                  <AnimatedCounter end={400} suffix="K+" />
+                </div>
+              </FloatingTechCard>
             </div>
-            <div className="card-brand">
-              <div className="w-16 h-16 bg-accent-600 rounded-3xl flex items-center justify-center mb-6">
-                <span className="text-secondary-900 font-bold text-xl">$485M</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-white mb-3">Capital Raised</h3>
-              <p className="text-white/80">Total Series A capital raised for Austin clients</p>
+            
+            <div className="absolute bottom-40 right-20 hidden lg:block">
+              <FloatingTechCard delay={1.5}>
+                <div className="text-white/90 text-sm font-medium">Deal Volume</div>
+                <div className="text-2xl font-bold text-white">
+                  <AnimatedCounter end={8} prefix="$" suffix=".5B" />
+                </div>
+              </FloatingTechCard>
             </div>
-            <div className="card-brand">
-              <div className="w-16 h-16 bg-accent-600 rounded-3xl flex items-center justify-center mb-6">
-                <span className="text-secondary-900 font-bold text-xl">#3</span>
+            
+            <div className="text-center">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 hover:bg-white/20 transition-all duration-300">
+                <div className="w-3 h-3 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full mr-3 animate-pulse"></div>
+                <span className="text-white text-sm font-medium tracking-wide">SILICON HILLS CAPITAL SOLUTIONS</span>
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-3">Global VC Hub</h3>
-              <p className="text-white/80">Austin ranked #3 VC hub globally in 2024, surpassing Boston and Seattle</p>
+              
+              <h1 className="text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+                Silicon Hills
+                <span className="block bg-gradient-to-r from-orange-400 via-pink-400 to-purple-400 bg-clip-text text-transparent mt-2">
+                  Tech Capital
+                </span>
+              </h1>
+              
+              <p className="text-xl lg:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
+                Premier Series A capital introduction platform for Austin's booming tech ecosystem. Connect with the #3 global VC hub's most influential investors, SXSW networks, and Texas innovation capital.
+              </p>
+              
+              {/* Interactive Austin Metrics Dashboard */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                    <AnimatedCounter end={75} suffix="+" />
+                  </div>
+                  <div className="text-white/70 text-sm">Austin Raises</div>
+                </div>
+                
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                    <AnimatedCounter end={520} prefix="$" suffix="M+" />
+                  </div>
+                  <div className="text-white/70 text-sm">Capital Deployed</div>
+                </div>
+                
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                    <AnimatedCounter end={91} suffix="%" />
+                  </div>
+                  <div className="text-white/70 text-sm">Success Rate</div>
+                </div>
+                
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                    <AnimatedCounter end={4} suffix=" Months" />
+                  </div>
+                  <div className="text-white/70 text-sm">Avg Timeline</div>
+                </div>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <button className="bg-gradient-to-r from-orange-600 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-orange-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-300 shadow-xl">
+                  Schedule SXSW Network Session
+                </button>
+                
+                <button className="bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-xl font-semibold border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  Explore Silicon Hills Network
+                </button>
+              </div>
             </div>
           </div>
         </div>
+        
+        {/* Texas heat haze overlay at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white/10 to-transparent backdrop-blur-sm"></div>
       </section>
 
       {/* Austin Market Overview */}

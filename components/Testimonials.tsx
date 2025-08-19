@@ -9,8 +9,8 @@ const testimonials = [
     industry: 'SaaS',
     rating: 5,
     content: 'Vommuli transformed our fundraising process. Their deep understanding of the SaaS space and extensive VC network helped us secure Series A funding in just 6 weeks. The team\'s strategic guidance was invaluable.',
-    avatar: '/avatars/sarah-chen.jpg',
-    logo: '/logos/techflow.png'
+    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b47c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80',
+    logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=80&q=80'
   },
   {
     name: 'Michael Rodriguez',
@@ -20,8 +20,8 @@ const testimonials = [
     industry: 'Healthcare',
     rating: 5,
     content: 'As a healthcare startup, we needed investors who understood the regulatory landscape. Vommuli connected us with the perfect angel investors who not only provided capital but also strategic guidance.',
-    avatar: '/avatars/michael-rodriguez.jpg',
-    logo: '/logos/healthtech.png'
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80',
+    logo: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=80&q=80'
   },
   {
     name: 'Jennifer Park',
@@ -31,8 +31,8 @@ const testimonials = [
     industry: 'Fintech',
     rating: 5,
     content: 'The Vommuli team exceeded our expectations. They helped us navigate complex Series B negotiations and connected us with investors who shared our vision for transforming financial services.',
-    avatar: '/avatars/jennifer-park.jpg',
-    logo: '/logos/finserve.png'
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80',
+    logo: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=80&q=80'
   },
   {
     name: 'David Thompson',
@@ -42,8 +42,8 @@ const testimonials = [
     industry: 'Clean Energy',
     rating: 5,
     content: 'Vommuli\'s expertise in late-stage funding was crucial for our Series C round. They helped us structure the deal optimally and connected us with strategic investors who could accelerate our growth.',
-    avatar: '/avatars/david-thompson.jpg',
-    logo: '/logos/green-energy.png'
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80',
+    logo: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=80&q=80'
   },
   {
     name: 'Lisa Wang',
@@ -53,8 +53,8 @@ const testimonials = [
     industry: 'Education',
     rating: 5,
     content: 'Starting an edtech company during the pandemic was challenging, but Vommuli helped us tell our story effectively and connect with investors who believed in the future of online education.',
-    avatar: '/avatars/lisa-wang.jpg',
-    logo: '/logos/edutech.png'
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80',
+    logo: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=80&q=80'
   },
   {
     name: 'Robert Kim',
@@ -64,8 +64,8 @@ const testimonials = [
     industry: 'Logistics',
     rating: 5,
     content: 'Vommuli\'s industry knowledge and investor network helped us secure funding at a critical growth stage. Their ongoing support and strategic advice continue to be valuable as we scale.',
-    avatar: '/avatars/robert-kim.jpg',
-    logo: '/logos/logichain.png'
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80',
+    logo: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=80&q=80'
   }
 ];
 

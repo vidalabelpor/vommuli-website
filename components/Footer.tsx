@@ -24,20 +24,20 @@ export default function Footer() {
 
   const company = [
     { name: 'About Vommuli', href: '/about' },
-    { name: 'Our Team', href: '/team' },
-    { name: 'Success Stories', href: '/case-studies' },
-    { name: 'Client Testimonials', href: '/testimonials' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Press & Media', href: '/press' }
+    { name: 'Contact Us', href: '/contact' },
+    { name: 'Series A Advisory', href: '/series-a-funding-advisory' },
+    { name: 'Investment Readiness', href: '/tools/investment-readiness-assessment' },
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms of Service', href: '/terms' }
   ];
 
   const resources = [
     { name: 'Market Insights', href: '/insights' },
-    { name: 'Capital Markets Report', href: '/reports' },
-    { name: 'Funding Guides', href: '/guides' },
-    { name: 'Webinars & Events', href: '/events' },
-    { name: 'Newsletter', href: '/newsletter' },
-    { name: 'Knowledge Center', href: '/knowledge' }
+    { name: 'Blog & Articles', href: '/blog' },
+    { name: 'Startup Resources', href: '/resources' },
+    { name: 'Investment Assessment', href: '/tools/investment-readiness-assessment' },
+    { name: 'Series A Checklist', href: '/resources/series-a-funding-checklist' },
+    { name: 'Pitch Deck Guide', href: '/resources/startup-pitch-deck-guide' }
   ];
 
   return (
@@ -140,12 +140,12 @@ export default function Footer() {
             {/* Contact CTA */}
             <div className="mt-6 p-4 bg-slate-800 rounded-lg">
               <h4 className="text-white font-semibold text-sm mb-2">Ready to Raise Capital?</h4>
-              <p className="text-slate-400 text-xs mb-3">Schedule a confidential consultation to discuss your funding strategy.</p>
+              <p className="text-slate-400 text-xs mb-3">Start with our free investment readiness assessment.</p>
               <Link 
-                href="/schedule-consultation" 
+                href="/tools/investment-readiness-assessment" 
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium px-3 py-2 rounded transition-colors"
               >
-                Schedule Consultation
+                Free Assessment
               </Link>
             </div>
           </div>

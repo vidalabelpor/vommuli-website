@@ -7,6 +7,7 @@ import Testimonials from '@/components/Testimonials';
 import CTASection from '@/components/CTASection';
 import FAQ from '@/components/FAQ';
 import Stats from '@/components/Stats';
+import ClientLogos from '@/components/ClientLogos';
 import InternalLinkingSystem, { QuickNavigation } from '@/components/InternalLinking';
 import TechnicalSEO from '@/components/TechnicalSEO';
 
@@ -27,6 +28,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       <Hero />
+      <ClientLogos />
       <Stats />
       <Services />
       

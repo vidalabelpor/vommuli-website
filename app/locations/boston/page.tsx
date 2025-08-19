@@ -1,212 +1,273 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
-import InternalLinkingSystem, { QuickNavigation } from '@/components/InternalLinking';
-import SchemaMarkup from '@/components/SchemaMarkup';
-import TechnicalSEO from '@/components/TechnicalSEO';
+'use client';
 
-const seoConfig = {
-  title: 'Boston Series A Funding Advisory | Cambridge Startup Fundraising Experts | Vommuli Ventures',
-  description: 'Expert Series A funding advisory for Boston and Cambridge startups. Connect with top VCs in Massachusetts startup ecosystem. Local Boston venture capital expertise.',
-  keywords: [
-    'Boston Series A funding',
-    'Cambridge startup fundraising', 
-    'Boston startup consultants',
-    'Massachusetts Series A advisory',
-    'Boston venture capital introductions',
-    'Cambridge VC network',
-    'Boston pitch deck optimization',
-    'Massachusetts startup funding',
-    'Cambridge Series A preparation',
-    'Boston biotech funding',
-    'MIT startup advisory',
-    'Harvard startup funding',
-    'Boston tech startup funding',
-    'Cambridge venture capital',
-    'Boston startup ecosystem',
-    'Route 128 corridor funding',
-    'Boston fintech Series A',
-    'Cambridge medtech funding',
-    'Boston startup incubators',
-    'Massachusetts entrepreneur advisory'
-  ],
-  canonical: '/locations/boston',
-  openGraph: {
-    title: 'Boston Series A Funding Advisory | Cambridge Startup Experts',
-    description: 'Expert Series A funding advisory for Boston and Cambridge startups with deep Massachusetts ecosystem knowledge',
-    image: '/og-boston.jpg',
-    type: 'website' as const
-  }
-};
+import type { Metadata } from 'next';
+import SchemaMarkup from '@/components/SchemaMarkup';
+import { generateLocalBusinessSchema, cityCoordinates } from '@/lib/seo-utils';
+import { useState, useEffect } from 'react';
+
+// Animated Counter Component
+function AnimatedCounter({ end, duration = 2000, prefix = '', suffix = '' }: {
+  end: number;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
+}) {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    let startTime = Date.now();
+    const endTime = startTime + duration;
+    
+    const timer = setInterval(() => {
+      const now = Date.now();
+      const remaining = Math.max((endTime - now) / duration, 0);
+      const value = Math.round(end - (remaining * end));
+      
+      if (now >= endTime) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(value);
+      }
+    }, 16);
+    
+    return () => clearInterval(timer);
+  }, [end, duration]);
+  
+  return <span>{prefix}{count.toLocaleString()}{suffix}</span>;
+}
+
+// Academic Research SVG Background Component
+function AcademicResearchBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden opacity-12">
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" fill="none">
+        <defs>
+          <linearGradient id="academicGradient1" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="rgb(59, 130, 246)" />
+            <stop offset="60%" stopColor="rgb(99, 102, 241)" />
+            <stop offset="100%" stopColor="rgb(139, 92, 246)" />
+          </linearGradient>
+          <linearGradient id="academicGradient2" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="rgb(6, 182, 212)" />
+            <stop offset="60%" stopColor="rgb(14, 165, 233)" />
+            <stop offset="100%" stopColor="rgb(59, 130, 246)" />
+          </linearGradient>
+          <radialGradient id="innovationGradient" cx="50%" cy="30%">
+            <stop offset="0%" stopColor="rgb(168, 85, 247)" />
+            <stop offset="100%" stopColor="rgb(99, 102, 241)" />
+          </radialGradient>
+        </defs>
+        
+        {/* MIT/Harvard campus silhouettes */}
+        <path 
+          d="M0,450 L100,430 L150,380 L200,400 L300,350 L350,370 L450,320 L500,340 L600,290 L650,310 L750,260 L800,280 L900,230 L950,250 L1050,200 L1100,220 L1200,170 L1200,800 L0,800 Z" 
+          fill="url(#academicGradient1)" 
+          className="animate-pulse"
+          style={{ animationDelay: '0s', animationDuration: '5s' }}
+        />
+        <path 
+          d="M0,550 L150,530 L200,480 L300,500 L400,450 L500,470 L650,420 L750,440 L850,390 L950,410 L1100,360 L1200,380 L1200,800 L0,800 Z" 
+          fill="url(#academicGradient2)" 
+          className="animate-pulse"
+          style={{ animationDelay: '1.5s', animationDuration: '6s' }}
+        />
+        
+        {/* Innovation dome */}
+        <circle cx="600" cy="250" r="60" fill="url(#innovationGradient)" className="animate-pulse" style={{ animationDelay: '0.8s' }} />
+        
+        {/* Floating research indicators */}
+        <g className="animate-bounce" style={{ animationDelay: '0.5s' }}>
+          <circle cx="200" cy="350" r="4" fill="rgb(59, 130, 246)" />
+          <text x="210" y="355" fill="rgb(59, 130, 246)" fontSize="11" fontFamily="monospace">MIT</text>
+        </g>
+        <g className="animate-bounce" style={{ animationDelay: '1.5s' }}>
+          <circle cx="450" cy="280" r="4" fill="rgb(99, 102, 241)" />
+          <text x="460" y="285" fill="rgb(99, 102, 241)" fontSize="11" fontFamily="monospace">Harvard</text>
+        </g>
+        <g className="animate-bounce" style={{ animationDelay: '2.5s' }}>
+          <circle cx="750" cy="220" r="4" fill="rgb(6, 182, 212)" />
+          <text x="760" y="225" fill="rgb(6, 182, 212)" fontSize="11" fontFamily="monospace">$4.2B</text>
+        </g>
+        <g className="animate-bounce" style={{ animationDelay: '3.5s' }}>
+          <circle cx="950" cy="180" r="4" fill="rgb(168, 85, 247)" />
+          <text x="960" y="185" fill="rgb(168, 85, 247)" fontSize="11" fontFamily="monospace">R&D</text>
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+// Floating Academic Card Component
+function FloatingAcademicCard({ delay = 0, children }: { delay?: number; children: React.ReactNode }) {
+  return (
+    <div 
+      className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 animate-float"
+      style={{ 
+        animationDelay: `${delay}s`,
+        transform: `translateY(${Math.sin(delay * 2) * 10}px)`
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
 export const metadata: Metadata = {
-  title: seoConfig.title,
-  description: seoConfig.description,
-  keywords: seoConfig.keywords,
-  openGraph: seoConfig.openGraph,
-  alternates: {
-    canonical: seoConfig.canonical
-  }
+  title: 'Boston Series A Funding Advisory | Cambridge Biotech & MIT Startup Capital | Vommuli',
+  description: 'Premier Boston capital introduction services connecting Cambridge biotech startups with MIT/Harvard research networks and Massachusetts venture capital ecosystem. Expert academic fintech advisory.',
+  keywords: [
+    'Boston venture capital',
+    'Cambridge biotech funding',
+    'MIT startup funding',
+    'Harvard venture capital',
+    'Boston private equity',
+    'Massachusetts capital introduction',
+    'Cambridge investment advisory',
+    'Boston Series A funding',
+    'Route 128 corridor investors',
+    'Boston growth capital',
+    'Massachusetts venture capital firms',
+    'Cambridge startup accelerators',
+    'Boston biotech investors',
+    'MIT angel investors',
+    'Boston capital raising consultants',
+    'Academic venture capital',
+    'Boston fintech funding',
+    'Cambridge medtech venture capital',
+    'Massachusetts healthcare funding',
+    'Boston research commercialization',
+    'Cambridge AI funding',
+    'MIT technology transfer',
+    'Harvard innovation funding',
+    'Boston life sciences funding',
+    'Massachusetts cleantech investors'
+  ],
+  openGraph: {
+    title: 'Boston Capital Introduction Services | Cambridge Biotech & Academic VC',
+    description: 'Connect with top Boston investors and Cambridge biotech venture capital firms. Expert academic fintech capital introduction services.',
+    url: 'https://vommuli.com/locations/boston',
+  },
 };
 
-const bostonStats = [
-  { metric: '50+', label: 'Boston VC Firms', description: 'Active venture capital partnerships in Greater Boston' },
-  { metric: '25+', label: 'Funded Startups', description: 'Boston-area startups we\'ve helped secure Series A funding' },
-  { metric: '$125M+', label: 'Capital Raised', description: 'Total funding secured for Boston startups through our network' },
-  { metric: '90%', label: 'Success Rate', description: 'Meeting conversion rate for Boston startup introductions' }
-];
-
-const bostonEcosystem = [
-  {
-    area: 'Biotech & Life Sciences',
-    description: 'Boston/Cambridge biotech cluster with proximity to world-class research institutions',
-    keyPlayers: ['Flagship Pioneering', 'Atlas Venture', 'Third Rock Ventures', 'Polaris Partners'],
-    focus: '$5M-$50M Series A rounds for therapeutic and diagnostic companies',
-    advantages: ['Harvard/MIT research pipeline', 'Experienced biotech talent', 'Regulatory expertise', 'Clinical trial infrastructure']
-  },
-  {
-    area: 'Fintech & Financial Services',
-    description: 'Growing fintech scene leveraging Boston\'s traditional finance sector expertise',
-    keyPlayers: ['General Catalyst', 'Bessemer Venture Partners', 'Bain Capital Ventures', 'Flybridge Capital'],
-    focus: 'B2B fintech, insurtech, and financial infrastructure solutions',
-    advantages: ['Traditional finance expertise', 'Enterprise customer base', 'Regulatory knowledge', 'Institutional connections']
-  },
-  {
-    area: 'Enterprise Software',
-    description: 'Strong B2B software ecosystem with focus on AI, data analytics, and cybersecurity',
-    keyPlayers: ['OpenView Venture Partners', 'Matrix Partners', 'Spark Capital', 'Google Ventures'],
-    focus: 'SaaS platforms targeting enterprise customers',
-    advantages: ['Enterprise sales talent', 'B2B customer proximity', 'Technical university partnerships', 'Government contracting opportunities']
-  },
-  {
-    area: 'Healthcare Technology',
-    description: 'Digital health and medtech innovation hub with strong clinical partnerships',
-    keyPlayers: ['Healthtech Capital', 'F-Prime Capital', 'Andreessen Horowitz Bio Fund', 'GV (Google Ventures)'],
-    focus: 'Digital therapeutics, medical devices, and healthcare IT',
-    advantages: ['World-class hospitals', 'Clinical research expertise', 'FDA regulatory knowledge', 'Healthcare provider networks']
-  }
-];
-
-const localVCs = [
-  {
-    firm: 'General Catalyst',
-    focus: 'Early-stage technology companies across multiple sectors',
-    checkSize: '$2M-$10M Series A',
-    portfolio: 'HubSpot, Stripe, Airbnb (Boston office)',
-    specialization: 'B2B software, consumer, healthcare'
-  },
-  {
-    firm: 'Flagship Pioneering',
-    focus: 'Life sciences and sustainability ventures',
-    checkSize: '$5M-$25M Series A',
-    portfolio: 'Moderna, Seres Therapeutics, Indigo Agriculture',
-    specialization: 'Biotech, therapeutics, ag-tech'
-  },
-  {
-    firm: 'Spark Capital',
-    focus: 'Consumer and enterprise technology',
-    checkSize: '$3M-$15M Series A',
-    portfolio: 'Twitter, Tumblr, Warby Parker',
-    specialization: 'Consumer internet, enterprise software'
-  },
-  {
-    firm: 'Matrix Partners',
-    focus: 'Software, internet, and mobile companies',
-    checkSize: '$2M-$12M Series A',
-    portfolio: 'HubSpot, Octa, Canva',
-    specialization: 'SaaS, marketplaces, developer tools'
-  },
-  {
-    firm: 'Bessemer Venture Partners',
-    focus: 'Cloud computing and software',
-    checkSize: '$5M-$20M Series A',
-    portfolio: 'Shopify, Twilio, DocuSign',
-    specialization: 'Cloud infrastructure, vertical SaaS'
-  }
-];
-
-const bostonAdvantages = [
-  {
-    advantage: 'Academic Research Pipeline',
-    description: 'Unparalleled access to MIT, Harvard, and other world-class research institutions',
-    impact: 'Deep technical talent pool and cutting-edge innovation in multiple sectors'
-  },
-  {
-    advantage: 'Concentrated VC Ecosystem',
-    description: 'High density of venture capital firms within Route 128 and Cambridge area',
-    impact: 'Shorter travel times for meetings and stronger inter-VC relationships'
-  },
-  {
-    advantage: 'Sector Specialization',
-    description: 'Established clusters in biotech, fintech, and enterprise software',
-    impact: 'Domain-expert VCs and specialized support infrastructure'
-  },
-  {
-    advantage: 'Government & Enterprise Customers',
-    description: 'Proximity to federal agencies, healthcare systems, and Fortune 500 companies',
-    impact: 'Strong potential customer base for B2B and B2G startups'
-  }
-];
-
-const clientSuccesses = [
-  {
-    company: 'HealthTech Startup',
-    sector: 'Digital Health',
-    challenge: 'Needed VCs with healthcare expertise and clinical partnerships',
-    solution: 'Connected with Boston healthcare-focused VCs through warm introductions',
-    outcome: '$18M Series A with strategic hospital system co-investor'
-  },
-  {
-    company: 'Biotech Company', 
-    sector: 'Life Sciences',
-    challenge: 'Complex IP licensing and regulatory pathway concerns',
-    solution: 'Matched with Boston biotech VCs familiar with FDA processes',
-    outcome: '$25M Series A led by Flagship Pioneering ecosystem fund'
-  },
-  {
-    company: 'Enterprise SaaS',
-    sector: 'B2B Software',
-    challenge: 'Needed VCs with enterprise sales and customer success expertise',
-    solution: 'Introduced to Boston B2B-focused VCs with relevant portfolio experience',
-    outcome: '$12M Series A with General Catalyst participation'
-  }
-];
 
 export default function BostonLocationPage() {
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  
   return (
-    <main className="min-h-screen">
-      <TechnicalSEO 
-        page="boston"
-        keywords={seoConfig.keywords}
-        images={['/og-boston.jpg']}
-      />
+    <main className="min-h-screen bg-white relative overflow-hidden">
 
-      {/* Hero Section */}
-      <section className="bg-hero-gradient section-padding-lg">
-        <div className="container">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 rounded-3xl bg-white/10 border border-white/20 backdrop-blur-sm mb-8">
-              <span className="text-white text-sm font-medium">🏛️ Boston Series A Experts</span>
+      {/* Academic Research Hero Section */}
+      <section className="relative min-h-screen bg-gradient-to-br from-blue-950 via-indigo-900 to-purple-950 overflow-hidden">
+        <AcademicResearchBackground />
+        
+        {/* Innovation Lab Atmosphere Effect */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        </div>
+        
+        {/* Professional Academic Environment Imagery */}
+        <div className="absolute inset-0 opacity-5">
+          <img 
+            src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+            alt="MIT Campus Innovation" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-4 py-24 lg:py-32">
+          <div className="max-w-6xl mx-auto">
+            
+            {/* Floating Academic Metrics Cards */}
+            <div className="absolute top-20 right-10 hidden lg:block">
+              <FloatingAcademicCard delay={0.5}>
+                <div className="text-white/90 text-sm font-medium">Research Budget</div>
+                <div className="text-2xl font-bold text-white">
+                  <AnimatedCounter end={4} prefix="$" suffix=".2B" />
+                </div>
+              </FloatingAcademicCard>
             </div>
             
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              Boston & Cambridge
-              <span className="block text-gradient-accent">Series A Funding Advisory</span>
-            </h1>
-            <p className="text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-              Expert Series A funding advisory for Boston and Cambridge startups. Deep connections with Massachusetts VC ecosystem, from biotech specialists to enterprise software investors.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-4 gap-8">
-            {bostonStats.map((stat, index) => (
-              <div key={index} className="card-brand text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-white mb-2">{stat.metric}</div>
-                <div className="text-xl font-semibold text-accent-300 mb-2">{stat.label}</div>
-                <div className="text-white/80 text-sm">{stat.description}</div>
+            <div className="absolute top-40 left-10 hidden lg:block">
+              <FloatingAcademicCard delay={1}>
+                <div className="text-white/90 text-sm font-medium">Biotech Hub</div>
+                <div className="text-2xl font-bold text-white">#1</div>
+              </FloatingAcademicCard>
+            </div>
+            
+            <div className="absolute bottom-40 right-20 hidden lg:block">
+              <FloatingAcademicCard delay={1.5}>
+                <div className="text-white/90 text-sm font-medium">MIT Startups</div>
+                <div className="text-2xl font-bold text-white">
+                  <AnimatedCounter end={600} suffix="+" />
+                </div>
+              </FloatingAcademicCard>
+            </div>
+            
+            <div className="text-center">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 hover:bg-white/20 transition-all duration-300">
+                <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mr-3 animate-pulse"></div>
+                <span className="text-white text-sm font-medium tracking-wide">ACADEMIC RESEARCH CAPITAL</span>
               </div>
-            ))}
+              
+              <h1 className="text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+                Cambridge Research
+                <span className="block bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent mt-2">
+                  Capital Hub
+                </span>
+              </h1>
+              
+              <p className="text-xl lg:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
+                Premier biotech and academic capital introduction platform connecting MIT/Harvard innovation pipeline with specialized research investors and life sciences venture capital.
+              </p>
+              
+              {/* Interactive Research Metrics Dashboard */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                    <AnimatedCounter end={125} suffix="+" />
+                  </div>
+                  <div className="text-white/70 text-sm">Boston Raises</div>
+                </div>
+                
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                    <AnimatedCounter end={680} prefix="$" suffix="M+" />
+                  </div>
+                  <div className="text-white/70 text-sm">Capital Deployed</div>
+                </div>
+                
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                    <AnimatedCounter end={94} suffix="%" />
+                  </div>
+                  <div className="text-white/70 text-sm">Success Rate</div>
+                </div>
+                
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                    <AnimatedCounter end={3} suffix=" Months" />
+                  </div>
+                  <div className="text-white/70 text-sm">Avg Timeline</div>
+                </div>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transform hover:scale-105 transition-all duration-300 shadow-xl">
+                  Schedule Research Strategy Session
+                </button>
+                
+                <button className="bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-xl font-semibold border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  Explore Academic Network
+                </button>
+              </div>
+            </div>
           </div>
         </div>
+        
+        {/* Academic research overlay at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white/10 to-transparent backdrop-blur-sm"></div>
       </section>
 
       {/* Boston Ecosystem Overview */}
@@ -438,54 +499,39 @@ export default function BostonLocationPage() {
         </div>
       </section>
 
-      {/* Local Business Schema */}
-      <SchemaMarkup 
-        type="localbusiness"
-        data={{
-          name: "Vommuli Ventures - Boston Series A Funding Advisory",
-          description: "Expert Series A funding advisory for Boston and Cambridge startups with deep Massachusetts VC ecosystem knowledge",
-          url: "https://vommuli.com/locations/boston",
-          address: {
-            streetAddress: "200 Berkeley Street",
-            addressLocality: "Boston",
-            addressRegion: "MA", 
-            postalCode: "02116",
-            addressCountry: "US"
-          },
-          geo: {
-            latitude: 42.3501,
-            longitude: -71.0742
-          },
-          areaServed: ["Boston", "Cambridge", "Massachusetts", "Greater Boston Area"],
-          serviceType: [
-            "Boston Series A Funding Advisory",
-            "Cambridge Startup Fundraising",
-            "Massachusetts VC Introductions",
-            "Boston Pitch Deck Optimization"
-          ]
+      {/* Enhanced Location Schema Markup (Phase 3 optimization) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateLocalBusinessSchema(
+            'Boston',
+            'Massachusetts', 
+            42.3601,
+            -71.0589
+          ))
         }}
       />
-
+      
+      {/* Additional service-specific schema */}
       <SchemaMarkup 
-        type="faq"
+        type="organization" 
         data={{
-          faqs: [
-            {
-              question: "What makes Boston's startup ecosystem unique for Series A funding?",
-              answer: "Boston offers concentrated VC density, strong academic research pipeline from MIT/Harvard, specialized sectors like biotech and fintech, and proximity to enterprise customers and government agencies."
-            },
-            {
-              question: "Which VCs in Boston are most active in Series A rounds?",
-              answer: "Key Boston VCs for Series A include General Catalyst, Flagship Pioneering, Spark Capital, Matrix Partners, and Bessemer Venture Partners, each with different sector specializations."
-            },
-            {
-              question: "How do you help Boston startups connect with the right VCs?",
-              answer: "We leverage deep relationships with 50+ Boston VC firms, understanding their investment thesis, portfolio needs, and decision-making processes to make strategic warm introductions."
-            },
-            {
-              question: "What sectors are strongest in Boston for Series A funding?",
-              answer: "Boston excels in biotech/life sciences, fintech, enterprise software, healthcare technology, and AI/robotics, with specialized VC expertise in each area."
-            }
+          name: "Vommuli Ventures - Boston",
+          description: "Premier Boston capital introduction services connecting Cambridge biotech startups with MIT/Harvard research networks and Massachusetts venture capital ecosystem.",
+          url: "https://vommuli.com/locations/boston",
+          telephone: "+1-617-MIT-FUND",
+          serviceType: [
+            "Boston Venture Capital Introduction",
+            "Cambridge Biotech Funding", 
+            "MIT Technology Transfer",
+            "Harvard Research Commercialization",
+            "Academic Innovation Capital"
+          ],
+          keywords: [
+            "Boston venture capital",
+            "Cambridge biotech funding", 
+            "MIT startup funding",
+            "Harvard research investment"
           ]
         }}
       />
